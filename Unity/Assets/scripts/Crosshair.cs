@@ -82,8 +82,8 @@ public class Crosshair : MonoBehaviour {
 
 	private void checkLockOn() {
 		Vector3 aim = transform.position - cam.transform.position;
-		print ("Transform.position = " + transform.position);
-		print ("Cam.transform = " + cam.transform.position);
+		//print ("Transform.position = " + transform.position);
+		//print ("Cam.transform = " + cam.transform.position);
 
 		RaycastHit hit = new RaycastHit();
 		Debug.DrawRay(transform.position, aim*2, Color.blue);
