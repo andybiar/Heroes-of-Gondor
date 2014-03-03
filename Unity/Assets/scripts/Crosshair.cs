@@ -2,30 +2,30 @@
 using System.Collections;
 
 public class Crosshair : MonoBehaviour {
-
+	
 	public float sensitivity;
 	public Camera cam;
-
+	
 	public enum State { IDLE, LOCKING }
 	public State currentState;
 	private Transform target;
 	public int lockCount;
 	public int maxLockCount;
-
+	public GameObject crosshair;
+	
 	void Start() {
 		currentState = State.IDLE;
 	}
-
+	
 	// Update is called once per frame
 	void Update () {
 		processInput();
-
+		
 		//Check for lockable between crosshair and camera.
-		checkLockOnBetween();
-
+		//checkLockOnBetween();
 		checkLockOn();
 	}
-
+	
 	private void processInput() {
 		// Receive Input
 		if (Input.GetKey(KeyCode.LeftArrow)) {
@@ -41,13 +41,13 @@ public class Crosshair : MonoBehaviour {
 			transform.position += new Vector3(0, -1 * sensitivity * Time.deltaTime, 0);
 		}
 	}
-
+	
 	private void reset() {
 		lockCount = 0;
 		currentState = State.IDLE;
 		target = null;
 	}
-
+	/*
 	private void checkLockOnBetween() {
 
 		RaycastHit hit = new RaycastHit();
@@ -57,7 +57,7 @@ public class Crosshair : MonoBehaviour {
 		if (Physics.Raycast (transform.position, aim, out hit, 1000)) {
 			if (hit.transform.GetComponents(typeof(Lockable)).Length > 0) {
 				// We are locking on!
-				
+
 				// If IDLE, set target and set state to LOCKING
 				if (currentState == State.IDLE) {
 					target = hit.transform;
@@ -79,48 +79,96 @@ public class Crosshair : MonoBehaviour {
 			
 		}
 	}
-
 	private void checkLockOn() {
 		Vector3 aim = transform.position - cam.transform.position;
-		//print ("Transform.position = " + transform.position);
-		//print ("Cam.transform = " + cam.transform.position);
+		print ("Transform.position = " + transform.position);
+		print ("Cam.transform = " + cam.transform.position);
 
 		RaycastHit hit = new RaycastHit();
 		Debug.DrawRay(transform.position, aim*2, Color.blue);
 		// If we are aiming at a Lockable, start locking on
-		if (Physics.Raycast (transform.position, aim*2, out hit, 100)) {
-			if (hit.transform.GetComponents(typeof(Lockable)).Length > 0) {
-				// We are locking on!
+			if (Physics.Raycast (transform.position, aim*2, out hit, 100)) {
+				if (hit.transform.GetComponents(typeof(Lockable)).Length > 0) {
+					// We are locking on!
 
-				// If IDLE, set target and set state to LOCKING
-				if (currentState == State.IDLE) {
-					target = hit.transform;
-					currentState = State.LOCKING;
-				}
+					// If IDLE, set target and set state to LOCKING
+					if (currentState == State.IDLE) {
+						target = hit.transform;
+						currentState = State.LOCKING;
+					}
 
-				// If LOCKING and SAME TARGET, increment count or FIRE!!
-				if (currentState == State.LOCKING && hit.transform == target) {
-					if (lockCount < 100) { lockCount += 1; }
-					else {
-						fire();
+					// If LOCKING and SAME TARGET, increment count or FIRE!!
+					if (currentState == State.LOCKING && hit.transform == target) {
+						if (lockCount < 100) { lockCount += 1; }
+						else {
+							fire();
+							reset();
+						}
+					}
+
+					// If LOCKING and NEW TARGET, reset
+					else if (currentState == State.LOCKING) {
+						target = hit.transform;
+						Debug.Log("New Target");
 						reset();
 					}
 				}
-
-				// If LOCKING and NEW TARGET, reset
-				else if (currentState == State.LOCKING) {
-					target = hit.transform;
-					Debug.Log("New Target");
+				else {
 					reset();
 				}
 			}
-			else {
-				reset();
-			}
-
+		}
+	*/
+	private void checkLockOn() {
+		Vector3 aim = transform.position - cam.transform.position; 
+		RaycastHit hitBetween = new RaycastHit();
+		RaycastHit hitFar = new RaycastHit();
+		//print ("Transform.position = " + transform.position);
+		//print ("Cam.transform = " + cam.transform.position);
+		Debug.DrawRay(cam.transform.position, aim, Color.yellow);
+		Debug.DrawRay(transform.position, aim*2, Color.blue);
+		
+		// If we are aiming at a Lockable in between the crosshair and camera, start locking on to it.
+		if (Physics.Raycast(cam.transform.position, aim, out hitBetween, 100) && 
+		    hitBetween.transform.GetComponents(typeof(Lockable)).Length > 0) {
+			transform.position = hitBetween.point;
+			updateState (hitBetween);
+		}
+		else if (Physics.Raycast (transform.position, aim*2, out hitFar, 100) &&
+		         hitFar.transform.GetComponents(typeof(Lockable)).Length > 0) {
+			Debug.Log("blalfjewio");
+			transform.position = hitFar.point;
+			updateState(hitFar);
+		}
+		else {
+			reset ();
 		}
 	}
-
+	
+	private void updateState(RaycastHit hit) {
+		// If IDLE, set target and set state to LOCKING
+		if (currentState == State.IDLE) {
+			target = hit.transform;
+			currentState = State.LOCKING;
+		}
+		
+		// If LOCKING and SAME TARGET, increment count or FIRE!!
+		if (currentState == State.LOCKING && hit.transform == target) {
+			if (lockCount < 100) { lockCount += 1; }
+			else {
+				fire();
+				reset();
+			}
+		}
+		
+		// If LOCKING and NEW TARGET, reset
+		else if (currentState == State.LOCKING) {
+			target = hit.transform;
+			Debug.Log("New Target");
+			reset();
+		}
+	}
+	
 	private void fire() {
 	}
 }
