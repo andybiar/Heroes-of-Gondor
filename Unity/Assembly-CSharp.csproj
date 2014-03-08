@@ -49,6 +49,7 @@
      <Compile Include="Assets\scripts\ArcherAI.cs" />
      <Compile Include="Assets\scripts\Arrow.cs" />
      <Compile Include="Assets\scripts\Crosshair.cs" />
+     <Compile Include="Assets\scripts\Health.cs" />
      <Compile Include="Assets\scripts\Infantry_AI.cs" />
      <Compile Include="Assets\scripts\Lockable.cs" />
      <Compile Include="Assets\scripts\Troll_AI.cs" />

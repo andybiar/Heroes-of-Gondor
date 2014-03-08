@@ -41,6 +41,7 @@
 'Assets/scripts/ArcherAI.cs'
 'Assets/scripts/Arrow.cs'
 'Assets/scripts/Crosshair.cs'
+'Assets/scripts/Health.cs'
 'Assets/scripts/Infantry_AI.cs'
 'Assets/scripts/Lockable.cs'
 'Assets/scripts/Troll_AI.cs'
