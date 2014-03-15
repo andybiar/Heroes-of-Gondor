@@ -1,7 +1,7 @@
 ﻿using UnityEngine;
 using System.Collections;
 
-public class ArcherAI : MonoBehaviour {
+public class ArcherAI : MonoBehaviour, Health {
 	public GameObject arrow;
 	public float arrowSpeed;
 	public GameObject target;

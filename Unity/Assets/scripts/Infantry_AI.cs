@@ -1,7 +1,7 @@
 ﻿using UnityEngine;
 using System.Collections;
 
-public class Infantry_AI : MonoBehaviour {
+public class Infantry_AI : MonoBehaviour, Health {
 	private float STABTIMEOUT = 3; // in seconds
 
 	public enum Behaviors { IDLE, GUARD, ATTACK, STAB }
