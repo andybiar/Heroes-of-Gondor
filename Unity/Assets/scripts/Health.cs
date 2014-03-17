@@ -2,5 +2,5 @@
 using System.Collections;
 
 public interface Health {
-	void Damage(float life);
+	void damage(float life);
 }

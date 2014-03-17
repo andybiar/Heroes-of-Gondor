@@ -18,4 +18,8 @@ public class ArcherAI : MonoBehaviour, Health {
 		newArrow.transform.rotation *= Quaternion.Euler(90, 0, 0);
 		newArrow.GetComponent<Arrow>().fire(target, arrowSpeed);
 	}
+
+	public void damage(float d) {
+
+	}
 }

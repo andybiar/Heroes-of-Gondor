@@ -6,7 +6,7 @@ public class Infantry_AI : MonoBehaviour, Health {
 
 	public enum Behaviors { IDLE, GUARD, ATTACK, STAB }
 	public Behaviors currentBehavior;
-	public float damage;
+	public float power;
 	public float health;
 	public float aggroRange;
 	public GameObject doorMarker;
@@ -82,5 +82,9 @@ public class Infantry_AI : MonoBehaviour, Health {
 			// play stabbing animation
 			// do damage
 		}
+	}
+
+	public void damage(float d) {
+
 	}
 }
