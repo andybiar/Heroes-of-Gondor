@@ -12,6 +12,10 @@ public class Crosshair : MonoBehaviour {
 	public int lockCount;
 	public int maxLockCount;
 	public GameObject crosshair;
+
+	// Force push controllers
+	public float power;
+	public float radius;
 	
 	void Start() {
 		currentState = State.IDLE;
@@ -20,9 +24,6 @@ public class Crosshair : MonoBehaviour {
 	// Update is called once per frame
 	void Update () {
 		processInput();
-		
-		//Check for lockable between crosshair and camera.
-		//checkLockOnBetween();
 		checkLockOn();
 	}
 	
@@ -47,100 +48,36 @@ public class Crosshair : MonoBehaviour {
 		currentState = State.IDLE;
 		target = null;
 	}
-	/*
-	private void checkLockOnBetween() {
 
-		RaycastHit hit = new RaycastHit();
-		Vector3 aim = cam.transform.position-transform.position;
-		Debug.DrawRay(transform.position, aim, Color.yellow);
-
-		if (Physics.Raycast (transform.position, aim, out hit, 1000)) {
-			if (hit.transform.GetComponents(typeof(Lockable)).Length > 0) {
-				// We are locking on!
-
-				// If IDLE, set target and set state to LOCKING
-				if (currentState == State.IDLE) {
-					target = hit.transform;
-					currentState = State.LOCKING;
-				}
-				
-				// If LOCKING and SAME TARGET, increment count or FIRE!!
-				if (currentState == State.LOCKING && hit.transform == target) {
-					if (lockCount < 100) { lockCount += 1; }
-					else {
-						fire();
-						reset();
-					}
-				}
-			}
-			else {
-				reset();
-			}
-			
-		}
-	}
 	private void checkLockOn() {
-		Vector3 aim = transform.position - cam.transform.position;
-		print ("Transform.position = " + transform.position);
-		print ("Cam.transform = " + cam.transform.position);
-
-		RaycastHit hit = new RaycastHit();
-		Debug.DrawRay(transform.position, aim*2, Color.blue);
-		// If we are aiming at a Lockable, start locking on
-			if (Physics.Raycast (transform.position, aim*2, out hit, 100)) {
-				if (hit.transform.GetComponents(typeof(Lockable)).Length > 0) {
-					// We are locking on!
-
-					// If IDLE, set target and set state to LOCKING
-					if (currentState == State.IDLE) {
-						target = hit.transform;
-						currentState = State.LOCKING;
-					}
-
-					// If LOCKING and SAME TARGET, increment count or FIRE!!
-					if (currentState == State.LOCKING && hit.transform == target) {
-						if (lockCount < 100) { lockCount += 1; }
-						else {
-							fire();
-							reset();
-						}
-					}
-
-					// If LOCKING and NEW TARGET, reset
-					else if (currentState == State.LOCKING) {
-						target = hit.transform;
-						Debug.Log("New Target");
-						reset();
-					}
-				}
-				else {
-					reset();
-				}
-			}
-		}
-	*/
-	private void checkLockOn() {
-		Vector3 aim = transform.position - cam.transform.position; 
+		// initialize RaycastHits
 		RaycastHit hitBetween = new RaycastHit();
 		RaycastHit hitFar = new RaycastHit();
-		//print ("Transform.position = " + transform.position);
-		//print ("Cam.transform = " + cam.transform.position);
+
+		// Get vectors from camera to crosshair and beyond
+		Vector3 aim = transform.position - cam.transform.position;
+		Vector3 offset = Vector3.Normalize(aim) * .5f;
 		Debug.DrawRay(cam.transform.position, aim, Color.yellow);
 		Debug.DrawRay(transform.position, aim*2, Color.blue);
 		
-		// If we are aiming at a Lockable in between the crosshair and camera, start locking on to it.
+		// Lock on to anything between crosshair and camera
 		if (Physics.Raycast(cam.transform.position, aim, out hitBetween, 100) && 
 		    hitBetween.transform.GetComponents(typeof(Lockable)).Length > 0) {
-			transform.position = hitBetween.point;
+
+			transform.position = hitBetween.point - offset;
 			updateState (hitBetween);
 		}
+
+		// Or else lock on beyond the crosshair
 		else if (Physics.Raycast (transform.position, aim*2, out hitFar, 100) &&
 		         hitFar.transform.GetComponents(typeof(Lockable)).Length > 0) {
-			Debug.Log("blalfjewio");
-			transform.position = hitFar.point;
+
+			transform.position = hitFar.point - offset;
 			updateState(hitFar);
 		}
-		else {
+
+		// Or else do a reset check
+		else if (currentState != State.IDLE) {
 			reset ();
 		}
 	}
@@ -154,9 +91,9 @@ public class Crosshair : MonoBehaviour {
 		
 		// If LOCKING and SAME TARGET, increment count or FIRE!!
 		if (currentState == State.LOCKING && hit.transform == target) {
-			if (lockCount < 100) { lockCount += 1; }
+			if (lockCount < 100) { lockCount = lockCount + 1; }
 			else {
-				fire();
+				fire(hit);
 				reset();
 			}
 		}
@@ -169,6 +106,10 @@ public class Crosshair : MonoBehaviour {
 		}
 	}
 	
-	private void fire() {
+	private void fire(RaycastHit hit) {
+		// If we have a Rigidbody, apply an explosive force to it
+		if (hit.rigidbody) {
+			hit.rigidbody.AddExplosionForce(power, transform.position, radius);
+		}
 	}
 }

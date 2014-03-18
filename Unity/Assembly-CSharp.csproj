@@ -46,6 +46,7 @@
 	</Reference>
   </ItemGroup>
   <ItemGroup>
+     <Compile Include="Assets\OrcAI.cs" />
      <Compile Include="Assets\scripts\ArcherAI.cs" />
      <Compile Include="Assets\scripts\Arrow.cs" />
      <Compile Include="Assets\scripts\Crosshair.cs" />

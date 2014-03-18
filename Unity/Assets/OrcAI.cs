@@ -1,7 +1,7 @@
 ﻿using UnityEngine;
 using System.Collections;
 
-public class Troll_AI : MonoBehaviour, Lockable {
+public class OrcAI : MonoBehaviour, Health, Lockable {
 
 	// Use this for initialization
 	void Start () {
@@ -13,7 +13,10 @@ public class Troll_AI : MonoBehaviour, Lockable {
 	
 	}
 
-	public void onLock() {
+	public void damage(float amount) {
 
+	}
+
+	public void onLock() {
 	}
 }
