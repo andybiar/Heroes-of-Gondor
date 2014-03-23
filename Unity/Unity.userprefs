@@ -1,11 +1,15 @@
 ﻿<Properties>
   <MonoDevelop.Ide.Workspace ActiveConfiguration="Debug" />
-  <MonoDevelop.Ide.Workbench ActiveDocument="Assets\scripts\AI\Infantry_AI.cs">
+  <MonoDevelop.Ide.Workbench ActiveDocument="Assets\scripts\army_stuff\Allies.cs">
     <Files>
-      <File FileName="Assets\scripts\Crosshair.cs" Line="13" Column="26" />
+      <File FileName="Assets\scripts\Crosshair.cs" Line="53" Column="66" />
       <File FileName="Assets\scripts\Arrow.cs" Line="1" Column="1" />
-      <File FileName="Assets\scripts\AI\OrcAI.cs" Line="22" Column="34" />
-      <File FileName="Assets\scripts\AI\Infantry_AI.cs" Line="31" Column="2" />
+      <File FileName="Assets\scripts\Gandalf.cs" Line="1" Column="1" />
+      <File FileName="Assets\scripts\army_stuff\Troll_AI.cs" Line="1" Column="1" />
+      <File FileName="Assets\scripts\army_stuff\Orc.cs" Line="26" Column="84" />
+      <File FileName="Assets\scripts\army_stuff\Infantry.cs" Line="94" Column="57" />
+      <File FileName="Assets\scripts\interfaces\Ally.cs" Line="5" Column="2" />
+      <File FileName="Assets\scripts\army_stuff\Allies.cs" Line="1" Column="1" />
     </Files>
   </MonoDevelop.Ide.Workbench>
   <MonoDevelop.Ide.DebuggingService.Breakpoints>

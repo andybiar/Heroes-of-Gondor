@@ -1,9 +1,11 @@
 ﻿using UnityEngine;
 using System.Collections;
 
-public class Infantry_AI : MonoBehaviour, Health {
+namespace BoothGame{ 
+
+public abstract class Infantry : MonoBehaviour, Health {
 	// Definitions for guard state
-	public enum Task { IDLE, ENGAGING, STABBING }
+	public enum Task { IDLE, ENGAGING, STABBING, RUNNING }
 	public enum Stance { GUARD, ATTACK, FLEE }
 
 	// Things to set in the inspector
@@ -16,20 +18,32 @@ public class Infantry_AI : MonoBehaviour, Health {
 	public GameObject doorMarker;
 	public float pikeRange;
 	public float speed;
-	public Infantry_AI partner;
 	public float cooldown;
+	public Material deathColor;
 
 	// Private state
 	private Vector3 guardLocation;
-	private Transform target;
 	private float lastActionTime;
+	private bool isAlive = true;
+	private float distToGround;
+	private Transform target;
+
+	// Abstract stuff
+	public abstract void onLock();
+	public abstract void onFire();
+	public abstract bool isItAlive();
+	protected abstract bool aggroCast(RaycastHit hit);
 
 	void Start() {
-		transform.LookAt(doorMarker.transform);
-		guardLocation = transform.position;
+		distToGround = collider.bounds.extents.y;
 	}
 
 	void Update () {
+		// If dead or airborne: do nothing
+		if (!isGrounded() || !isAlive) {
+			return;
+		}
+
 		// GUARD STANCE
 		if (currentStance == Stance.GUARD) {
 			switch(currentTask) {
@@ -52,31 +66,47 @@ public class Infantry_AI : MonoBehaviour, Health {
 
 		// ATTACK STANCE
 		else if (currentStance == Stance.ATTACK) {
+			switch(currentTask) {
+			case Task.RUNNING:
+				charge();
+				break;
+			case Task.ENGAGING:
+				engage();
+				break;
+			case Task.STABBING:
+				stab(target);
+				break;
+			}
 		}
 	}
 
-	private void setTarget(Transform target) {
-		// Set target, timer, and task
-		currentTask = Task.ENGAGING;
+	public void damage(float d) {
+		health = health - d;
+		if (health <= 0) die();
+	}
+
+	public bool getIsAlive() {
+		return isAlive;
+	}
+
+	private bool isGrounded() {
+		RaycastHit hit = new RaycastHit();
+		return Physics.Raycast(transform.position, -Vector3.up, out hit, distToGround + 0.1f);
+	}
+
+	protected void setTarget(Transform target) {
+		// Set target and timer
 		lastActionTime = Time.timeSinceLevelLoad;
 		this.target = target;
 	}
 
 	// Stand ground, look for enemies
 	private void guard() {
-		Debug.DrawRay(transform.position, transform.forward * aggroRange);
 		RaycastHit hit = new RaycastHit();
-
-		// If we see an enemy within our aggro range, engage it in combat!
-		if (Physics.Raycast (transform.position, transform.forward, out hit, aggroRange) &&
-		    hit.transform.GetComponents(typeof(Enemy)).Length > 0) {
-	
-			setTarget(hit.transform);
-			partner.engage(hit.transform);
-		}
+		aggroCast(hit);
 	}
 
-	// Charge at an enemy in aggroRange
+	// Approach an enemy in aggroRange
 	private void engage() {
 		if (target == null) return;
 
@@ -98,13 +128,6 @@ public class Infantry_AI : MonoBehaviour, Health {
 		}
 	}
 
-	// The partner's order to engage
-	public void engage(Transform target) {
-		if (currentTask == Task.IDLE) {
-			setTarget(target);
-		}
-	}
-
 	// Attack the target
 	private void stab(Transform enemy) {
 		Debug.DrawLine(transform.position, enemy.position, Color.red);
@@ -116,9 +139,15 @@ public class Infantry_AI : MonoBehaviour, Health {
 		// TODO: play stabbing animation
 	}
 
-	// Receive damage
-	public void damage(float d) {
+	// Run forward, seeking targets
+	private void charge() {
+		transform.position += transform.forward * speed * Time.deltaTime;
+		RaycastHit hit = new RaycastHit();
 
+		if (aggroCast(hit)) {
+			setTarget(hit.transform);
+			currentTask = Task.ENGAGING;
+		}
 	}
 
 	// Run away!!
@@ -127,4 +156,12 @@ public class Infantry_AI : MonoBehaviour, Health {
 		transform.position -= fleeDir * speed * Time.deltaTime;
 		// TODO: play running animation
 	}
+
+	public void die() {
+		isAlive = false;
+		renderer.material = deathColor;
+		// TODO: play death animation
+	}
+}
+
 }

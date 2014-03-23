@@ -52,7 +52,7 @@ public class Crosshair : MonoBehaviour {
 	private bool checkLockable(RaycastHit hit) {
 		Component[] ls = hit.transform.GetComponents(typeof(Lockable));
 		
-		if (ls.Length > 0 && !(((Lockable)ls[0]).isDead())) {
+		if (ls.Length > 0 && ((Lockable)ls[0]).isItAlive()) {
 			return true;
 		}
 

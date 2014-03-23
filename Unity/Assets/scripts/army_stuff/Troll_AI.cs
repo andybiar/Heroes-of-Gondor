@@ -2,14 +2,14 @@
 using System.Collections;
 
 public class Troll_AI : MonoBehaviour, Lockable {
-	public bool isAlive;
 
-	// Use this for initialization
+	// Private state
+	private bool isAlive;
+	
 	void Start () {
 		isAlive = true;
 	}
-	
-	// Update is called once per frame
+
 	void Update () {
 	
 	}
@@ -21,7 +21,7 @@ public class Troll_AI : MonoBehaviour, Lockable {
 	public void onFire() {
 	}
 
-	public bool isDead() {
-		return !isAlive;
+	public bool isItAlive() {
+		return isAlive;
 	}
 }
