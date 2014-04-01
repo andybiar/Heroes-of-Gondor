@@ -5,22 +5,34 @@ public class Gandalf : MonoBehaviour {
 	// Set these in the inspector
 	public float spellRadius;
 	public float spellPower;
+	public float spellCooldown;
+
+	// Private state
+	private float lastSpellTime;
+	private bool hasCast;
+
+	void Start() {
+		lastSpellTime = -spellCooldown;
+	}
 	
 	void Update () {
 		processInput();
 	}
 
 	private void processInput() {
-		if (Input.GetKeyDown(KeyCode.A) ||
+		if ((Input.GetKeyDown(KeyCode.A) ||
 		    Input.GetKeyDown(KeyCode.B) ||
 		    Input.GetKeyDown(KeyCode.X) ||
-		    Input.GetKeyDown(KeyCode.Y)){
+		    Input.GetKeyDown(KeyCode.Y)) &&
+		    Time.timeSinceLevelLoad - lastSpellTime > spellCooldown &&
+			!hasCast){
 
 			castBigSpell();
 		}
 	}
 
 	private void castBigSpell() {
+		hasCast = true;
 		Collider[] hits = Physics.OverlapSphere(transform.position, spellRadius);
 
 		for (int i = 0; i < hits.Length; i++) {

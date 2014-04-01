@@ -2,32 +2,61 @@
 using System.Collections;
 using BoothGame;
 
-public class Orc : Infantry, Enemy {
+public class Orc : Infantry, Enemy, Lockable {
 
-	void Start() {
-
+	public Orc() : base() {
 	}
 
-	public override void onLock() {
+	public void onLock() {
 
 	}
 
 	// When Gandalf hit an orc with a spell, it dies
-	public override void onFire() {
+	public void onFire() {
 		die();
 	}
 
-	public override bool isItAlive() {
+	public bool isItAlive() {
 		return getIsAlive();
 	}
 
-	protected override bool aggroCast(RaycastHit hit) {
-		// If we see an enemy within our aggro range, engage it in combat!
-		if (Physics.Raycast (transform.position, transform.forward, out hit, aggroRange)) {
-			Component[] allies = hit.transform.GetComponents(typeof(Ally));
-			
-			return allies.Length > 0 && ((Ally)allies[0]).getIsAlive();
-		}
+	private bool isAlly(Transform t) {
+		Component[] allies = t.GetComponents(typeof(Ally));
+		
+		if (allies.Length > 0 && ((Ally)allies[0]).getIsAlive()) return true;
 		return false;
+	}
+		
+	protected override Transform aggroCast() {
+		Debug.DrawRay(transform.position, Quaternion.Euler(0, -6, 0) * transform.forward * aggroRange);
+		Debug.DrawRay(transform.position, Quaternion.Euler(0, 6, 0) * transform.forward * aggroRange);
+
+		// Double Raycast
+		RaycastHit l = new RaycastHit();
+		RaycastHit r = new RaycastHit();
+
+		bool isL = Physics.Raycast(
+			transform.position, Quaternion.Euler(0,-6,0)*transform.forward, out l, aggroRange);
+		bool isR = Physics.Raycast(
+			transform.position, Quaternion.Euler(0,6,0)*transform.forward, out r, aggroRange);
+
+		// Figure out what to return
+		if (isL && isR) {
+			if (l.distance < r.distance) {
+				if (isAlly(l.transform)) return l.transform;
+				else if (isAlly(r.transform)) return r.transform;
+			}
+			else {
+				if (isAlly(r.transform)) return r.transform;
+				else if (isAlly(l.transform)) return l.transform;
+			}
+		}
+		else if (isL) {
+			if (isAlly(l.transform)) return l.transform;
+		}
+		else if (isR) {
+			if (isAlly(r.transform)) return r.transform;
+		}
+		return null;
 	}
 }

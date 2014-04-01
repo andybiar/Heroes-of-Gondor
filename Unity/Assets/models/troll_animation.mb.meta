@@ -1,0 +1,482 @@
+fileFormatVersion: 2
+guid: 2d3cdfa12610fc14aa4a5e4cf8789c05
+ModelImporter:
+  serializedVersion: 15
+  fileIDToRecycleName:
+    100000: back
+    100002: back_control
+    100004: head
+    100006: jaw
+    100008: left_arm_control
+    100010: left_arm_IK
+    100012: left_clav
+    100014: left_elbow
+    100016: left_foot
+    100018: left_hand
+    100020: left_hip
+    100022: left_knee
+    100024: left_leg_control
+    100026: left_leg_IK
+    100028: left_middle_base
+    100030: left_middle_IK
+    100032: left_middle_mid
+    100034: left_middle_tip
+    100036: left_pinky_base
+    100038: left_pinky_IK
+    100040: left_pinky_mid
+    100042: left_pinky_tip
+    100044: left_shoulder
+    100046: left_thumb_base
+    100048: left_thumb_base 1
+    100050: left_toe
+    100052: left_wrist
+    100054: loincloth
+    100056: mace
+    100058: neck
+    100060: neck_control
+    100062: right_arm_control
+    100064: right_arm_IK
+    100066: right_clav
+    100068: right_elbow
+    100070: right_foot
+    100072: right_hand
+    100074: right_hip
+    100076: right_knee
+    100078: right_leg_control
+    100080: right_leg_IK
+    100082: right_middle_base
+    100084: right_middle_IK
+    100086: right_middle_mid
+    100088: right_middle_tip
+    100090: right_pinky_base
+    100092: right_pinky_IK
+    100094: right_pinky_mid
+    100096: right_pinky_tip
+    100098: right_shoulder
+    100100: right_thumb_base
+    100102: right_thumb_tip
+    100104: right_toe
+    100106: right_wrist
+    100108: teeth
+    100110: troll
+    100112: //RootNode
+    100114: troll_controls
+    100116: troll_skel
+    100118: upper_back
+    400000: back
+    400002: back_control
+    400004: head
+    400006: jaw
+    400008: left_arm_control
+    400010: left_arm_IK
+    400012: left_clav
+    400014: left_elbow
+    400016: left_foot
+    400018: left_hand
+    400020: left_hip
+    400022: left_knee
+    400024: left_leg_control
+    400026: left_leg_IK
+    400028: left_middle_base
+    400030: left_middle_IK
+    400032: left_middle_mid
+    400034: left_middle_tip
+    400036: left_pinky_base
+    400038: left_pinky_IK
+    400040: left_pinky_mid
+    400042: left_pinky_tip
+    400044: left_shoulder
+    400046: left_thumb_base
+    400048: left_thumb_base 1
+    400050: left_toe
+    400052: left_wrist
+    400054: loincloth
+    400056: mace
+    400058: neck
+    400060: neck_control
+    400062: right_arm_control
+    400064: right_arm_IK
+    400066: right_clav
+    400068: right_elbow
+    400070: right_foot
+    400072: right_hand
+    400074: right_hip
+    400076: right_knee
+    400078: right_leg_control
+    400080: right_leg_IK
+    400082: right_middle_base
+    400084: right_middle_IK
+    400086: right_middle_mid
+    400088: right_middle_tip
+    400090: right_pinky_base
+    400092: right_pinky_IK
+    400094: right_pinky_mid
+    400096: right_pinky_tip
+    400098: right_shoulder
+    400100: right_thumb_base
+    400102: right_thumb_tip
+    400104: right_toe
+    400106: right_wrist
+    400108: teeth
+    400110: troll
+    400112: //RootNode
+    400114: troll_controls
+    400116: troll_skel
+    400118: upper_back
+    2300000: mace
+    3300000: mace
+    4300000: troll
+    4300002: loincloth
+    4300004: mace
+    7400000: Walking2
+    7400002: troll_attack
+    9500000: //RootNode
+    11100000: //RootNode
+    13700000: loincloth
+    13700002: troll
+  materials:
+    importMaterials: 1
+    materialName: 0
+    materialSearch: 1
+  animations:
+    legacyGenerateAnimations: 4
+    bakeSimulation: 1
+    optimizeGameObjects: 0
+    animationCompression: 1
+    animationRotationError: .5
+    animationPositionError: .5
+    animationScaleError: .5
+    animationWrapMode: 0
+    extraExposedTransformPaths: []
+    clipAnimations:
+    - serializedVersion: 16
+      name: Walking2
+      takeName: Take 001
+      firstFrame: 17
+      lastFrame: 97
+      wrapMode: 0
+      orientationOffsetY: 0
+      level: 0
+      cycleOffset: 0
+      loop: 0
+      loopTime: 0
+      loopBlend: 0
+      loopBlendOrientation: 0
+      loopBlendPositionY: 0
+      loopBlendPositionXZ: 0
+      keepOriginalOrientation: 0
+      keepOriginalPositionY: 1
+      keepOriginalPositionXZ: 0
+      heightFromFeet: 0
+      mirror: 0
+      bodyMask: 01000000010000000100000001000000010000000100000001000000010000000100000001000000010000000100000001000000
+      curves: []
+      events: []
+      transformMask:
+      - path: 
+        weight: 1
+      - path: left_middle_IK
+        weight: 1
+      - path: left_pinky_IK
+        weight: 1
+      - path: loincloth
+        weight: 1
+      - path: right_middle_IK
+        weight: 1
+      - path: right_pinky_IK
+        weight: 1
+      - path: troll
+        weight: 1
+      - path: troll_controls
+        weight: 1
+      - path: troll_controls/left_arm_control
+        weight: 1
+      - path: troll_controls/left_arm_control/left_arm_IK
+        weight: 1
+      - path: troll_controls/left_leg_control
+        weight: 1
+      - path: troll_controls/left_leg_control/left_leg_IK
+        weight: 1
+      - path: troll_controls/right_arm_control
+        weight: 1
+      - path: troll_controls/right_arm_control/right_arm_IK
+        weight: 1
+      - path: troll_controls/right_leg_control
+        weight: 1
+      - path: troll_controls/right_leg_control/right_leg_IK
+        weight: 1
+      - path: troll_controls/troll_skel
+        weight: 1
+      - path: troll_controls/troll_skel/back_control
+        weight: 1
+      - path: troll_controls/troll_skel/back_control/back
+        weight: 1
+      - path: troll_controls/troll_skel/back_control/back/upper_back
+        weight: 1
+      - path: troll_controls/troll_skel/back_control/back/upper_back/left_clav
+        weight: 1
+      - path: troll_controls/troll_skel/back_control/back/upper_back/left_clav/left_shoulder
+        weight: 1
+      - path: troll_controls/troll_skel/back_control/back/upper_back/left_clav/left_shoulder/left_elbow
+        weight: 1
+      - path: troll_controls/troll_skel/back_control/back/upper_back/left_clav/left_shoulder/left_elbow/left_wrist
+        weight: 1
+      - path: troll_controls/troll_skel/back_control/back/upper_back/left_clav/left_shoulder/left_elbow/left_wrist/left_hand
+        weight: 1
+      - path: troll_controls/troll_skel/back_control/back/upper_back/left_clav/left_shoulder/left_elbow/left_wrist/left_hand/left_middle_base
+        weight: 1
+      - path: troll_controls/troll_skel/back_control/back/upper_back/left_clav/left_shoulder/left_elbow/left_wrist/left_hand/left_middle_base/left_middle_mid
+        weight: 1
+      - path: troll_controls/troll_skel/back_control/back/upper_back/left_clav/left_shoulder/left_elbow/left_wrist/left_hand/left_middle_base/left_middle_mid/left_middle_tip
+        weight: 1
+      - path: troll_controls/troll_skel/back_control/back/upper_back/left_clav/left_shoulder/left_elbow/left_wrist/left_hand/left_pinky_base
+        weight: 1
+      - path: troll_controls/troll_skel/back_control/back/upper_back/left_clav/left_shoulder/left_elbow/left_wrist/left_hand/left_pinky_base/left_pinky_mid
+        weight: 1
+      - path: troll_controls/troll_skel/back_control/back/upper_back/left_clav/left_shoulder/left_elbow/left_wrist/left_hand/left_pinky_base/left_pinky_mid/left_pinky_tip
+        weight: 1
+      - path: troll_controls/troll_skel/back_control/back/upper_back/left_clav/left_shoulder/left_elbow/left_wrist/left_thumb_base
+        weight: 1
+      - path: troll_controls/troll_skel/back_control/back/upper_back/left_clav/left_shoulder/left_elbow/left_wrist/left_thumb_base/left_thumb_base
+          1
+        weight: 1
+      - path: troll_controls/troll_skel/back_control/back/upper_back/neck_control
+        weight: 1
+      - path: troll_controls/troll_skel/back_control/back/upper_back/neck_control/neck
+        weight: 1
+      - path: troll_controls/troll_skel/back_control/back/upper_back/neck_control/neck/head
+        weight: 1
+      - path: troll_controls/troll_skel/back_control/back/upper_back/neck_control/neck/head/jaw
+        weight: 1
+      - path: troll_controls/troll_skel/back_control/back/upper_back/neck_control/neck/head/jaw/teeth
+        weight: 1
+      - path: troll_controls/troll_skel/back_control/back/upper_back/right_clav
+        weight: 1
+      - path: troll_controls/troll_skel/back_control/back/upper_back/right_clav/right_shoulder
+        weight: 1
+      - path: troll_controls/troll_skel/back_control/back/upper_back/right_clav/right_shoulder/right_elbow
+        weight: 1
+      - path: troll_controls/troll_skel/back_control/back/upper_back/right_clav/right_shoulder/right_elbow/right_wrist
+        weight: 1
+      - path: troll_controls/troll_skel/back_control/back/upper_back/right_clav/right_shoulder/right_elbow/right_wrist/right_hand
+        weight: 1
+      - path: troll_controls/troll_skel/back_control/back/upper_back/right_clav/right_shoulder/right_elbow/right_wrist/right_hand/mace
+        weight: 1
+      - path: troll_controls/troll_skel/back_control/back/upper_back/right_clav/right_shoulder/right_elbow/right_wrist/right_hand/right_middle_base
+        weight: 1
+      - path: troll_controls/troll_skel/back_control/back/upper_back/right_clav/right_shoulder/right_elbow/right_wrist/right_hand/right_middle_base/right_middle_mid
+        weight: 1
+      - path: troll_controls/troll_skel/back_control/back/upper_back/right_clav/right_shoulder/right_elbow/right_wrist/right_hand/right_middle_base/right_middle_mid/right_middle_tip
+        weight: 1
+      - path: troll_controls/troll_skel/back_control/back/upper_back/right_clav/right_shoulder/right_elbow/right_wrist/right_hand/right_pinky_base
+        weight: 1
+      - path: troll_controls/troll_skel/back_control/back/upper_back/right_clav/right_shoulder/right_elbow/right_wrist/right_hand/right_pinky_base/right_pinky_mid
+        weight: 1
+      - path: troll_controls/troll_skel/back_control/back/upper_back/right_clav/right_shoulder/right_elbow/right_wrist/right_hand/right_pinky_base/right_pinky_mid/right_pinky_tip
+        weight: 1
+      - path: troll_controls/troll_skel/back_control/back/upper_back/right_clav/right_shoulder/right_elbow/right_wrist/right_thumb_base
+        weight: 1
+      - path: troll_controls/troll_skel/back_control/back/upper_back/right_clav/right_shoulder/right_elbow/right_wrist/right_thumb_base/right_thumb_tip
+        weight: 1
+      - path: troll_controls/troll_skel/left_hip
+        weight: 1
+      - path: troll_controls/troll_skel/left_hip/left_knee
+        weight: 1
+      - path: troll_controls/troll_skel/left_hip/left_knee/left_foot
+        weight: 1
+      - path: troll_controls/troll_skel/left_hip/left_knee/left_foot/left_toe
+        weight: 1
+      - path: troll_controls/troll_skel/right_hip
+        weight: 1
+      - path: troll_controls/troll_skel/right_hip/right_knee
+        weight: 1
+      - path: troll_controls/troll_skel/right_hip/right_knee/right_foot
+        weight: 1
+      - path: troll_controls/troll_skel/right_hip/right_knee/right_foot/right_toe
+        weight: 1
+      maskType: 0
+      maskSource: {instanceID: 0}
+    - serializedVersion: 16
+      name: troll_attack
+      takeName: Take 001
+      firstFrame: 130
+      lastFrame: 195
+      wrapMode: 0
+      orientationOffsetY: 0
+      level: 0
+      cycleOffset: 0
+      loop: 0
+      loopTime: 0
+      loopBlend: 0
+      loopBlendOrientation: 0
+      loopBlendPositionY: 0
+      loopBlendPositionXZ: 0
+      keepOriginalOrientation: 0
+      keepOriginalPositionY: 1
+      keepOriginalPositionXZ: 0
+      heightFromFeet: 0
+      mirror: 0
+      bodyMask: 01000000010000000100000001000000010000000100000001000000010000000100000001000000010000000100000001000000
+      curves: []
+      events: []
+      transformMask:
+      - path: 
+        weight: 1
+      - path: left_middle_IK
+        weight: 1
+      - path: left_pinky_IK
+        weight: 1
+      - path: loincloth
+        weight: 1
+      - path: right_middle_IK
+        weight: 1
+      - path: right_pinky_IK
+        weight: 1
+      - path: troll
+        weight: 1
+      - path: troll_controls
+        weight: 1
+      - path: troll_controls/left_arm_control
+        weight: 1
+      - path: troll_controls/left_arm_control/left_arm_IK
+        weight: 1
+      - path: troll_controls/left_leg_control
+        weight: 1
+      - path: troll_controls/left_leg_control/left_leg_IK
+        weight: 1
+      - path: troll_controls/right_arm_control
+        weight: 1
+      - path: troll_controls/right_arm_control/right_arm_IK
+        weight: 1
+      - path: troll_controls/right_leg_control
+        weight: 1
+      - path: troll_controls/right_leg_control/right_leg_IK
+        weight: 1
+      - path: troll_controls/troll_skel
+        weight: 1
+      - path: troll_controls/troll_skel/back_control
+        weight: 1
+      - path: troll_controls/troll_skel/back_control/back
+        weight: 1
+      - path: troll_controls/troll_skel/back_control/back/upper_back
+        weight: 1
+      - path: troll_controls/troll_skel/back_control/back/upper_back/left_clav
+        weight: 1
+      - path: troll_controls/troll_skel/back_control/back/upper_back/left_clav/left_shoulder
+        weight: 1
+      - path: troll_controls/troll_skel/back_control/back/upper_back/left_clav/left_shoulder/left_elbow
+        weight: 1
+      - path: troll_controls/troll_skel/back_control/back/upper_back/left_clav/left_shoulder/left_elbow/left_wrist
+        weight: 1
+      - path: troll_controls/troll_skel/back_control/back/upper_back/left_clav/left_shoulder/left_elbow/left_wrist/left_hand
+        weight: 1
+      - path: troll_controls/troll_skel/back_control/back/upper_back/left_clav/left_shoulder/left_elbow/left_wrist/left_hand/left_middle_base
+        weight: 1
+      - path: troll_controls/troll_skel/back_control/back/upper_back/left_clav/left_shoulder/left_elbow/left_wrist/left_hand/left_middle_base/left_middle_mid
+        weight: 1
+      - path: troll_controls/troll_skel/back_control/back/upper_back/left_clav/left_shoulder/left_elbow/left_wrist/left_hand/left_middle_base/left_middle_mid/left_middle_tip
+        weight: 1
+      - path: troll_controls/troll_skel/back_control/back/upper_back/left_clav/left_shoulder/left_elbow/left_wrist/left_hand/left_pinky_base
+        weight: 1
+      - path: troll_controls/troll_skel/back_control/back/upper_back/left_clav/left_shoulder/left_elbow/left_wrist/left_hand/left_pinky_base/left_pinky_mid
+        weight: 1
+      - path: troll_controls/troll_skel/back_control/back/upper_back/left_clav/left_shoulder/left_elbow/left_wrist/left_hand/left_pinky_base/left_pinky_mid/left_pinky_tip
+        weight: 1
+      - path: troll_controls/troll_skel/back_control/back/upper_back/left_clav/left_shoulder/left_elbow/left_wrist/left_thumb_base
+        weight: 1
+      - path: troll_controls/troll_skel/back_control/back/upper_back/left_clav/left_shoulder/left_elbow/left_wrist/left_thumb_base/left_thumb_base
+          1
+        weight: 1
+      - path: troll_controls/troll_skel/back_control/back/upper_back/neck_control
+        weight: 1
+      - path: troll_controls/troll_skel/back_control/back/upper_back/neck_control/neck
+        weight: 1
+      - path: troll_controls/troll_skel/back_control/back/upper_back/neck_control/neck/head
+        weight: 1
+      - path: troll_controls/troll_skel/back_control/back/upper_back/neck_control/neck/head/jaw
+        weight: 1
+      - path: troll_controls/troll_skel/back_control/back/upper_back/neck_control/neck/head/jaw/teeth
+        weight: 1
+      - path: troll_controls/troll_skel/back_control/back/upper_back/right_clav
+        weight: 1
+      - path: troll_controls/troll_skel/back_control/back/upper_back/right_clav/right_shoulder
+        weight: 1
+      - path: troll_controls/troll_skel/back_control/back/upper_back/right_clav/right_shoulder/right_elbow
+        weight: 1
+      - path: troll_controls/troll_skel/back_control/back/upper_back/right_clav/right_shoulder/right_elbow/right_wrist
+        weight: 1
+      - path: troll_controls/troll_skel/back_control/back/upper_back/right_clav/right_shoulder/right_elbow/right_wrist/right_hand
+        weight: 1
+      - path: troll_controls/troll_skel/back_control/back/upper_back/right_clav/right_shoulder/right_elbow/right_wrist/right_hand/mace
+        weight: 1
+      - path: troll_controls/troll_skel/back_control/back/upper_back/right_clav/right_shoulder/right_elbow/right_wrist/right_hand/right_middle_base
+        weight: 1
+      - path: troll_controls/troll_skel/back_control/back/upper_back/right_clav/right_shoulder/right_elbow/right_wrist/right_hand/right_middle_base/right_middle_mid
+        weight: 1
+      - path: troll_controls/troll_skel/back_control/back/upper_back/right_clav/right_shoulder/right_elbow/right_wrist/right_hand/right_middle_base/right_middle_mid/right_middle_tip
+        weight: 1
+      - path: troll_controls/troll_skel/back_control/back/upper_back/right_clav/right_shoulder/right_elbow/right_wrist/right_hand/right_pinky_base
+        weight: 1
+      - path: troll_controls/troll_skel/back_control/back/upper_back/right_clav/right_shoulder/right_elbow/right_wrist/right_hand/right_pinky_base/right_pinky_mid
+        weight: 1
+      - path: troll_controls/troll_skel/back_control/back/upper_back/right_clav/right_shoulder/right_elbow/right_wrist/right_hand/right_pinky_base/right_pinky_mid/right_pinky_tip
+        weight: 1
+      - path: troll_controls/troll_skel/back_control/back/upper_back/right_clav/right_shoulder/right_elbow/right_wrist/right_thumb_base
+        weight: 1
+      - path: troll_controls/troll_skel/back_control/back/upper_back/right_clav/right_shoulder/right_elbow/right_wrist/right_thumb_base/right_thumb_tip
+        weight: 1
+      - path: troll_controls/troll_skel/left_hip
+        weight: 1
+      - path: troll_controls/troll_skel/left_hip/left_knee
+        weight: 1
+      - path: troll_controls/troll_skel/left_hip/left_knee/left_foot
+        weight: 1
+      - path: troll_controls/troll_skel/left_hip/left_knee/left_foot/left_toe
+        weight: 1
+      - path: troll_controls/troll_skel/right_hip
+        weight: 1
+      - path: troll_controls/troll_skel/right_hip/right_knee
+        weight: 1
+      - path: troll_controls/troll_skel/right_hip/right_knee/right_foot
+        weight: 1
+      - path: troll_controls/troll_skel/right_hip/right_knee/right_foot/right_toe
+        weight: 1
+      maskType: 0
+      maskSource: {instanceID: 0}
+    isReadable: 1
+  meshes:
+    lODScreenPercentages: []
+    globalScale: .400000006
+    meshCompression: 0
+    addColliders: 0
+    importBlendShapes: 1
+    swapUVChannels: 0
+    generateSecondaryUV: 0
+    useFileUnits: 1
+    optimizeMeshForGPU: 1
+    weldVertices: 1
+    secondaryUVAngleDistortion: 8
+    secondaryUVAreaDistortion: 15.000001
+    secondaryUVHardAngle: 88
+    secondaryUVPackMargin: 4
+  tangentSpace:
+    normalSmoothAngle: 60
+    splitTangentsAcrossUV: 1
+    normalImportMode: 0
+    tangentImportMode: 1
+  importAnimation: 1
+  copyAvatar: 0
+  humanDescription:
+    human: []
+    skeleton: []
+    armTwist: .5
+    foreArmTwist: .5
+    upperLegTwist: .5
+    legTwist: .5
+    armStretch: .0500000007
+    legStretch: .0500000007
+    feetSpacing: 0
+    rootMotionBoneName: 
+  lastHumanDescriptionAvatarSource: {instanceID: 0}
+  animationType: 1
+  userData: 

@@ -9,9 +9,10 @@ using OSC.NET;
 public class UnityOSCReceiver : MonoBehaviour {
 	
 	private bool connected = false;
-	public int port = 8338; //MH faceShiftOSC default port
+	public int port;
 	private OSCReceiver receiver;
 	private Thread thread;
+	public Crosshair crosshair;
 	
 	private List<OSCMessage> processQueue = new List<OSCMessage>();
 	
@@ -43,8 +44,9 @@ public class UnityOSCReceiver : MonoBehaviour {
 		//so we used a shared proccessQueue full of OSC Messages
 		lock(processQueue){
 			foreach( OSCMessage message in processQueue){
-				
-				BroadcastMessage("OSCMessageReceived", message, SendMessageOptions.DontRequireReceiver);
+				if (message.Address.Equals("/staffPos")){
+					crosshair.setPos((float)message.Values[0], (float)message.Values[1]);
+				}
 			}
 			processQueue.Clear();
 		}

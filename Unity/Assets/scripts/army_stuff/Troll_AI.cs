@@ -8,6 +8,8 @@ public class Troll_AI : MonoBehaviour, Lockable {
 	
 	void Start () {
 		isAlive = true;
+		animation.wrapMode = WrapMode.Loop;
+		animation.Play("troll_attack");
 	}
 
 	void Update () {
