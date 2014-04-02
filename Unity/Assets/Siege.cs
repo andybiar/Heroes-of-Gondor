@@ -8,11 +8,11 @@ public class Siege : MonoBehaviour {
 
 	// Use this for initialization
 	void Start () {
-		active = true;
 	}
 	
 	// Update is called once per frame
 	void Update () {
+		if (Input.GetKeyDown (KeyCode.S)) active = true;
 		if (active) {
 			transform.LookAt(target.transform);
 			transform.position += transform.forward * speed * Time.deltaTime;

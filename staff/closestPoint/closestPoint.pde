@@ -9,15 +9,16 @@ import SimpleOpenNI.*;
 //******************************************
 // Init
 //******************************************
-boolean use3Avg = false;
-boolean useOutlierScreen = true;;
+boolean useOutlierScreen = false;
 float jumpTolerance = 150;
+int stabThreshold = 35;
 
 OscP5 oscP5;
 NetAddress myRemoteLocation;
 
 SimpleOpenNI kinect;
 
+int lastClosestValue;
 int closestValue;
 int closestX;
 int closestY;
@@ -47,10 +48,8 @@ void setup()
 }
 
 void draw()
-{
-  mod += 1;
-  if (mod >= 3) mod = 0;
-  
+{ 
+  lastClosestValue = closestValue;
   closestValue = 8000;
   
   kinect.update();
@@ -66,17 +65,15 @@ void draw()
       //reverse x
       int reversedX = 640-x-1;
     
-    
       // pull ut the corresponding value from the depth array
       int i = reversedX + y * 640;
       int currentDepthValue = depthValues[i];
       
       // if that pixel is the closest one we've seen so far and
       // is within a range 620 is 2 feet 1525 is 5 feet
-      if(currentDepthValue > 310 && currentDepthValue < 1625
+      if(currentDepthValue > 10 && currentDepthValue < 5625
       && currentDepthValue < closestValue){
         
-      
           //save its value
           closestValue = currentDepthValue;
           // and save its position (both x and y coordinates)
@@ -87,11 +84,12 @@ void draw()
     }
     
     //************************************************
-    // The xexy part
+    // The sexy part
     //************************************************
     // draw the depth image on the screen or block it
     // image(kinect.depthImage(),0,0);
-   fill(255);
+     fill(255);
+     //System.out.println(closestValue);
      rect(0, 0, width, height);
      float interpolatedX, interpolatedY;
      if (useOutlierScreen && 
@@ -104,9 +102,15 @@ void draw()
       interpolatedY = lerp(lastY, closestY, 0.3f);
      }
       
-    if(closestValue<threshold){
+    if(closestValue<threshold && millis() > 4000){
       fill(254);
-      ellipse(interpolatedX, interpolatedY, 60, 60);
+      
+      if (closestValue - lastClosestValue > stabThreshold) {
+        //System.out.println("Closest: " + closestValue);
+        //System.out.println("Last: " + lastClosestValue);
+        fill(#FF0000);
+      }
+      ellipse(interpolatedX, interpolatedY, 30, 30);
     }
     lastX = interpolatedX;
     lastY = interpolatedY;
@@ -115,24 +119,8 @@ void draw()
     lastMessageMillis = millis();
     if(closestValue<threshold){
      
-     float msgX = 0;
-     float msgY = 0;;
-     
-     if (use3Avg) {
-       lastVals[2*mod] = interpolatedX;
-       lastVals[2*mod + 1] = interpolatedY;
-       for (int i = 0; i < 3; i++) {
-         msgX += lastVals[2*i];
-         msgY += lastVals[2*i + 1];
-       }
-       msgX /= 3.0f;
-       msgY /= 3.0f;
-     }
-     
-     else {
-       msgX = interpolatedX;
-       msgY = interpolatedY;
-     } 
+     float msgX = interpolatedX;
+     float msgY = interpolatedY;
      
      OscMessage myMessage = new OscMessage("/staffPos");
        myMessage.add(msgX);
