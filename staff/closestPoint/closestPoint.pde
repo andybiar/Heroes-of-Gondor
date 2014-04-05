@@ -10,8 +10,12 @@ import SimpleOpenNI.*;
 // Init
 //******************************************
 boolean useOutlierScreen = false;
-float jumpTolerance = 150;
-int stabThreshold = 35;
+float jumpTolerance = 9;
+int stabThreshold = 37;
+
+boolean fire = false;
+KPacket[] frames;
+int mod;
 
 OscP5 oscP5;
 NetAddress myRemoteLocation;
@@ -23,8 +27,6 @@ int closestValue;
 int closestX;
 int closestY;
 
-float[] lastVals;
-int mod; // the modulus of the frame number
 float lastX;
 float lastY;
 
@@ -44,7 +46,11 @@ void setup()
   oscP5 = new OscP5(this,12000);
   myRemoteLocation = new NetAddress("127.0.0.1",8338);
   
-  lastVals = new float[6];
+  frames = new KPacket[4];
+}
+
+private float distance(float x0, float y0, float x1, float y1) {
+  return sqrt(((x0 - x1) * (x0 - x1)) + ((y0 - y1) * (y0 - y1)));
 }
 
 void draw()
@@ -87,31 +93,62 @@ void draw()
     // The sexy part
     //************************************************
     // draw the depth image on the screen or block it
-    // image(kinect.depthImage(),0,0);
+     image(kinect.depthImage(),0,0);
      fill(255);
-     //System.out.println(closestValue);
-     rect(0, 0, width, height);
+     //rect(0, 0, width, height);
      float interpolatedX, interpolatedY;
-     if (useOutlierScreen && 
-     sqrt(pow((lastX - closestX), 2) + pow((lastY - closestY), 2)) > jumpTolerance) {
-       interpolatedX = lastX;
-       interpolatedY = lastY;
-     }
-     else {
-      interpolatedX = lerp(lastX, closestX, 0.3f);
-      interpolatedY = lerp(lastY, closestY, 0.3f);
-     }
+     
+     interpolatedX = lerp(lastX, closestX, 0.3f);
+     interpolatedY = lerp(lastY, closestY, 0.3f);
       
-    if(closestValue<threshold && millis() > 4000){
+    if(closestValue<threshold){
+      float iX = interpolatedX;
+      float iY = interpolatedY;
+      KPacket f1 = frames[(mod + 1) % 4];
+      KPacket f2 = frames[(mod + 2) % 4];
+      KPacket f3 = frames[(mod + 3) % 4];
+      boolean corrected = false;
+      
+      // 2-FRAME CORRECTION
+      if (frames[3] != null &&
+          distance(f1.x, f1.y, f3.x, f3.y) > jumpTolerance &&
+          distance(f2.x, f2.y, f3.x, f3.y) > jumpTolerance &&
+          distance(iX, iY, f3.x, f3.y) < jumpTolerance) {
+            
+            f2.x = iX;
+            f2.y = iY;
+            f2.closestPoint = (f3.closestPoint + closestValue / 2);
+            f1.x = iX;
+            f1.y = iY;
+            f1.closestPoint = (f3.closestPoint + closestValue / 2);
+            corrected = true;
+      }
+      
+      // 1-FRAME CORRECTION
+      if (frames[3] != null && 
+          !corrected &&
+          distance(f1.x, f1.y, f2.x, f2.y) > jumpTolerance && 
+          distance(iX, iY, f2.x, f2.y) < jumpTolerance) {
+            
+            f1.x = iX;
+            f1.y = iY;
+            f1.closestPoint = (f2.closestPoint + closestValue) / 2;
+      }
+      corrected = false;
+          
+      frames[mod] = new KPacket(closestValue, interpolatedX, interpolatedY);
+      
       fill(254);
       
-      if (closestValue - lastClosestValue > stabThreshold) {
-        //System.out.println("Closest: " + closestValue);
-        //System.out.println("Last: " + lastClosestValue);
+      // STAB MOTION DETECTED
+      if (lastClosestValue - closestValue > stabThreshold) {
         fill(#FF0000);
+        fire = true;
       }
-      ellipse(interpolatedX, interpolatedY, 30, 30);
+      if (f2 != null) ellipse(f2.x, f2.y, 30, 30);
+      else ellipse(iX, iY, 30, 30);
     }
+    
     lastX = interpolatedX;
     lastY = interpolatedY;
   
@@ -119,14 +156,25 @@ void draw()
     lastMessageMillis = millis();
     if(closestValue<threshold){
      
-     float msgX = interpolatedX;
-     float msgY = interpolatedY;
+     KPacket f3 = frames[(mod + 3) % 4];
+     float msgX = 0;
+     float msgY = 0;
+     
+     if (f3 != null) {
+       msgX = -1 * (f3.x - 320) / 320;
+       msgY = -1 * (f3.y - 240) / 240;
+     }
      
      OscMessage myMessage = new OscMessage("/staffPos");
        myMessage.add(msgX);
        myMessage.add(msgY);
-       oscP5.send(myMessage, myRemoteLocation); 
-       //println("Staff X:"+interpolatedX+" Y:"+interpolatedY);
+       oscP5.send(myMessage, myRemoteLocation);
+      
+     if (fire) {
+       OscMessage fireMessage = new OscMessage("/fire");
+       oscP5.send(fireMessage, myRemoteLocation);
+       fire = false;
+     }
     }
     else{
       /*OscMessage myMessage = new OscMessage("/threshold");
@@ -134,6 +182,8 @@ void draw()
       println("Threshold");*/
     }
   }
+  mod += 1;
+  if (mod == 4) mod = 0;
   }
   void mousePressed(){
     // clear screen

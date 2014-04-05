@@ -21,4 +21,7 @@ public class Spearman : Infantry, Ally {
 		return null;
 	}
 
+	protected override void charge() {
+	}
+
 }

@@ -23,6 +23,15 @@ public class Troll_AI : MonoBehaviour, Lockable {
 	public void onFire() {
 	}
 
+	public void onArrow(){
+	}
+
+	public void onStab() {
+	}
+
+	public void onRelease() {
+	}
+
 	public bool isItAlive() {
 		return isAlive;
 	}

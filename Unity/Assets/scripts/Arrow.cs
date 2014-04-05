@@ -3,16 +3,12 @@ using System.Collections;
 
 public class Arrow : MonoBehaviour {
 	public State currentState;
-	public float speed;
 	public Vector3 target;
 	public enum State { LOADING, FLYING, HIT }
+	public float stoppingPower;
 
 	private Vector3 launchPos;
-
-	/*void Start() {
-		Debug.Log("Started");
-		currentState = State.LOADING;
-	}*/
+	private float speed;
 
 	void Update () {
 		switch (currentState) {
@@ -25,10 +21,18 @@ public class Arrow : MonoBehaviour {
 			break;
 		}
 	}
-
-	// Doesn't work!!
-	void OnCollisionEnter() {
-		Debug.Log("Collided");
+	
+	void OnCollisionEnter(Collision c) {
+		if (c.rigidbody && c.transform.GetComponents(typeof(Lockable)).Length > 0) {
+			c.rigidbody.AddForce(Vector3.Normalize(c.transform.position - transform.position) * stoppingPower);
+			Lockable l = (Lockable)c.transform.GetComponents(typeof(Lockable))[0];
+			l.onArrow();
+			currentState = State.HIT;
+			transform.parent = c.transform;
+			Destroy(transform.rigidbody);
+			Destroy(transform.collider);
+			transform.position += transform.up * .15f;
+		}
 	}
 
 	public void fire(Vector3 target, float speed) {
@@ -47,7 +51,7 @@ public class Arrow : MonoBehaviour {
 
 
 	void fly() {
-		transform.position += (target - launchPos) / 24;
+		transform.position += Vector3.Normalize(target - launchPos) * speed * Time.deltaTime;
 	}
 
 }

@@ -47,6 +47,9 @@ public class UnityOSCReceiver : MonoBehaviour {
 				if (message.Address.Equals("/staffPos")){
 					crosshair.setPos((float)message.Values[0], (float)message.Values[1]);
 				}
+				if (message.Address.Equals("/fire")) {
+					crosshair.fire();
+				}
 			}
 			processQueue.Clear();
 		}

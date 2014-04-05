@@ -30,10 +30,15 @@ namespace BoothGame{
 
 		// Abstract stuff
 		protected abstract Transform aggroCast();
-
-		// Getters
+		protected abstract void charge();
+				
+		// Getters and Setters
 		public bool getIsAlive() {
 			return isAlive;
+		}
+
+		public void setIsAlive(bool t) {
+			isAlive = t;
 		}
 
 		void Start() {
@@ -171,18 +176,6 @@ namespace BoothGame{
 			// TODO: play stabbing animation
 		}
 
-		// Run forward, seeking targets
-		private void charge() {
-			transform.position += transform.forward * speed * Time.deltaTime;
-
-			Transform t = aggroCast();
-
-			if (t) {
-				setTarget(t);
-				currentTask = Task.ENGAGING;
-			}
-		}
-
 		// Run away!!
 		private void flee() {
 			// TODO: play running animation
@@ -191,8 +184,6 @@ namespace BoothGame{
 		public void die() {
 			isAlive = false;
 			renderer.material = deathColor;
-			int neg = Random.Range(0, 2) * -1;
-			transform.rigidbody.AddTorque(Vector3.right * neg);
 			// TODO: play death animation
 		}
 	}

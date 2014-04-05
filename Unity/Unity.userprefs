@@ -1,21 +1,15 @@
 ﻿<Properties>
   <MonoDevelop.Ide.Workspace ActiveConfiguration="Debug" />
-  <MonoDevelop.Ide.Workbench ActiveDocument="Assets\Siege.cs">
+  <MonoDevelop.Ide.Workbench ActiveDocument="Assets\SiegeBody.cs">
     <Files>
-      <File FileName="Unity.sln" Line="1" Column="1" />
-      <File FileName="Assets\Siege.cs" Line="15" Column="51" />
-      <File FileName="Assets\scripts\movieTex.cs" Line="1" Column="1" />
-      <File FileName="Assets\scripts\Crosshair.cs" Line="1" Column="1" />
+      <File FileName="Assets\scripts\Crosshair.cs" Line="140" Column="5" />
       <File FileName="Assets\scripts\army_stuff\Troll_AI.cs" Line="1" Column="1" />
-      <File FileName="Assets\scripts\OSC\UnityOSCReceiver.cs" Line="1" Column="1" />
-      <File FileName="Assets\scripts\army_stuff\Infantry.cs" Line="1" Column="1" />
-      <File FileName="Assets\scripts\Gandalf.cs" Line="1" Column="1" />
-      <File FileName="Assets\scripts\army_stuff\Orc.cs" Line="1" Column="1" />
-      <File FileName="Assets\scripts\army_stuff\Spearman.cs" Line="1" Column="1" />
-      <File FileName="Assets\scripts\Settings.cs" Line="1" Column="1" />
-      <File FileName="Assets\scripts\EndCollider.cs" Line="1" Column="1" />
-      <File FileName="Assets\scripts\Arrow.cs" Line="1" Column="1" />
-      <File FileName="Assets\Siege.cs" Line="15" Column="51" />
+      <File FileName="Assets\scripts\GameStateController.cs" Line="1" Column="1" />
+      <File FileName="Assets\scripts\army_stuff\Infantry.cs" Line="78" Column="15" />
+      <File FileName="Assets\scripts\army_stuff\Orc.cs" Line="121" Column="31" />
+      <File FileName="Assets\scripts\army_stuff\Spearman.cs" Line="24" Column="11" />
+      <File FileName="Assets\scripts\Siege.cs" Line="22" Column="17" />
+      <File FileName="Assets\SiegeBody.cs" Line="10" Column="84" />
     </Files>
   </MonoDevelop.Ide.Workbench>
   <MonoDevelop.Ide.DebuggingService.Breakpoints>

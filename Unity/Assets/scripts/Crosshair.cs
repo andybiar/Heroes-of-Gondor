@@ -5,6 +5,7 @@ public class Crosshair : MonoBehaviour {
 	public bool keyboardMode;
 	public float arrowKeySensitivity;
 	public Camera cam;
+	public GameObject viewPortObject;
 	
 	public enum State { IDLE, LOCKING }
 	public State currentState;
@@ -24,38 +25,21 @@ public class Crosshair : MonoBehaviour {
 	// Private state
 	private Transform target;
 	private int lockCount;
-	private float x, y;
+	private float x, y; // (0, 0) is top left of Viewport
+	private Collider viewPort;
 
 	void Start() {
 		currentState = State.IDLE;
+		viewPort = (Collider)viewPortObject.GetComponents(typeof(Collider))[0];
 	}
 
 	void Update () {
-		//processInput();
-		updatePos();
+		if (keyboardMode) processInput();
+		else updatePos();
 		checkLockOn();
 	}
 
-	/* Collider / trigger version is not so good
-	void OnTriggerEnter(Collider c) {
-		currentState = State.IDLE;
-		target = c.transform;
-	}
-
-	void OnTriggerStay(Collider c) {
-		lockCount = lockCount + 1;
-		if (lockCount >= maxLockCount) {
-			Debug.Log("fire");
-			fire(c.transform);
-			reset();
-		}
-	}
-
-	void OnTriggerExit(Collider c) {
-		reset();
-	}*/
-
-	// PROCESS USER INPUT
+	// KEYBOARD MODE
 	private void processInput() {
 		// Receive Input
 		if (Input.GetKey(KeyCode.LeftArrow)) {
@@ -73,12 +57,10 @@ public class Crosshair : MonoBehaviour {
 	}
 
 	private void updatePos() {
-		// TODO: auto-aim??
+		Vector3 e = viewPort.bounds.extents;
+		Vector3 t = viewPortObject.transform.position;
 
-		float z = transform.position.z;
-		transform.position = new Vector3(((640-x) / 640.0f) * (bRight - bLeft) + bLeft, 
-		                                 ((480-y) / 480.0f) * (bUp - bDown) + bDown,
-		                                 z);
+		transform.position = t + new Vector3(e.x * x, e.y * y, 0);
 	}
 
 	public void setPos(float newx, float newy) {
@@ -111,31 +93,32 @@ public class Crosshair : MonoBehaviour {
 
 		// Vector shit
 		Vector3 aim = transform.position - cam.transform.position;
-		Vector3 co = Vector3.Normalize(aim);
+		Vector3 offset = Vector3.Normalize(aim) * .5f;
 
 		Debug.DrawLine(cam.transform.position, transform.position, Color.yellow);
-		Debug.DrawRay(transform.position - co, aim*2, Color.blue);
+		Debug.DrawRay(transform.position + offset, Vector3.Normalize(aim)*200, Color.blue);
 
 		bool c = Physics.Raycast(cam.transform.position, aim, out hitClose, 
 		                         Vector3.Distance(cam.transform.position, transform.position));
-		bool f = Physics.Raycast (transform.position - co, aim*2, out hitFar, 100);
+		bool f = Physics.Raycast (transform.position + offset, aim, out hitFar, 200);
 
 		// Lock on to a close target
 		if (c && checkLockable(hitClose)) {
-			Vector3 offset = Vector3.Normalize(aim) * .05f;
-			transform.position = hitClose.point; //- offset;
+			transform.position = hitClose.point;
 			updateState (hitClose);
 		}
 
 		// Or else lock on to a far target
 		else if (f && checkLockable(hitFar)) {
-			Vector3 offset = Vector3.Normalize(aim) * .05f;
-			transform.position = hitFar.point; //- offset;
 			updateState(hitFar);
 		}
 
-		// Or else do a reset check
+		// Or else reset
 		else if (currentState != State.IDLE) {
+			if (target) {
+				Lockable l = (Lockable)target.GetComponents(typeof(Lockable))[0];
+				l.onRelease();
+			}
 			reset ();
 		}
 	}
@@ -146,17 +129,14 @@ public class Crosshair : MonoBehaviour {
 		if (currentState == State.IDLE) {
 			target = hit.transform;
 			currentState = State.LOCKING;
+			Lockable l = (Lockable)target.GetComponents(typeof(Lockable))[0];
+			l.onLock();
 		}
 		
 		// If LOCKING and SAME TARGET, increment count or FIRE!!
 		if (currentState == State.LOCKING && hit.transform == target) {
 			if (lockCount < maxLockCount) { 
 				lockCount = lockCount + 1;
-				//transform.localScale = startScale * ((maxLockCount - lockCount) / maxLockCount);
-			}
-			else {
-				fire(hit);
-				reset();
 			}
 		}
 		
@@ -165,6 +145,10 @@ public class Crosshair : MonoBehaviour {
 			target = hit.transform;
 			lockCount = 0;
 		}
+	}
+
+	public void fire() {
+		if (target) fire(target);
 	}
 	
 	private void fire(RaycastHit hit) {

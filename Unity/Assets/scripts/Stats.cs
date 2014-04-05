@@ -2,14 +2,16 @@
 using System.Collections;
 
 public class Stats : MonoBehaviour {
+	public int orcsKilled;
+	public GUIText orcsKilledText;
 
-	// Use this for initialization
-	void Start () {
-	
+	void Start() {
+		orcsKilledText.text = "Orcs Killed: 0";
 	}
-	
-	// Update is called once per frame
-	void Update () {
-	
+
+	public void orcDied() {
+		orcsKilled += 1;
+		orcsKilledText.text = "Orcs Killed: " + orcsKilledText;
 	}
+
 }
