@@ -19,6 +19,7 @@ namespace BoothGame{
 		public float speed;
 		public float cooldown;
 		public Material deathColor;
+		public float maxAirTime;
 
 		// Private state
 		private Vector3 guardLocation;
@@ -27,6 +28,8 @@ namespace BoothGame{
 		private float distToGround;
 		protected Transform target;
 		protected Health targetHealth;
+		private float airTime;
+		private bool airDeath;
 
 		// Abstract stuff
 		protected abstract Transform aggroCast();
@@ -46,8 +49,15 @@ namespace BoothGame{
 		}
 
 		void Update () {
-			// If dead or airborne or fallen over: do nothing
-			if (!isGrounded() || !isAlive || !isUpright()) {
+			// Handle the airborne case
+			if (!isGrounded()) {
+				airTime += 1;
+				if (airTime >= maxAirTime) airDeath = true;
+			}
+			else if (airDeath) die();
+
+			// If dead or fallen over: do nothing
+			if (!isAlive || !isUpright()) {
 				return;
 			}
 

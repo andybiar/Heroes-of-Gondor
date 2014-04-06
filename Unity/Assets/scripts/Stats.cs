@@ -11,7 +11,7 @@ public class Stats : MonoBehaviour {
 
 	public void orcDied() {
 		orcsKilled += 1;
-		orcsKilledText.text = "Orcs Killed: " + orcsKilledText;
+		orcsKilledText.text = "Orcs Killed: " + orcsKilled;
 	}
 
 }

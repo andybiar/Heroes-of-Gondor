@@ -118,7 +118,7 @@ public class Orc : Infantry, Enemy, Lockable {
 	private void move() {
 		if (separationL < .5 && separationR < .5) {
 			Debug.DrawRay(transform.position, transform.forward, Color.magenta);
-			Debug.Log(lName + ", " + rName);
+			//Debug.Log(lName + ", " + rName);
 			return;
 		}
 		else {
