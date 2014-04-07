@@ -10,6 +10,10 @@ public class Gate : MonoBehaviour {
 	}
 	
 	public void open() {
+		Object[] trolls = GameObject.FindObjectsOfType(typeof(Troll_AI));
+		foreach (Object g in trolls) {
+			((Troll_AI)g).setAttackRun();
+		}
 		openMe.Play();
 	}
 }

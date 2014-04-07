@@ -10,7 +10,6 @@ public class Orc : Infantry, Enemy, Lockable {
 	private string lName, rName;
 
 	public Stats stats;
-	public AudioSource orcSounds;
 
 	void Awake() {
 		selectionAura = transform.GetChild(0).gameObject;
@@ -70,7 +69,7 @@ public class Orc : Infantry, Enemy, Lockable {
 	}
 		
 	protected override Transform aggroCast() {
-		Vector3 v = new Vector3(0,.8f,0);
+		Vector3 v = new Vector3(0,.8f,0) + transform.forward * .2f;
 		Debug.DrawRay(transform.position + v, 
 		              Quaternion.Euler(0, -6, 0) * (transform.forward) * aggroRange);
 		Debug.DrawRay(transform.position + v,
@@ -114,10 +113,14 @@ public class Orc : Infantry, Enemy, Lockable {
 		return ally;
 	}
 
+	// CALLED WHEN THE TOWER LANDS AT THE WALL
 	public void setAttackRun() {
 		currentStance = Stance.ATTACK;
 		currentTask = Task.RUNNING;
 		animation.Play("Run");
+		int i = Random.Range(0,2);
+		if (i == 0) mySounds.PlayOneShot(Resources.Load<AudioClip>("Orc/takeThemDown"));
+		else if (i == 1) mySounds.PlayOneShot(Resources.Load<AudioClip>("Orc/getUpThere"));                
 	}
 
 	protected override void die() {
@@ -139,7 +142,9 @@ public class Orc : Infantry, Enemy, Lockable {
 	}
 
 	private void move() {
+		// SHIT BE'S IN THE WAY
 		if (separationL < .5 && separationR < .5) {
+			animation.Play("RunToStand");
 			Debug.DrawRay(transform.position, transform.forward, Color.magenta);
 			Debug.Log(lName + ", " + rName);
 			return;

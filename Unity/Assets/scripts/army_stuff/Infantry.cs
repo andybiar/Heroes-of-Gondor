@@ -30,6 +30,7 @@ namespace BoothGame{
 		private bool airDeath;
 		protected Renderer myRenderer;
 		protected float dissolveTime = 90;
+		protected AudioSource mySounds;
 
 		// Abstract stuff
 		protected abstract Transform aggroCast();
@@ -48,6 +49,7 @@ namespace BoothGame{
 		}
 
 		void Start() {
+			mySounds = transform.GetComponent<AudioSource>();
 		}
 
 		void Update () {

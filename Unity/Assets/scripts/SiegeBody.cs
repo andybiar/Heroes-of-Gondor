@@ -7,6 +7,8 @@ public class SiegeBody : MonoBehaviour {
 	public GameStateController gameMaster;
 	bool advancedScene;
 
+	public bool canAdvanceScene;
+
 	void OnTriggerEnter(Collider collider) {
 		if (!advancedScene) {
 			gameMaster.nextScene();

@@ -1,6 +1,7 @@
 ﻿using UnityEngine;
 using System.Collections;
 
+/* THIS IS THE UGLIEST BEHEMOTH OF A CLASS */
 public class GameStateController : MonoBehaviour {
 	// Set these in the inspector
 	public Siege siege;
@@ -18,9 +19,9 @@ public class GameStateController : MonoBehaviour {
 	private bool fireEnabled = true;
 	private bool moving;
 	private bool onTimer;
-	private bool fadeOut;
+	private bool musicFadeOut;
 	private bool hogFadeOut;
-	private bool playShit = true;
+	private bool playIntro = true;
 	private int timerCount;
 	private int timerIndex = -1;
 	private Vector3 startPos;
@@ -30,6 +31,10 @@ public class GameStateController : MonoBehaviour {
 	private Camera cam;
 	private float timeGameStarted;
 	private bool movedToWall;
+	private bool openedGate;
+	private bool sceneAutoPilot = true;
+	private float spaceCooldown = 1.5f;
+	private float lastSpaceTime;
 
 	// TIMERS
 	private int[] timers;
@@ -47,7 +52,7 @@ public class GameStateController : MonoBehaviour {
 		positions[1] = new Vector3(323.2827f, 329.244f, 5.450752f);
 		fovs[0] = 40.6f;
 
-		transitionTimes[0] = 300;
+		transitionTimes[0] = 200;
 
 		// 1. FIRST TOWER
 		positions[2] = new Vector3(34.81511f, 18.5997f, 42.50385f);
@@ -55,7 +60,7 @@ public class GameStateController : MonoBehaviour {
 		fovs[1] = 40.6f;
 		timers[0] = 0;
 
-		transitionTimes[1] = 300;
+		transitionTimes[1] = 375;
 
 		// 2. LOOKING AT TOWERS
 		positions[4] = new Vector3(19.44117f, 15.48369f, 7.56176f);
@@ -87,7 +92,7 @@ public class GameStateController : MonoBehaviour {
 		cam.fieldOfView = fovs[0];
 	}
 
-	// UPDATE ERMAGERD
+	// UPDATE
 	void FixedUpdate () {
 		if (moving) updateScene();
 
@@ -95,43 +100,67 @@ public class GameStateController : MonoBehaviour {
 			timerCount += 1;
 			if (timerCount >= timers[timerIndex]) {
 				onTimer = false;
+				Debug.Log("Scene advanced by timer");
 				nextScene();
 				timerCount = 0;
 			}
 		}
 
-		if (fadeOut) {
+		// BEGIN THE GAME
+		if (Input.GetKeyDown (KeyCode.S)) {
+			musicFadeOut = true;
+			hogFadeOut = true;
+			siege.send();
+		}
+		
+		// FADE OUT THE MAIN MENU
+		if (musicFadeOut) {
 			jukebox.volume -= .06f;
-			if (jukebox.volume <= 0) fadeOut = false;
+			if (jukebox.volume <= 0) musicFadeOut = false;
 		}
 
 		if (hogFadeOut) {
 			Color c = HoG.renderer.material.color;
 			if (c.a <= 0) hogFadeOut = false;
 			HoG.renderer.material.color = new Color(c.r, c.g, c.b, c.a - .06f);
-
 		}
 
-		if (!movedToWall && Time.timeSinceLevelLoad - timeGameStarted >= 34) {
+		// MOVE TO THE GATE
+		if (sceneAutoPilot && !movedToWall && Time.timeSinceLevelLoad - timeGameStarted >= 34) {
+			Debug.Log("Scene advanced by 'move to the wall'");
 			nextScene();
 			movedToWall = true;
 		}
 
-		if (Input.GetKeyDown (KeyCode.S)) {
-			fadeOut = true;
-			hogFadeOut = true;
-			siege.send();
-		}
-		if (Input.GetKeyDown (KeyCode.D)) {
+		// OPEN THE GATE
+		if (sceneAutoPilot && !openedGate && Time.timeSinceLevelLoad - timeGameStarted >= 41) {
 			gate.open();
+			openedGate = true;
 		}
 
-		if (Input.GetKeyDown (KeyCode.Space)) {
+		// DEBUG: ADVANCE THE SCENE
+		if (Input.GetKeyDown (KeyCode.Space) && Time.timeSinceLevelLoad - lastSpaceTime > spaceCooldown) {
+			lastSpaceTime = Time.timeSinceLevelLoad;
+
+			// MAKE ALL TRANSITIONS INSTANT
+			for (int i = 0; i < transitionTimes.Length; i++) {
+				transitionTimes[i] = 1;
+			}
+
+			// DISABLE ALL OTHER BODIES FROM ADVANCING THE SCENE
+			Object[] siegeBodies = GameObject.FindObjectsOfType(typeof(SiegeBody));
+			for (int i = 0; i < siegeBodies.Length; i++) {
+				((SiegeBody)siegeBodies[i]).canAdvanceScene = false;
+			}
+
+			sceneAutoPilot = false;
+			Debug.Log("Scene advanced by spacebar");
 			nextScene();
+			jukebox.Stop();
 		}
 	}
 
-	// Scene was just incremented
+	// Plays when moving
 	private void updateScene() {
 		if (scene == 6) Application.LoadLevel(0);
 
@@ -142,20 +171,28 @@ public class GameStateController : MonoBehaviour {
 			(positions[scene * 2 + 1] - startRot) / transitionTimes[scene-1]);
 		cam.fieldOfView += (fovs[scene] - startFov) / (transitionTimes[scene-1]);
 
-		// ON ARRIVE
-		// Scenes 1 and 2 have timer option
+		// -=-=-=-=-=-ON ARRIVE-=-=-=-=-=-=-=-
+		// Scenes 1 and 2 advance by timers
 		if (Vector3.Distance(p + positions[scene * 2], transform.position) < .04) {
 			moving = false;
-			if (scene == 1 || scene == 2) {
+			if (sceneAutoPilot && (scene == 1 || scene == 2)) {
 				onTimer = true;
 				timerIndex = timerIndex + 1;
 			}
 		}
 
-		// Gandalf line at scene3 start
-		if (scene == 3 && playShit) {
+		// Gandalf line at staff slam start
+		if (scene == 3 && playIntro) {
 			jukebox.PlayOneShot(Resources.Load<AudioClip>("Gandalf/enemiesApproaching"));
-			playShit = false;
+			playIntro = false;
+		}
+
+		// Gandalf line at gate arrival
+		if (scene == 4 && playIntro) {
+			jukebox.PlayOneShot(Resources.Load<AudioClip>("Gandalf/soldiersOfGondor"));
+			playIntro = false;
+
+			if (!sceneAutoPilot) gate.open();
 		}
 
 	}
@@ -163,7 +200,7 @@ public class GameStateController : MonoBehaviour {
 	public void nextScene() {
 		scene += 1;
 		moving = true;
-		playShit = true;
+		playIntro = true;
 		startPos = transform.position;
 		startRot = transform.rotation.eulerAngles;
 		startFov = cam.fieldOfView;
@@ -171,7 +208,7 @@ public class GameStateController : MonoBehaviour {
 		// BEGIN THE OPENING SEQUENCE
 		if (scene == 1) {
 			timeGameStarted = Time.timeSinceLevelLoad;
-			fadeOut = false;
+			musicFadeOut = false;
 			jukebox.clip = gameMusic;
 			jukebox.volume = 1;
 			jukebox.Play();
