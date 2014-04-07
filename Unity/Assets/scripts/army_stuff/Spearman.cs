@@ -24,4 +24,13 @@ public class Spearman : Infantry, Ally {
 	protected override void charge() {
 	}
 
+	protected override void die() {
+	}
+
+	protected override void onFall() {
+	}
+
+	protected override void onCrash() {
+	}
+
 }

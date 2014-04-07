@@ -46,8 +46,6 @@
 	</Reference>
   </ItemGroup>
   <ItemGroup>
-     <Compile Include="Assets\SiegeBody.cs" />
-     <Compile Include="Assets\SiegeTrigger.cs" />
      <Compile Include="Assets\scripts\Arrow.cs" />
      <Compile Include="Assets\scripts\Crosshair.cs" />
      <Compile Include="Assets\scripts\EndCollider.cs" />
@@ -59,6 +57,8 @@
      <Compile Include="Assets\scripts\OSC\UnityOSCReceiver.cs" />
      <Compile Include="Assets\scripts\Settings.cs" />
      <Compile Include="Assets\scripts\Siege.cs" />
+     <Compile Include="Assets\scripts\SiegeBody.cs" />
+     <Compile Include="Assets\scripts\SiegeTrigger.cs" />
      <Compile Include="Assets\scripts\Stats.cs" />
      <Compile Include="Assets\scripts\army_stuff\ArcherAI.cs" />
      <Compile Include="Assets\scripts\army_stuff\Infantry.cs" />

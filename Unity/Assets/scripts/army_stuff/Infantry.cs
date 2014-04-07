@@ -6,7 +6,7 @@ namespace BoothGame{
 	public abstract class Infantry : MonoBehaviour, Health {
 		// Definitions for guard state
 		public enum Task { IDLE, ENGAGING, STABBING, RUNNING }
-		public enum Stance { GUARD, ATTACK, FLEE }
+		public enum Stance { GUARD, ATTACK, FLEE, DEAD }
 
 		// Things to set in the inspector
 		public float ENGAGE_TIMEOUT;
@@ -18,22 +18,25 @@ namespace BoothGame{
 		public float pikeRange;
 		public float speed;
 		public float cooldown;
-		public Material deathColor;
 		public float maxAirTime;
 
 		// Private state
 		private Vector3 guardLocation;
 		private float lastActionTime;
 		private bool isAlive = true;
-		private float distToGround;
 		protected Transform target;
 		protected Health targetHealth;
 		private float airTime;
 		private bool airDeath;
+		protected Renderer myRenderer;
+		protected float dissolveTime = 90;
 
 		// Abstract stuff
 		protected abstract Transform aggroCast();
 		protected abstract void charge();
+		protected abstract void die();
+		protected abstract void onCrash();
+		protected abstract void onFall();
 				
 		// Getters and Setters
 		public bool getIsAlive() {
@@ -45,21 +48,29 @@ namespace BoothGame{
 		}
 
 		void Start() {
-			distToGround = collider.bounds.extents.y;
 		}
 
 		void Update () {
+			// If dead or fallen over: do nothing
+			if (!isAlive) {
+				dissolveMe();
+			}
+
+			if (!isUpright()) return;
+
 			// Handle the airborne case
 			if (!isGrounded()) {
 				airTime += 1;
-				if (airTime >= maxAirTime) airDeath = true;
+				if (airTime >= maxAirTime) {
+					airDeath = true;
+					onFall();
+				}
 			}
-			else if (airDeath) die();
-
-			// If dead or fallen over: do nothing
-			if (!isAlive || !isUpright()) {
-				return;
+			else if (airDeath) {
+				onCrash();
+				isAlive = false;
 			}
+			else airTime = 0;
 
 			// GUARD STANCE
 			if (currentStance == Stance.GUARD) {
@@ -97,18 +108,20 @@ namespace BoothGame{
 			}
 		}
 
-		public void damage(float d) {
-			health = health - d;
-			if (health <= 0) die();
-		}
-
 		private bool isUpright() {
 			return (Vector3.Dot(Vector3.up, transform.up) > .5);
 		}
-
+		
 		private bool isGrounded() {
-			RaycastHit hit = new RaycastHit();
-			return Physics.Raycast(transform.position, -Vector3.up, out hit, distToGround + 0.1f);
+			return Mathf.Abs(rigidbody.velocity.y) < 2;
+		}
+
+		public void damage(float d) {
+			health = health - d;
+			if (health <= 0) {
+				Debug.Log("Infantry death by loss of health");
+				die();
+			}
 		}
 
 		protected void setTarget(Transform t) {
@@ -191,10 +204,9 @@ namespace BoothGame{
 			// TODO: play running animation
 		}
 
-		public void die() {
-			isAlive = false;
-			renderer.material = deathColor;
-			// TODO: play death animation
+		protected void dissolveMe() {
+			dissolveTime = dissolveTime - 1;
+			if (dissolveTime <= 0) Destroy(this.gameObject);
 		}
 	}
 }

@@ -10,6 +10,7 @@ public class Orc : Infantry, Enemy, Lockable {
 	private string lName, rName;
 
 	public Stats stats;
+	public AudioSource orcSounds;
 
 	void Awake() {
 		selectionAura = transform.GetChild(0).gameObject;
@@ -24,15 +25,30 @@ public class Orc : Infantry, Enemy, Lockable {
 
 	// When Gandalf hit an orc with a spell, it dies
 	public void onFire() {
+		Debug.Log("Orc death by Gandalf");
 		die();
 	}
 
 	public void onStab() {
+		Debug.Log("Orc death by stabbing");
 		die();
 	}
 
 	public void onArrow() {
+		Debug.Log("Orc death by arrow");
 		die();
+	}
+
+	protected override void onFall() {
+		animation.Play("Flail");
+		// TODO: play falling sound
+	}
+
+	protected override void onCrash() {
+		die();
+		animation.Play("FlailToDead");
+		Debug.Log("Orc death by falling");
+		// TODO: play crashing sound
 	}
 
 	public void onRelease() {
@@ -54,17 +70,22 @@ public class Orc : Infantry, Enemy, Lockable {
 	}
 		
 	protected override Transform aggroCast() {
-		Debug.DrawRay(transform.position, Quaternion.Euler(0, -6, 0) * transform.forward * aggroRange);
-		Debug.DrawRay(transform.position, Quaternion.Euler(0, 6, 0) * transform.forward * aggroRange);
+		Vector3 v = new Vector3(0,.8f,0);
+		Debug.DrawRay(transform.position + v, 
+		              Quaternion.Euler(0, -6, 0) * (transform.forward) * aggroRange);
+		Debug.DrawRay(transform.position + v,
+		              Quaternion.Euler(0, 6, 0) * (transform.forward) * aggroRange);
 
 		// Double Raycast
 		RaycastHit l = new RaycastHit();
 		RaycastHit r = new RaycastHit();
 
 		bool isL = Physics.Raycast(
-			transform.position, Quaternion.Euler(0,-6,0)*transform.forward, out l, aggroRange);
+			transform.position + new Vector3(0,.6f,0), 
+			Quaternion.Euler(0,-6,0)*transform.forward, out l, aggroRange);
 		bool isR = Physics.Raycast(
-			transform.position, Quaternion.Euler(0,6,0)*transform.forward, out r, aggroRange);
+			transform.position + new Vector3(0,.6f,0), 
+			Quaternion.Euler(0,6,0)*transform.forward, out r, aggroRange);
 
 		float allyDist = 999;
 		Transform ally = null;
@@ -96,11 +117,13 @@ public class Orc : Infantry, Enemy, Lockable {
 	public void setAttackRun() {
 		currentStance = Stance.ATTACK;
 		currentTask = Task.RUNNING;
+		animation.Play("Run");
 	}
 
-	public void die() {
+	protected override void die() {
+		currentTask = Task.IDLE;
+		currentStance = Stance.DEAD;
 		setIsAlive(false);
-		renderer.material = deathColor;
 		stats.orcDied();
 	}
 
@@ -118,7 +141,7 @@ public class Orc : Infantry, Enemy, Lockable {
 	private void move() {
 		if (separationL < .5 && separationR < .5) {
 			Debug.DrawRay(transform.position, transform.forward, Color.magenta);
-			//Debug.Log(lName + ", " + rName);
+			Debug.Log(lName + ", " + rName);
 			return;
 		}
 		else {

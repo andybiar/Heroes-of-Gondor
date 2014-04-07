@@ -1,0 +1,1423 @@
+fileFormatVersion: 2
+guid: caef7fe1053a9234299b8e675454037b
+ModelImporter:
+  serializedVersion: 15
+  fileIDToRecycleName:
+    100000: chest
+    100002: head
+    100004: left_arm_control
+    100006: left_arm_IK
+    100008: left_elbow
+    100010: left_hand
+    100012: left_hip
+    100014: left_index_base
+    100016: left_index_mid
+    100018: left_index_tip
+    100020: left_knee
+    100022: left_leg_control
+    100024: left_leg_IK
+    100026: left_middle_base
+    100028: left_middle_mid
+    100030: left_middle_tip
+    100032: left_pinky_base
+    100034: left_pinky_mid
+    100036: left_pinky_tip
+    100038: left_ring_base
+    100040: left_ring_mid
+    100042: left_ring_tip
+    100044: left_shoulder
+    100046: left_thumb_base
+    100048: left_thumb_mid
+    100050: left_thumb_tip
+    100052: left_toe
+    100054: left_toe 1
+    100056: neck
+    100058: orc
+    100060: //RootNode
+    100062: orc_control
+    100064: orc_controls
+    100066: orc_skel
+    100068: orc_sword
+    100070: right_arm_control
+    100072: right_elbow
+    100074: right_foot
+    100076: right_hand
+    100078: right_hip
+    100080: right_index_base
+    100082: right_index_mid
+    100084: right_index_tip
+    100086: right_knee
+    100088: right_leg_control
+    100090: right_leg_IK
+    100092: right_middle_base
+    100094: right_middle_mid
+    100096: right_middle_tip
+    100098: right_pinky_base
+    100100: right_pinky_mid
+    100102: right_pinky_tip
+    100104: right_ring_base
+    100106: right_ring_mid
+    100108: right_ring_tip
+    100110: right_shoulder
+    100112: right_thub_base
+    100114: right_thumb_mid
+    100116: right_thumb_tip
+    100118: right_toe
+    100120: rigth_arm_IK
+    100122: transform1
+    100124: waist
+    400000: chest
+    400002: head
+    400004: left_arm_control
+    400006: left_arm_IK
+    400008: left_elbow
+    400010: left_hand
+    400012: left_hip
+    400014: left_index_base
+    400016: left_index_mid
+    400018: left_index_tip
+    400020: left_knee
+    400022: left_leg_control
+    400024: left_leg_IK
+    400026: left_middle_base
+    400028: left_middle_mid
+    400030: left_middle_tip
+    400032: left_pinky_base
+    400034: left_pinky_mid
+    400036: left_pinky_tip
+    400038: left_ring_base
+    400040: left_ring_mid
+    400042: left_ring_tip
+    400044: left_shoulder
+    400046: left_thumb_base
+    400048: left_thumb_mid
+    400050: left_thumb_tip
+    400052: left_toe
+    400054: left_toe 1
+    400056: neck
+    400058: orc
+    400060: //RootNode
+    400062: orc_control
+    400064: orc_controls
+    400066: orc_skel
+    400068: orc_sword
+    400070: right_arm_control
+    400072: right_elbow
+    400074: right_foot
+    400076: right_hand
+    400078: right_hip
+    400080: right_index_base
+    400082: right_index_mid
+    400084: right_index_tip
+    400086: right_knee
+    400088: right_leg_control
+    400090: right_leg_IK
+    400092: right_middle_base
+    400094: right_middle_mid
+    400096: right_middle_tip
+    400098: right_pinky_base
+    400100: right_pinky_mid
+    400102: right_pinky_tip
+    400104: right_ring_base
+    400106: right_ring_mid
+    400108: right_ring_tip
+    400110: right_shoulder
+    400112: right_thub_base
+    400114: right_thumb_mid
+    400116: right_thumb_tip
+    400118: right_toe
+    400120: rigth_arm_IK
+    400122: transform1
+    400124: waist
+    2300000: orc_sword
+    3300000: orc_sword
+    4300000: orc
+    4300002: orc_sword
+    6400000: orc_sword
+    7400000: StandToRun
+    7400002: Run
+    7400004: RunToStand
+    7400006: Strike
+    7400008: StandToFlail
+    7400010: Flail
+    7400012: FlailToDead
+    7400014: OrcDie
+    9500000: //RootNode
+    11100000: //RootNode
+    13700000: orc
+  materials:
+    importMaterials: 1
+    materialName: 0
+    materialSearch: 1
+  animations:
+    legacyGenerateAnimations: 4
+    bakeSimulation: 1
+    optimizeGameObjects: 0
+    animationCompression: 1
+    animationRotationError: .5
+    animationPositionError: .5
+    animationScaleError: .5
+    animationWrapMode: 0
+    extraExposedTransformPaths: []
+    clipAnimations:
+    - serializedVersion: 16
+      name: StandToRun
+      takeName: Take 001
+      firstFrame: 1
+      lastFrame: 31
+      wrapMode: 1
+      orientationOffsetY: 0
+      level: 0
+      cycleOffset: 0
+      loop: 0
+      loopTime: 0
+      loopBlend: 0
+      loopBlendOrientation: 0
+      loopBlendPositionY: 0
+      loopBlendPositionXZ: 0
+      keepOriginalOrientation: 0
+      keepOriginalPositionY: 1
+      keepOriginalPositionXZ: 0
+      heightFromFeet: 0
+      mirror: 0
+      bodyMask: 01000000010000000100000001000000010000000100000001000000010000000100000001000000010000000100000001000000
+      curves: []
+      events: []
+      transformMask:
+      - path: 
+        weight: 1
+      - path: orc
+        weight: 1
+      - path: orc_controls
+        weight: 1
+      - path: orc_controls/left_arm_control
+        weight: 1
+      - path: orc_controls/left_arm_control/left_arm_IK
+        weight: 1
+      - path: orc_controls/left_leg_control
+        weight: 1
+      - path: orc_controls/left_leg_control/left_leg_IK
+        weight: 1
+      - path: orc_controls/orc_control
+        weight: 1
+      - path: orc_controls/orc_control/transform1
+        weight: 1
+      - path: orc_controls/orc_control/transform1/orc_skel
+        weight: 1
+      - path: orc_controls/orc_control/transform1/orc_skel/left_hip
+        weight: 1
+      - path: orc_controls/orc_control/transform1/orc_skel/left_hip/left_knee
+        weight: 1
+      - path: orc_controls/orc_control/transform1/orc_skel/left_hip/left_knee/left_toe
+        weight: 1
+      - path: orc_controls/orc_control/transform1/orc_skel/left_hip/left_knee/left_toe/left_toe
+          1
+        weight: 1
+      - path: orc_controls/orc_control/transform1/orc_skel/right_hip
+        weight: 1
+      - path: orc_controls/orc_control/transform1/orc_skel/right_hip/right_knee
+        weight: 1
+      - path: orc_controls/orc_control/transform1/orc_skel/right_hip/right_knee/right_foot
+        weight: 1
+      - path: orc_controls/orc_control/transform1/orc_skel/right_hip/right_knee/right_foot/right_toe
+        weight: 1
+      - path: orc_controls/orc_control/transform1/orc_skel/waist
+        weight: 1
+      - path: orc_controls/orc_control/transform1/orc_skel/waist/chest
+        weight: 1
+      - path: orc_controls/orc_control/transform1/orc_skel/waist/chest/neck
+        weight: 1
+      - path: orc_controls/orc_control/transform1/orc_skel/waist/chest/neck/head
+        weight: 1
+      - path: orc_controls/orc_control/transform1/orc_skel/waist/chest/neck/left_shoulder
+        weight: 1
+      - path: orc_controls/orc_control/transform1/orc_skel/waist/chest/neck/left_shoulder/left_elbow
+        weight: 1
+      - path: orc_controls/orc_control/transform1/orc_skel/waist/chest/neck/left_shoulder/left_elbow/left_hand
+        weight: 1
+      - path: orc_controls/orc_control/transform1/orc_skel/waist/chest/neck/left_shoulder/left_elbow/left_hand/left_index_base
+        weight: 1
+      - path: orc_controls/orc_control/transform1/orc_skel/waist/chest/neck/left_shoulder/left_elbow/left_hand/left_index_base/left_index_mid
+        weight: 1
+      - path: orc_controls/orc_control/transform1/orc_skel/waist/chest/neck/left_shoulder/left_elbow/left_hand/left_index_base/left_index_mid/left_index_tip
+        weight: 1
+      - path: orc_controls/orc_control/transform1/orc_skel/waist/chest/neck/left_shoulder/left_elbow/left_hand/left_middle_base
+        weight: 1
+      - path: orc_controls/orc_control/transform1/orc_skel/waist/chest/neck/left_shoulder/left_elbow/left_hand/left_middle_base/left_middle_mid
+        weight: 1
+      - path: orc_controls/orc_control/transform1/orc_skel/waist/chest/neck/left_shoulder/left_elbow/left_hand/left_middle_base/left_middle_mid/left_middle_tip
+        weight: 1
+      - path: orc_controls/orc_control/transform1/orc_skel/waist/chest/neck/left_shoulder/left_elbow/left_hand/left_pinky_base
+        weight: 1
+      - path: orc_controls/orc_control/transform1/orc_skel/waist/chest/neck/left_shoulder/left_elbow/left_hand/left_pinky_base/left_pinky_mid
+        weight: 1
+      - path: orc_controls/orc_control/transform1/orc_skel/waist/chest/neck/left_shoulder/left_elbow/left_hand/left_pinky_base/left_pinky_mid/left_pinky_tip
+        weight: 1
+      - path: orc_controls/orc_control/transform1/orc_skel/waist/chest/neck/left_shoulder/left_elbow/left_hand/left_ring_base
+        weight: 1
+      - path: orc_controls/orc_control/transform1/orc_skel/waist/chest/neck/left_shoulder/left_elbow/left_hand/left_ring_base/left_ring_mid
+        weight: 1
+      - path: orc_controls/orc_control/transform1/orc_skel/waist/chest/neck/left_shoulder/left_elbow/left_hand/left_ring_base/left_ring_mid/left_ring_tip
+        weight: 1
+      - path: orc_controls/orc_control/transform1/orc_skel/waist/chest/neck/left_shoulder/left_elbow/left_hand/left_thumb_base
+        weight: 1
+      - path: orc_controls/orc_control/transform1/orc_skel/waist/chest/neck/left_shoulder/left_elbow/left_hand/left_thumb_base/left_thumb_mid
+        weight: 1
+      - path: orc_controls/orc_control/transform1/orc_skel/waist/chest/neck/left_shoulder/left_elbow/left_hand/left_thumb_base/left_thumb_mid/left_thumb_tip
+        weight: 1
+      - path: orc_controls/orc_control/transform1/orc_skel/waist/chest/neck/right_shoulder
+        weight: 1
+      - path: orc_controls/orc_control/transform1/orc_skel/waist/chest/neck/right_shoulder/right_elbow
+        weight: 1
+      - path: orc_controls/orc_control/transform1/orc_skel/waist/chest/neck/right_shoulder/right_elbow/right_hand
+        weight: 1
+      - path: orc_controls/orc_control/transform1/orc_skel/waist/chest/neck/right_shoulder/right_elbow/right_hand/orc_sword
+        weight: 1
+      - path: orc_controls/orc_control/transform1/orc_skel/waist/chest/neck/right_shoulder/right_elbow/right_hand/right_index_base
+        weight: 1
+      - path: orc_controls/orc_control/transform1/orc_skel/waist/chest/neck/right_shoulder/right_elbow/right_hand/right_index_base/right_index_mid
+        weight: 1
+      - path: orc_controls/orc_control/transform1/orc_skel/waist/chest/neck/right_shoulder/right_elbow/right_hand/right_index_base/right_index_mid/right_index_tip
+        weight: 1
+      - path: orc_controls/orc_control/transform1/orc_skel/waist/chest/neck/right_shoulder/right_elbow/right_hand/right_middle_base
+        weight: 1
+      - path: orc_controls/orc_control/transform1/orc_skel/waist/chest/neck/right_shoulder/right_elbow/right_hand/right_middle_base/right_middle_mid
+        weight: 1
+      - path: orc_controls/orc_control/transform1/orc_skel/waist/chest/neck/right_shoulder/right_elbow/right_hand/right_middle_base/right_middle_mid/right_middle_tip
+        weight: 1
+      - path: orc_controls/orc_control/transform1/orc_skel/waist/chest/neck/right_shoulder/right_elbow/right_hand/right_pinky_base
+        weight: 1
+      - path: orc_controls/orc_control/transform1/orc_skel/waist/chest/neck/right_shoulder/right_elbow/right_hand/right_pinky_base/right_pinky_mid
+        weight: 1
+      - path: orc_controls/orc_control/transform1/orc_skel/waist/chest/neck/right_shoulder/right_elbow/right_hand/right_pinky_base/right_pinky_mid/right_pinky_tip
+        weight: 1
+      - path: orc_controls/orc_control/transform1/orc_skel/waist/chest/neck/right_shoulder/right_elbow/right_hand/right_ring_base
+        weight: 1
+      - path: orc_controls/orc_control/transform1/orc_skel/waist/chest/neck/right_shoulder/right_elbow/right_hand/right_ring_base/right_ring_mid
+        weight: 1
+      - path: orc_controls/orc_control/transform1/orc_skel/waist/chest/neck/right_shoulder/right_elbow/right_hand/right_ring_base/right_ring_mid/right_ring_tip
+        weight: 1
+      - path: orc_controls/orc_control/transform1/orc_skel/waist/chest/neck/right_shoulder/right_elbow/right_hand/right_thub_base
+        weight: 1
+      - path: orc_controls/orc_control/transform1/orc_skel/waist/chest/neck/right_shoulder/right_elbow/right_hand/right_thub_base/right_thumb_mid
+        weight: 1
+      - path: orc_controls/orc_control/transform1/orc_skel/waist/chest/neck/right_shoulder/right_elbow/right_hand/right_thub_base/right_thumb_mid/right_thumb_tip
+        weight: 1
+      - path: orc_controls/right_arm_control
+        weight: 1
+      - path: orc_controls/right_arm_control/rigth_arm_IK
+        weight: 1
+      - path: orc_controls/right_leg_control
+        weight: 1
+      - path: orc_controls/right_leg_control/right_leg_IK
+        weight: 1
+      maskType: 0
+      maskSource: {instanceID: 0}
+    - serializedVersion: 16
+      name: Run
+      takeName: Take 001
+      firstFrame: 32
+      lastFrame: 60
+      wrapMode: 2
+      orientationOffsetY: 0
+      level: 0
+      cycleOffset: 0
+      loop: 0
+      loopTime: 0
+      loopBlend: 0
+      loopBlendOrientation: 0
+      loopBlendPositionY: 0
+      loopBlendPositionXZ: 0
+      keepOriginalOrientation: 0
+      keepOriginalPositionY: 1
+      keepOriginalPositionXZ: 0
+      heightFromFeet: 0
+      mirror: 0
+      bodyMask: 01000000010000000100000001000000010000000100000001000000010000000100000001000000010000000100000001000000
+      curves: []
+      events: []
+      transformMask:
+      - path: 
+        weight: 1
+      - path: orc
+        weight: 1
+      - path: orc_controls
+        weight: 1
+      - path: orc_controls/left_arm_control
+        weight: 1
+      - path: orc_controls/left_arm_control/left_arm_IK
+        weight: 1
+      - path: orc_controls/left_leg_control
+        weight: 1
+      - path: orc_controls/left_leg_control/left_leg_IK
+        weight: 1
+      - path: orc_controls/orc_control
+        weight: 1
+      - path: orc_controls/orc_control/transform1
+        weight: 1
+      - path: orc_controls/orc_control/transform1/orc_skel
+        weight: 1
+      - path: orc_controls/orc_control/transform1/orc_skel/left_hip
+        weight: 1
+      - path: orc_controls/orc_control/transform1/orc_skel/left_hip/left_knee
+        weight: 1
+      - path: orc_controls/orc_control/transform1/orc_skel/left_hip/left_knee/left_toe
+        weight: 1
+      - path: orc_controls/orc_control/transform1/orc_skel/left_hip/left_knee/left_toe/left_toe
+          1
+        weight: 1
+      - path: orc_controls/orc_control/transform1/orc_skel/right_hip
+        weight: 1
+      - path: orc_controls/orc_control/transform1/orc_skel/right_hip/right_knee
+        weight: 1
+      - path: orc_controls/orc_control/transform1/orc_skel/right_hip/right_knee/right_foot
+        weight: 1
+      - path: orc_controls/orc_control/transform1/orc_skel/right_hip/right_knee/right_foot/right_toe
+        weight: 1
+      - path: orc_controls/orc_control/transform1/orc_skel/waist
+        weight: 1
+      - path: orc_controls/orc_control/transform1/orc_skel/waist/chest
+        weight: 1
+      - path: orc_controls/orc_control/transform1/orc_skel/waist/chest/neck
+        weight: 1
+      - path: orc_controls/orc_control/transform1/orc_skel/waist/chest/neck/head
+        weight: 1
+      - path: orc_controls/orc_control/transform1/orc_skel/waist/chest/neck/left_shoulder
+        weight: 1
+      - path: orc_controls/orc_control/transform1/orc_skel/waist/chest/neck/left_shoulder/left_elbow
+        weight: 1
+      - path: orc_controls/orc_control/transform1/orc_skel/waist/chest/neck/left_shoulder/left_elbow/left_hand
+        weight: 1
+      - path: orc_controls/orc_control/transform1/orc_skel/waist/chest/neck/left_shoulder/left_elbow/left_hand/left_index_base
+        weight: 1
+      - path: orc_controls/orc_control/transform1/orc_skel/waist/chest/neck/left_shoulder/left_elbow/left_hand/left_index_base/left_index_mid
+        weight: 1
+      - path: orc_controls/orc_control/transform1/orc_skel/waist/chest/neck/left_shoulder/left_elbow/left_hand/left_index_base/left_index_mid/left_index_tip
+        weight: 1
+      - path: orc_controls/orc_control/transform1/orc_skel/waist/chest/neck/left_shoulder/left_elbow/left_hand/left_middle_base
+        weight: 1
+      - path: orc_controls/orc_control/transform1/orc_skel/waist/chest/neck/left_shoulder/left_elbow/left_hand/left_middle_base/left_middle_mid
+        weight: 1
+      - path: orc_controls/orc_control/transform1/orc_skel/waist/chest/neck/left_shoulder/left_elbow/left_hand/left_middle_base/left_middle_mid/left_middle_tip
+        weight: 1
+      - path: orc_controls/orc_control/transform1/orc_skel/waist/chest/neck/left_shoulder/left_elbow/left_hand/left_pinky_base
+        weight: 1
+      - path: orc_controls/orc_control/transform1/orc_skel/waist/chest/neck/left_shoulder/left_elbow/left_hand/left_pinky_base/left_pinky_mid
+        weight: 1
+      - path: orc_controls/orc_control/transform1/orc_skel/waist/chest/neck/left_shoulder/left_elbow/left_hand/left_pinky_base/left_pinky_mid/left_pinky_tip
+        weight: 1
+      - path: orc_controls/orc_control/transform1/orc_skel/waist/chest/neck/left_shoulder/left_elbow/left_hand/left_ring_base
+        weight: 1
+      - path: orc_controls/orc_control/transform1/orc_skel/waist/chest/neck/left_shoulder/left_elbow/left_hand/left_ring_base/left_ring_mid
+        weight: 1
+      - path: orc_controls/orc_control/transform1/orc_skel/waist/chest/neck/left_shoulder/left_elbow/left_hand/left_ring_base/left_ring_mid/left_ring_tip
+        weight: 1
+      - path: orc_controls/orc_control/transform1/orc_skel/waist/chest/neck/left_shoulder/left_elbow/left_hand/left_thumb_base
+        weight: 1
+      - path: orc_controls/orc_control/transform1/orc_skel/waist/chest/neck/left_shoulder/left_elbow/left_hand/left_thumb_base/left_thumb_mid
+        weight: 1
+      - path: orc_controls/orc_control/transform1/orc_skel/waist/chest/neck/left_shoulder/left_elbow/left_hand/left_thumb_base/left_thumb_mid/left_thumb_tip
+        weight: 1
+      - path: orc_controls/orc_control/transform1/orc_skel/waist/chest/neck/right_shoulder
+        weight: 1
+      - path: orc_controls/orc_control/transform1/orc_skel/waist/chest/neck/right_shoulder/right_elbow
+        weight: 1
+      - path: orc_controls/orc_control/transform1/orc_skel/waist/chest/neck/right_shoulder/right_elbow/right_hand
+        weight: 1
+      - path: orc_controls/orc_control/transform1/orc_skel/waist/chest/neck/right_shoulder/right_elbow/right_hand/orc_sword
+        weight: 1
+      - path: orc_controls/orc_control/transform1/orc_skel/waist/chest/neck/right_shoulder/right_elbow/right_hand/right_index_base
+        weight: 1
+      - path: orc_controls/orc_control/transform1/orc_skel/waist/chest/neck/right_shoulder/right_elbow/right_hand/right_index_base/right_index_mid
+        weight: 1
+      - path: orc_controls/orc_control/transform1/orc_skel/waist/chest/neck/right_shoulder/right_elbow/right_hand/right_index_base/right_index_mid/right_index_tip
+        weight: 1
+      - path: orc_controls/orc_control/transform1/orc_skel/waist/chest/neck/right_shoulder/right_elbow/right_hand/right_middle_base
+        weight: 1
+      - path: orc_controls/orc_control/transform1/orc_skel/waist/chest/neck/right_shoulder/right_elbow/right_hand/right_middle_base/right_middle_mid
+        weight: 1
+      - path: orc_controls/orc_control/transform1/orc_skel/waist/chest/neck/right_shoulder/right_elbow/right_hand/right_middle_base/right_middle_mid/right_middle_tip
+        weight: 1
+      - path: orc_controls/orc_control/transform1/orc_skel/waist/chest/neck/right_shoulder/right_elbow/right_hand/right_pinky_base
+        weight: 1
+      - path: orc_controls/orc_control/transform1/orc_skel/waist/chest/neck/right_shoulder/right_elbow/right_hand/right_pinky_base/right_pinky_mid
+        weight: 1
+      - path: orc_controls/orc_control/transform1/orc_skel/waist/chest/neck/right_shoulder/right_elbow/right_hand/right_pinky_base/right_pinky_mid/right_pinky_tip
+        weight: 1
+      - path: orc_controls/orc_control/transform1/orc_skel/waist/chest/neck/right_shoulder/right_elbow/right_hand/right_ring_base
+        weight: 1
+      - path: orc_controls/orc_control/transform1/orc_skel/waist/chest/neck/right_shoulder/right_elbow/right_hand/right_ring_base/right_ring_mid
+        weight: 1
+      - path: orc_controls/orc_control/transform1/orc_skel/waist/chest/neck/right_shoulder/right_elbow/right_hand/right_ring_base/right_ring_mid/right_ring_tip
+        weight: 1
+      - path: orc_controls/orc_control/transform1/orc_skel/waist/chest/neck/right_shoulder/right_elbow/right_hand/right_thub_base
+        weight: 1
+      - path: orc_controls/orc_control/transform1/orc_skel/waist/chest/neck/right_shoulder/right_elbow/right_hand/right_thub_base/right_thumb_mid
+        weight: 1
+      - path: orc_controls/orc_control/transform1/orc_skel/waist/chest/neck/right_shoulder/right_elbow/right_hand/right_thub_base/right_thumb_mid/right_thumb_tip
+        weight: 1
+      - path: orc_controls/right_arm_control
+        weight: 1
+      - path: orc_controls/right_arm_control/rigth_arm_IK
+        weight: 1
+      - path: orc_controls/right_leg_control
+        weight: 1
+      - path: orc_controls/right_leg_control/right_leg_IK
+        weight: 1
+      maskType: 0
+      maskSource: {instanceID: 0}
+    - serializedVersion: 16
+      name: RunToStand
+      takeName: Take 001
+      firstFrame: 61
+      lastFrame: 72
+      wrapMode: 1
+      orientationOffsetY: 0
+      level: 0
+      cycleOffset: 0
+      loop: 0
+      loopTime: 0
+      loopBlend: 0
+      loopBlendOrientation: 0
+      loopBlendPositionY: 0
+      loopBlendPositionXZ: 0
+      keepOriginalOrientation: 0
+      keepOriginalPositionY: 1
+      keepOriginalPositionXZ: 0
+      heightFromFeet: 0
+      mirror: 0
+      bodyMask: 01000000010000000100000001000000010000000100000001000000010000000100000001000000010000000100000001000000
+      curves: []
+      events: []
+      transformMask:
+      - path: 
+        weight: 1
+      - path: orc
+        weight: 1
+      - path: orc_controls
+        weight: 1
+      - path: orc_controls/left_arm_control
+        weight: 1
+      - path: orc_controls/left_arm_control/left_arm_IK
+        weight: 1
+      - path: orc_controls/left_leg_control
+        weight: 1
+      - path: orc_controls/left_leg_control/left_leg_IK
+        weight: 1
+      - path: orc_controls/orc_control
+        weight: 1
+      - path: orc_controls/orc_control/transform1
+        weight: 1
+      - path: orc_controls/orc_control/transform1/orc_skel
+        weight: 1
+      - path: orc_controls/orc_control/transform1/orc_skel/left_hip
+        weight: 1
+      - path: orc_controls/orc_control/transform1/orc_skel/left_hip/left_knee
+        weight: 1
+      - path: orc_controls/orc_control/transform1/orc_skel/left_hip/left_knee/left_toe
+        weight: 1
+      - path: orc_controls/orc_control/transform1/orc_skel/left_hip/left_knee/left_toe/left_toe
+          1
+        weight: 1
+      - path: orc_controls/orc_control/transform1/orc_skel/right_hip
+        weight: 1
+      - path: orc_controls/orc_control/transform1/orc_skel/right_hip/right_knee
+        weight: 1
+      - path: orc_controls/orc_control/transform1/orc_skel/right_hip/right_knee/right_foot
+        weight: 1
+      - path: orc_controls/orc_control/transform1/orc_skel/right_hip/right_knee/right_foot/right_toe
+        weight: 1
+      - path: orc_controls/orc_control/transform1/orc_skel/waist
+        weight: 1
+      - path: orc_controls/orc_control/transform1/orc_skel/waist/chest
+        weight: 1
+      - path: orc_controls/orc_control/transform1/orc_skel/waist/chest/neck
+        weight: 1
+      - path: orc_controls/orc_control/transform1/orc_skel/waist/chest/neck/head
+        weight: 1
+      - path: orc_controls/orc_control/transform1/orc_skel/waist/chest/neck/left_shoulder
+        weight: 1
+      - path: orc_controls/orc_control/transform1/orc_skel/waist/chest/neck/left_shoulder/left_elbow
+        weight: 1
+      - path: orc_controls/orc_control/transform1/orc_skel/waist/chest/neck/left_shoulder/left_elbow/left_hand
+        weight: 1
+      - path: orc_controls/orc_control/transform1/orc_skel/waist/chest/neck/left_shoulder/left_elbow/left_hand/left_index_base
+        weight: 1
+      - path: orc_controls/orc_control/transform1/orc_skel/waist/chest/neck/left_shoulder/left_elbow/left_hand/left_index_base/left_index_mid
+        weight: 1
+      - path: orc_controls/orc_control/transform1/orc_skel/waist/chest/neck/left_shoulder/left_elbow/left_hand/left_index_base/left_index_mid/left_index_tip
+        weight: 1
+      - path: orc_controls/orc_control/transform1/orc_skel/waist/chest/neck/left_shoulder/left_elbow/left_hand/left_middle_base
+        weight: 1
+      - path: orc_controls/orc_control/transform1/orc_skel/waist/chest/neck/left_shoulder/left_elbow/left_hand/left_middle_base/left_middle_mid
+        weight: 1
+      - path: orc_controls/orc_control/transform1/orc_skel/waist/chest/neck/left_shoulder/left_elbow/left_hand/left_middle_base/left_middle_mid/left_middle_tip
+        weight: 1
+      - path: orc_controls/orc_control/transform1/orc_skel/waist/chest/neck/left_shoulder/left_elbow/left_hand/left_pinky_base
+        weight: 1
+      - path: orc_controls/orc_control/transform1/orc_skel/waist/chest/neck/left_shoulder/left_elbow/left_hand/left_pinky_base/left_pinky_mid
+        weight: 1
+      - path: orc_controls/orc_control/transform1/orc_skel/waist/chest/neck/left_shoulder/left_elbow/left_hand/left_pinky_base/left_pinky_mid/left_pinky_tip
+        weight: 1
+      - path: orc_controls/orc_control/transform1/orc_skel/waist/chest/neck/left_shoulder/left_elbow/left_hand/left_ring_base
+        weight: 1
+      - path: orc_controls/orc_control/transform1/orc_skel/waist/chest/neck/left_shoulder/left_elbow/left_hand/left_ring_base/left_ring_mid
+        weight: 1
+      - path: orc_controls/orc_control/transform1/orc_skel/waist/chest/neck/left_shoulder/left_elbow/left_hand/left_ring_base/left_ring_mid/left_ring_tip
+        weight: 1
+      - path: orc_controls/orc_control/transform1/orc_skel/waist/chest/neck/left_shoulder/left_elbow/left_hand/left_thumb_base
+        weight: 1
+      - path: orc_controls/orc_control/transform1/orc_skel/waist/chest/neck/left_shoulder/left_elbow/left_hand/left_thumb_base/left_thumb_mid
+        weight: 1
+      - path: orc_controls/orc_control/transform1/orc_skel/waist/chest/neck/left_shoulder/left_elbow/left_hand/left_thumb_base/left_thumb_mid/left_thumb_tip
+        weight: 1
+      - path: orc_controls/orc_control/transform1/orc_skel/waist/chest/neck/right_shoulder
+        weight: 1
+      - path: orc_controls/orc_control/transform1/orc_skel/waist/chest/neck/right_shoulder/right_elbow
+        weight: 1
+      - path: orc_controls/orc_control/transform1/orc_skel/waist/chest/neck/right_shoulder/right_elbow/right_hand
+        weight: 1
+      - path: orc_controls/orc_control/transform1/orc_skel/waist/chest/neck/right_shoulder/right_elbow/right_hand/orc_sword
+        weight: 1
+      - path: orc_controls/orc_control/transform1/orc_skel/waist/chest/neck/right_shoulder/right_elbow/right_hand/right_index_base
+        weight: 1
+      - path: orc_controls/orc_control/transform1/orc_skel/waist/chest/neck/right_shoulder/right_elbow/right_hand/right_index_base/right_index_mid
+        weight: 1
+      - path: orc_controls/orc_control/transform1/orc_skel/waist/chest/neck/right_shoulder/right_elbow/right_hand/right_index_base/right_index_mid/right_index_tip
+        weight: 1
+      - path: orc_controls/orc_control/transform1/orc_skel/waist/chest/neck/right_shoulder/right_elbow/right_hand/right_middle_base
+        weight: 1
+      - path: orc_controls/orc_control/transform1/orc_skel/waist/chest/neck/right_shoulder/right_elbow/right_hand/right_middle_base/right_middle_mid
+        weight: 1
+      - path: orc_controls/orc_control/transform1/orc_skel/waist/chest/neck/right_shoulder/right_elbow/right_hand/right_middle_base/right_middle_mid/right_middle_tip
+        weight: 1
+      - path: orc_controls/orc_control/transform1/orc_skel/waist/chest/neck/right_shoulder/right_elbow/right_hand/right_pinky_base
+        weight: 1
+      - path: orc_controls/orc_control/transform1/orc_skel/waist/chest/neck/right_shoulder/right_elbow/right_hand/right_pinky_base/right_pinky_mid
+        weight: 1
+      - path: orc_controls/orc_control/transform1/orc_skel/waist/chest/neck/right_shoulder/right_elbow/right_hand/right_pinky_base/right_pinky_mid/right_pinky_tip
+        weight: 1
+      - path: orc_controls/orc_control/transform1/orc_skel/waist/chest/neck/right_shoulder/right_elbow/right_hand/right_ring_base
+        weight: 1
+      - path: orc_controls/orc_control/transform1/orc_skel/waist/chest/neck/right_shoulder/right_elbow/right_hand/right_ring_base/right_ring_mid
+        weight: 1
+      - path: orc_controls/orc_control/transform1/orc_skel/waist/chest/neck/right_shoulder/right_elbow/right_hand/right_ring_base/right_ring_mid/right_ring_tip
+        weight: 1
+      - path: orc_controls/orc_control/transform1/orc_skel/waist/chest/neck/right_shoulder/right_elbow/right_hand/right_thub_base
+        weight: 1
+      - path: orc_controls/orc_control/transform1/orc_skel/waist/chest/neck/right_shoulder/right_elbow/right_hand/right_thub_base/right_thumb_mid
+        weight: 1
+      - path: orc_controls/orc_control/transform1/orc_skel/waist/chest/neck/right_shoulder/right_elbow/right_hand/right_thub_base/right_thumb_mid/right_thumb_tip
+        weight: 1
+      - path: orc_controls/right_arm_control
+        weight: 1
+      - path: orc_controls/right_arm_control/rigth_arm_IK
+        weight: 1
+      - path: orc_controls/right_leg_control
+        weight: 1
+      - path: orc_controls/right_leg_control/right_leg_IK
+        weight: 1
+      maskType: 0
+      maskSource: {instanceID: 0}
+    - serializedVersion: 16
+      name: Strike
+      takeName: Take 001
+      firstFrame: 100
+      lastFrame: 128
+      wrapMode: 0
+      orientationOffsetY: 0
+      level: 0
+      cycleOffset: 0
+      loop: 0
+      loopTime: 0
+      loopBlend: 0
+      loopBlendOrientation: 0
+      loopBlendPositionY: 0
+      loopBlendPositionXZ: 0
+      keepOriginalOrientation: 0
+      keepOriginalPositionY: 1
+      keepOriginalPositionXZ: 0
+      heightFromFeet: 0
+      mirror: 0
+      bodyMask: 01000000010000000100000001000000010000000100000001000000010000000100000001000000010000000100000001000000
+      curves: []
+      events: []
+      transformMask:
+      - path: 
+        weight: 1
+      - path: orc
+        weight: 1
+      - path: orc_controls
+        weight: 1
+      - path: orc_controls/left_arm_control
+        weight: 1
+      - path: orc_controls/left_arm_control/left_arm_IK
+        weight: 1
+      - path: orc_controls/left_leg_control
+        weight: 1
+      - path: orc_controls/left_leg_control/left_leg_IK
+        weight: 1
+      - path: orc_controls/orc_control
+        weight: 1
+      - path: orc_controls/orc_control/transform1
+        weight: 1
+      - path: orc_controls/orc_control/transform1/orc_skel
+        weight: 1
+      - path: orc_controls/orc_control/transform1/orc_skel/left_hip
+        weight: 1
+      - path: orc_controls/orc_control/transform1/orc_skel/left_hip/left_knee
+        weight: 1
+      - path: orc_controls/orc_control/transform1/orc_skel/left_hip/left_knee/left_toe
+        weight: 1
+      - path: orc_controls/orc_control/transform1/orc_skel/left_hip/left_knee/left_toe/left_toe
+          1
+        weight: 1
+      - path: orc_controls/orc_control/transform1/orc_skel/right_hip
+        weight: 1
+      - path: orc_controls/orc_control/transform1/orc_skel/right_hip/right_knee
+        weight: 1
+      - path: orc_controls/orc_control/transform1/orc_skel/right_hip/right_knee/right_foot
+        weight: 1
+      - path: orc_controls/orc_control/transform1/orc_skel/right_hip/right_knee/right_foot/right_toe
+        weight: 1
+      - path: orc_controls/orc_control/transform1/orc_skel/waist
+        weight: 1
+      - path: orc_controls/orc_control/transform1/orc_skel/waist/chest
+        weight: 1
+      - path: orc_controls/orc_control/transform1/orc_skel/waist/chest/neck
+        weight: 1
+      - path: orc_controls/orc_control/transform1/orc_skel/waist/chest/neck/head
+        weight: 1
+      - path: orc_controls/orc_control/transform1/orc_skel/waist/chest/neck/left_shoulder
+        weight: 1
+      - path: orc_controls/orc_control/transform1/orc_skel/waist/chest/neck/left_shoulder/left_elbow
+        weight: 1
+      - path: orc_controls/orc_control/transform1/orc_skel/waist/chest/neck/left_shoulder/left_elbow/left_hand
+        weight: 1
+      - path: orc_controls/orc_control/transform1/orc_skel/waist/chest/neck/left_shoulder/left_elbow/left_hand/left_index_base
+        weight: 1
+      - path: orc_controls/orc_control/transform1/orc_skel/waist/chest/neck/left_shoulder/left_elbow/left_hand/left_index_base/left_index_mid
+        weight: 1
+      - path: orc_controls/orc_control/transform1/orc_skel/waist/chest/neck/left_shoulder/left_elbow/left_hand/left_index_base/left_index_mid/left_index_tip
+        weight: 1
+      - path: orc_controls/orc_control/transform1/orc_skel/waist/chest/neck/left_shoulder/left_elbow/left_hand/left_middle_base
+        weight: 1
+      - path: orc_controls/orc_control/transform1/orc_skel/waist/chest/neck/left_shoulder/left_elbow/left_hand/left_middle_base/left_middle_mid
+        weight: 1
+      - path: orc_controls/orc_control/transform1/orc_skel/waist/chest/neck/left_shoulder/left_elbow/left_hand/left_middle_base/left_middle_mid/left_middle_tip
+        weight: 1
+      - path: orc_controls/orc_control/transform1/orc_skel/waist/chest/neck/left_shoulder/left_elbow/left_hand/left_pinky_base
+        weight: 1
+      - path: orc_controls/orc_control/transform1/orc_skel/waist/chest/neck/left_shoulder/left_elbow/left_hand/left_pinky_base/left_pinky_mid
+        weight: 1
+      - path: orc_controls/orc_control/transform1/orc_skel/waist/chest/neck/left_shoulder/left_elbow/left_hand/left_pinky_base/left_pinky_mid/left_pinky_tip
+        weight: 1
+      - path: orc_controls/orc_control/transform1/orc_skel/waist/chest/neck/left_shoulder/left_elbow/left_hand/left_ring_base
+        weight: 1
+      - path: orc_controls/orc_control/transform1/orc_skel/waist/chest/neck/left_shoulder/left_elbow/left_hand/left_ring_base/left_ring_mid
+        weight: 1
+      - path: orc_controls/orc_control/transform1/orc_skel/waist/chest/neck/left_shoulder/left_elbow/left_hand/left_ring_base/left_ring_mid/left_ring_tip
+        weight: 1
+      - path: orc_controls/orc_control/transform1/orc_skel/waist/chest/neck/left_shoulder/left_elbow/left_hand/left_thumb_base
+        weight: 1
+      - path: orc_controls/orc_control/transform1/orc_skel/waist/chest/neck/left_shoulder/left_elbow/left_hand/left_thumb_base/left_thumb_mid
+        weight: 1
+      - path: orc_controls/orc_control/transform1/orc_skel/waist/chest/neck/left_shoulder/left_elbow/left_hand/left_thumb_base/left_thumb_mid/left_thumb_tip
+        weight: 1
+      - path: orc_controls/orc_control/transform1/orc_skel/waist/chest/neck/right_shoulder
+        weight: 1
+      - path: orc_controls/orc_control/transform1/orc_skel/waist/chest/neck/right_shoulder/right_elbow
+        weight: 1
+      - path: orc_controls/orc_control/transform1/orc_skel/waist/chest/neck/right_shoulder/right_elbow/right_hand
+        weight: 1
+      - path: orc_controls/orc_control/transform1/orc_skel/waist/chest/neck/right_shoulder/right_elbow/right_hand/orc_sword
+        weight: 1
+      - path: orc_controls/orc_control/transform1/orc_skel/waist/chest/neck/right_shoulder/right_elbow/right_hand/right_index_base
+        weight: 1
+      - path: orc_controls/orc_control/transform1/orc_skel/waist/chest/neck/right_shoulder/right_elbow/right_hand/right_index_base/right_index_mid
+        weight: 1
+      - path: orc_controls/orc_control/transform1/orc_skel/waist/chest/neck/right_shoulder/right_elbow/right_hand/right_index_base/right_index_mid/right_index_tip
+        weight: 1
+      - path: orc_controls/orc_control/transform1/orc_skel/waist/chest/neck/right_shoulder/right_elbow/right_hand/right_middle_base
+        weight: 1
+      - path: orc_controls/orc_control/transform1/orc_skel/waist/chest/neck/right_shoulder/right_elbow/right_hand/right_middle_base/right_middle_mid
+        weight: 1
+      - path: orc_controls/orc_control/transform1/orc_skel/waist/chest/neck/right_shoulder/right_elbow/right_hand/right_middle_base/right_middle_mid/right_middle_tip
+        weight: 1
+      - path: orc_controls/orc_control/transform1/orc_skel/waist/chest/neck/right_shoulder/right_elbow/right_hand/right_pinky_base
+        weight: 1
+      - path: orc_controls/orc_control/transform1/orc_skel/waist/chest/neck/right_shoulder/right_elbow/right_hand/right_pinky_base/right_pinky_mid
+        weight: 1
+      - path: orc_controls/orc_control/transform1/orc_skel/waist/chest/neck/right_shoulder/right_elbow/right_hand/right_pinky_base/right_pinky_mid/right_pinky_tip
+        weight: 1
+      - path: orc_controls/orc_control/transform1/orc_skel/waist/chest/neck/right_shoulder/right_elbow/right_hand/right_ring_base
+        weight: 1
+      - path: orc_controls/orc_control/transform1/orc_skel/waist/chest/neck/right_shoulder/right_elbow/right_hand/right_ring_base/right_ring_mid
+        weight: 1
+      - path: orc_controls/orc_control/transform1/orc_skel/waist/chest/neck/right_shoulder/right_elbow/right_hand/right_ring_base/right_ring_mid/right_ring_tip
+        weight: 1
+      - path: orc_controls/orc_control/transform1/orc_skel/waist/chest/neck/right_shoulder/right_elbow/right_hand/right_thub_base
+        weight: 1
+      - path: orc_controls/orc_control/transform1/orc_skel/waist/chest/neck/right_shoulder/right_elbow/right_hand/right_thub_base/right_thumb_mid
+        weight: 1
+      - path: orc_controls/orc_control/transform1/orc_skel/waist/chest/neck/right_shoulder/right_elbow/right_hand/right_thub_base/right_thumb_mid/right_thumb_tip
+        weight: 1
+      - path: orc_controls/right_arm_control
+        weight: 1
+      - path: orc_controls/right_arm_control/rigth_arm_IK
+        weight: 1
+      - path: orc_controls/right_leg_control
+        weight: 1
+      - path: orc_controls/right_leg_control/right_leg_IK
+        weight: 1
+      maskType: 0
+      maskSource: {instanceID: 0}
+    - serializedVersion: 16
+      name: StandToFlail
+      takeName: Take 001
+      firstFrame: 150
+      lastFrame: 163
+      wrapMode: 1
+      orientationOffsetY: 0
+      level: 0
+      cycleOffset: 0
+      loop: 0
+      loopTime: 0
+      loopBlend: 0
+      loopBlendOrientation: 0
+      loopBlendPositionY: 0
+      loopBlendPositionXZ: 0
+      keepOriginalOrientation: 0
+      keepOriginalPositionY: 1
+      keepOriginalPositionXZ: 0
+      heightFromFeet: 0
+      mirror: 0
+      bodyMask: 01000000010000000100000001000000010000000100000001000000010000000100000001000000010000000100000001000000
+      curves: []
+      events: []
+      transformMask:
+      - path: 
+        weight: 1
+      - path: orc
+        weight: 1
+      - path: orc_controls
+        weight: 1
+      - path: orc_controls/left_arm_control
+        weight: 1
+      - path: orc_controls/left_arm_control/left_arm_IK
+        weight: 1
+      - path: orc_controls/left_leg_control
+        weight: 1
+      - path: orc_controls/left_leg_control/left_leg_IK
+        weight: 1
+      - path: orc_controls/orc_control
+        weight: 1
+      - path: orc_controls/orc_control/transform1
+        weight: 1
+      - path: orc_controls/orc_control/transform1/orc_skel
+        weight: 1
+      - path: orc_controls/orc_control/transform1/orc_skel/left_hip
+        weight: 1
+      - path: orc_controls/orc_control/transform1/orc_skel/left_hip/left_knee
+        weight: 1
+      - path: orc_controls/orc_control/transform1/orc_skel/left_hip/left_knee/left_toe
+        weight: 1
+      - path: orc_controls/orc_control/transform1/orc_skel/left_hip/left_knee/left_toe/left_toe
+          1
+        weight: 1
+      - path: orc_controls/orc_control/transform1/orc_skel/right_hip
+        weight: 1
+      - path: orc_controls/orc_control/transform1/orc_skel/right_hip/right_knee
+        weight: 1
+      - path: orc_controls/orc_control/transform1/orc_skel/right_hip/right_knee/right_foot
+        weight: 1
+      - path: orc_controls/orc_control/transform1/orc_skel/right_hip/right_knee/right_foot/right_toe
+        weight: 1
+      - path: orc_controls/orc_control/transform1/orc_skel/waist
+        weight: 1
+      - path: orc_controls/orc_control/transform1/orc_skel/waist/chest
+        weight: 1
+      - path: orc_controls/orc_control/transform1/orc_skel/waist/chest/neck
+        weight: 1
+      - path: orc_controls/orc_control/transform1/orc_skel/waist/chest/neck/head
+        weight: 1
+      - path: orc_controls/orc_control/transform1/orc_skel/waist/chest/neck/left_shoulder
+        weight: 1
+      - path: orc_controls/orc_control/transform1/orc_skel/waist/chest/neck/left_shoulder/left_elbow
+        weight: 1
+      - path: orc_controls/orc_control/transform1/orc_skel/waist/chest/neck/left_shoulder/left_elbow/left_hand
+        weight: 1
+      - path: orc_controls/orc_control/transform1/orc_skel/waist/chest/neck/left_shoulder/left_elbow/left_hand/left_index_base
+        weight: 1
+      - path: orc_controls/orc_control/transform1/orc_skel/waist/chest/neck/left_shoulder/left_elbow/left_hand/left_index_base/left_index_mid
+        weight: 1
+      - path: orc_controls/orc_control/transform1/orc_skel/waist/chest/neck/left_shoulder/left_elbow/left_hand/left_index_base/left_index_mid/left_index_tip
+        weight: 1
+      - path: orc_controls/orc_control/transform1/orc_skel/waist/chest/neck/left_shoulder/left_elbow/left_hand/left_middle_base
+        weight: 1
+      - path: orc_controls/orc_control/transform1/orc_skel/waist/chest/neck/left_shoulder/left_elbow/left_hand/left_middle_base/left_middle_mid
+        weight: 1
+      - path: orc_controls/orc_control/transform1/orc_skel/waist/chest/neck/left_shoulder/left_elbow/left_hand/left_middle_base/left_middle_mid/left_middle_tip
+        weight: 1
+      - path: orc_controls/orc_control/transform1/orc_skel/waist/chest/neck/left_shoulder/left_elbow/left_hand/left_pinky_base
+        weight: 1
+      - path: orc_controls/orc_control/transform1/orc_skel/waist/chest/neck/left_shoulder/left_elbow/left_hand/left_pinky_base/left_pinky_mid
+        weight: 1
+      - path: orc_controls/orc_control/transform1/orc_skel/waist/chest/neck/left_shoulder/left_elbow/left_hand/left_pinky_base/left_pinky_mid/left_pinky_tip
+        weight: 1
+      - path: orc_controls/orc_control/transform1/orc_skel/waist/chest/neck/left_shoulder/left_elbow/left_hand/left_ring_base
+        weight: 1
+      - path: orc_controls/orc_control/transform1/orc_skel/waist/chest/neck/left_shoulder/left_elbow/left_hand/left_ring_base/left_ring_mid
+        weight: 1
+      - path: orc_controls/orc_control/transform1/orc_skel/waist/chest/neck/left_shoulder/left_elbow/left_hand/left_ring_base/left_ring_mid/left_ring_tip
+        weight: 1
+      - path: orc_controls/orc_control/transform1/orc_skel/waist/chest/neck/left_shoulder/left_elbow/left_hand/left_thumb_base
+        weight: 1
+      - path: orc_controls/orc_control/transform1/orc_skel/waist/chest/neck/left_shoulder/left_elbow/left_hand/left_thumb_base/left_thumb_mid
+        weight: 1
+      - path: orc_controls/orc_control/transform1/orc_skel/waist/chest/neck/left_shoulder/left_elbow/left_hand/left_thumb_base/left_thumb_mid/left_thumb_tip
+        weight: 1
+      - path: orc_controls/orc_control/transform1/orc_skel/waist/chest/neck/right_shoulder
+        weight: 1
+      - path: orc_controls/orc_control/transform1/orc_skel/waist/chest/neck/right_shoulder/right_elbow
+        weight: 1
+      - path: orc_controls/orc_control/transform1/orc_skel/waist/chest/neck/right_shoulder/right_elbow/right_hand
+        weight: 1
+      - path: orc_controls/orc_control/transform1/orc_skel/waist/chest/neck/right_shoulder/right_elbow/right_hand/orc_sword
+        weight: 1
+      - path: orc_controls/orc_control/transform1/orc_skel/waist/chest/neck/right_shoulder/right_elbow/right_hand/right_index_base
+        weight: 1
+      - path: orc_controls/orc_control/transform1/orc_skel/waist/chest/neck/right_shoulder/right_elbow/right_hand/right_index_base/right_index_mid
+        weight: 1
+      - path: orc_controls/orc_control/transform1/orc_skel/waist/chest/neck/right_shoulder/right_elbow/right_hand/right_index_base/right_index_mid/right_index_tip
+        weight: 1
+      - path: orc_controls/orc_control/transform1/orc_skel/waist/chest/neck/right_shoulder/right_elbow/right_hand/right_middle_base
+        weight: 1
+      - path: orc_controls/orc_control/transform1/orc_skel/waist/chest/neck/right_shoulder/right_elbow/right_hand/right_middle_base/right_middle_mid
+        weight: 1
+      - path: orc_controls/orc_control/transform1/orc_skel/waist/chest/neck/right_shoulder/right_elbow/right_hand/right_middle_base/right_middle_mid/right_middle_tip
+        weight: 1
+      - path: orc_controls/orc_control/transform1/orc_skel/waist/chest/neck/right_shoulder/right_elbow/right_hand/right_pinky_base
+        weight: 1
+      - path: orc_controls/orc_control/transform1/orc_skel/waist/chest/neck/right_shoulder/right_elbow/right_hand/right_pinky_base/right_pinky_mid
+        weight: 1
+      - path: orc_controls/orc_control/transform1/orc_skel/waist/chest/neck/right_shoulder/right_elbow/right_hand/right_pinky_base/right_pinky_mid/right_pinky_tip
+        weight: 1
+      - path: orc_controls/orc_control/transform1/orc_skel/waist/chest/neck/right_shoulder/right_elbow/right_hand/right_ring_base
+        weight: 1
+      - path: orc_controls/orc_control/transform1/orc_skel/waist/chest/neck/right_shoulder/right_elbow/right_hand/right_ring_base/right_ring_mid
+        weight: 1
+      - path: orc_controls/orc_control/transform1/orc_skel/waist/chest/neck/right_shoulder/right_elbow/right_hand/right_ring_base/right_ring_mid/right_ring_tip
+        weight: 1
+      - path: orc_controls/orc_control/transform1/orc_skel/waist/chest/neck/right_shoulder/right_elbow/right_hand/right_thub_base
+        weight: 1
+      - path: orc_controls/orc_control/transform1/orc_skel/waist/chest/neck/right_shoulder/right_elbow/right_hand/right_thub_base/right_thumb_mid
+        weight: 1
+      - path: orc_controls/orc_control/transform1/orc_skel/waist/chest/neck/right_shoulder/right_elbow/right_hand/right_thub_base/right_thumb_mid/right_thumb_tip
+        weight: 1
+      - path: orc_controls/right_arm_control
+        weight: 1
+      - path: orc_controls/right_arm_control/rigth_arm_IK
+        weight: 1
+      - path: orc_controls/right_leg_control
+        weight: 1
+      - path: orc_controls/right_leg_control/right_leg_IK
+        weight: 1
+      maskType: 0
+      maskSource: {instanceID: 0}
+    - serializedVersion: 16
+      name: Flail
+      takeName: Take 001
+      firstFrame: 164
+      lastFrame: 187
+      wrapMode: 2
+      orientationOffsetY: 0
+      level: 0
+      cycleOffset: 0
+      loop: 0
+      loopTime: 0
+      loopBlend: 0
+      loopBlendOrientation: 0
+      loopBlendPositionY: 0
+      loopBlendPositionXZ: 0
+      keepOriginalOrientation: 0
+      keepOriginalPositionY: 1
+      keepOriginalPositionXZ: 0
+      heightFromFeet: 0
+      mirror: 0
+      bodyMask: 01000000010000000100000001000000010000000100000001000000010000000100000001000000010000000100000001000000
+      curves: []
+      events: []
+      transformMask:
+      - path: 
+        weight: 1
+      - path: orc
+        weight: 1
+      - path: orc_controls
+        weight: 1
+      - path: orc_controls/left_arm_control
+        weight: 1
+      - path: orc_controls/left_arm_control/left_arm_IK
+        weight: 1
+      - path: orc_controls/left_leg_control
+        weight: 1
+      - path: orc_controls/left_leg_control/left_leg_IK
+        weight: 1
+      - path: orc_controls/orc_control
+        weight: 1
+      - path: orc_controls/orc_control/transform1
+        weight: 1
+      - path: orc_controls/orc_control/transform1/orc_skel
+        weight: 1
+      - path: orc_controls/orc_control/transform1/orc_skel/left_hip
+        weight: 1
+      - path: orc_controls/orc_control/transform1/orc_skel/left_hip/left_knee
+        weight: 1
+      - path: orc_controls/orc_control/transform1/orc_skel/left_hip/left_knee/left_toe
+        weight: 1
+      - path: orc_controls/orc_control/transform1/orc_skel/left_hip/left_knee/left_toe/left_toe
+          1
+        weight: 1
+      - path: orc_controls/orc_control/transform1/orc_skel/right_hip
+        weight: 1
+      - path: orc_controls/orc_control/transform1/orc_skel/right_hip/right_knee
+        weight: 1
+      - path: orc_controls/orc_control/transform1/orc_skel/right_hip/right_knee/right_foot
+        weight: 1
+      - path: orc_controls/orc_control/transform1/orc_skel/right_hip/right_knee/right_foot/right_toe
+        weight: 1
+      - path: orc_controls/orc_control/transform1/orc_skel/waist
+        weight: 1
+      - path: orc_controls/orc_control/transform1/orc_skel/waist/chest
+        weight: 1
+      - path: orc_controls/orc_control/transform1/orc_skel/waist/chest/neck
+        weight: 1
+      - path: orc_controls/orc_control/transform1/orc_skel/waist/chest/neck/head
+        weight: 1
+      - path: orc_controls/orc_control/transform1/orc_skel/waist/chest/neck/left_shoulder
+        weight: 1
+      - path: orc_controls/orc_control/transform1/orc_skel/waist/chest/neck/left_shoulder/left_elbow
+        weight: 1
+      - path: orc_controls/orc_control/transform1/orc_skel/waist/chest/neck/left_shoulder/left_elbow/left_hand
+        weight: 1
+      - path: orc_controls/orc_control/transform1/orc_skel/waist/chest/neck/left_shoulder/left_elbow/left_hand/left_index_base
+        weight: 1
+      - path: orc_controls/orc_control/transform1/orc_skel/waist/chest/neck/left_shoulder/left_elbow/left_hand/left_index_base/left_index_mid
+        weight: 1
+      - path: orc_controls/orc_control/transform1/orc_skel/waist/chest/neck/left_shoulder/left_elbow/left_hand/left_index_base/left_index_mid/left_index_tip
+        weight: 1
+      - path: orc_controls/orc_control/transform1/orc_skel/waist/chest/neck/left_shoulder/left_elbow/left_hand/left_middle_base
+        weight: 1
+      - path: orc_controls/orc_control/transform1/orc_skel/waist/chest/neck/left_shoulder/left_elbow/left_hand/left_middle_base/left_middle_mid
+        weight: 1
+      - path: orc_controls/orc_control/transform1/orc_skel/waist/chest/neck/left_shoulder/left_elbow/left_hand/left_middle_base/left_middle_mid/left_middle_tip
+        weight: 1
+      - path: orc_controls/orc_control/transform1/orc_skel/waist/chest/neck/left_shoulder/left_elbow/left_hand/left_pinky_base
+        weight: 1
+      - path: orc_controls/orc_control/transform1/orc_skel/waist/chest/neck/left_shoulder/left_elbow/left_hand/left_pinky_base/left_pinky_mid
+        weight: 1
+      - path: orc_controls/orc_control/transform1/orc_skel/waist/chest/neck/left_shoulder/left_elbow/left_hand/left_pinky_base/left_pinky_mid/left_pinky_tip
+        weight: 1
+      - path: orc_controls/orc_control/transform1/orc_skel/waist/chest/neck/left_shoulder/left_elbow/left_hand/left_ring_base
+        weight: 1
+      - path: orc_controls/orc_control/transform1/orc_skel/waist/chest/neck/left_shoulder/left_elbow/left_hand/left_ring_base/left_ring_mid
+        weight: 1
+      - path: orc_controls/orc_control/transform1/orc_skel/waist/chest/neck/left_shoulder/left_elbow/left_hand/left_ring_base/left_ring_mid/left_ring_tip
+        weight: 1
+      - path: orc_controls/orc_control/transform1/orc_skel/waist/chest/neck/left_shoulder/left_elbow/left_hand/left_thumb_base
+        weight: 1
+      - path: orc_controls/orc_control/transform1/orc_skel/waist/chest/neck/left_shoulder/left_elbow/left_hand/left_thumb_base/left_thumb_mid
+        weight: 1
+      - path: orc_controls/orc_control/transform1/orc_skel/waist/chest/neck/left_shoulder/left_elbow/left_hand/left_thumb_base/left_thumb_mid/left_thumb_tip
+        weight: 1
+      - path: orc_controls/orc_control/transform1/orc_skel/waist/chest/neck/right_shoulder
+        weight: 1
+      - path: orc_controls/orc_control/transform1/orc_skel/waist/chest/neck/right_shoulder/right_elbow
+        weight: 1
+      - path: orc_controls/orc_control/transform1/orc_skel/waist/chest/neck/right_shoulder/right_elbow/right_hand
+        weight: 1
+      - path: orc_controls/orc_control/transform1/orc_skel/waist/chest/neck/right_shoulder/right_elbow/right_hand/orc_sword
+        weight: 1
+      - path: orc_controls/orc_control/transform1/orc_skel/waist/chest/neck/right_shoulder/right_elbow/right_hand/right_index_base
+        weight: 1
+      - path: orc_controls/orc_control/transform1/orc_skel/waist/chest/neck/right_shoulder/right_elbow/right_hand/right_index_base/right_index_mid
+        weight: 1
+      - path: orc_controls/orc_control/transform1/orc_skel/waist/chest/neck/right_shoulder/right_elbow/right_hand/right_index_base/right_index_mid/right_index_tip
+        weight: 1
+      - path: orc_controls/orc_control/transform1/orc_skel/waist/chest/neck/right_shoulder/right_elbow/right_hand/right_middle_base
+        weight: 1
+      - path: orc_controls/orc_control/transform1/orc_skel/waist/chest/neck/right_shoulder/right_elbow/right_hand/right_middle_base/right_middle_mid
+        weight: 1
+      - path: orc_controls/orc_control/transform1/orc_skel/waist/chest/neck/right_shoulder/right_elbow/right_hand/right_middle_base/right_middle_mid/right_middle_tip
+        weight: 1
+      - path: orc_controls/orc_control/transform1/orc_skel/waist/chest/neck/right_shoulder/right_elbow/right_hand/right_pinky_base
+        weight: 1
+      - path: orc_controls/orc_control/transform1/orc_skel/waist/chest/neck/right_shoulder/right_elbow/right_hand/right_pinky_base/right_pinky_mid
+        weight: 1
+      - path: orc_controls/orc_control/transform1/orc_skel/waist/chest/neck/right_shoulder/right_elbow/right_hand/right_pinky_base/right_pinky_mid/right_pinky_tip
+        weight: 1
+      - path: orc_controls/orc_control/transform1/orc_skel/waist/chest/neck/right_shoulder/right_elbow/right_hand/right_ring_base
+        weight: 1
+      - path: orc_controls/orc_control/transform1/orc_skel/waist/chest/neck/right_shoulder/right_elbow/right_hand/right_ring_base/right_ring_mid
+        weight: 1
+      - path: orc_controls/orc_control/transform1/orc_skel/waist/chest/neck/right_shoulder/right_elbow/right_hand/right_ring_base/right_ring_mid/right_ring_tip
+        weight: 1
+      - path: orc_controls/orc_control/transform1/orc_skel/waist/chest/neck/right_shoulder/right_elbow/right_hand/right_thub_base
+        weight: 1
+      - path: orc_controls/orc_control/transform1/orc_skel/waist/chest/neck/right_shoulder/right_elbow/right_hand/right_thub_base/right_thumb_mid
+        weight: 1
+      - path: orc_controls/orc_control/transform1/orc_skel/waist/chest/neck/right_shoulder/right_elbow/right_hand/right_thub_base/right_thumb_mid/right_thumb_tip
+        weight: 1
+      - path: orc_controls/right_arm_control
+        weight: 1
+      - path: orc_controls/right_arm_control/rigth_arm_IK
+        weight: 1
+      - path: orc_controls/right_leg_control
+        weight: 1
+      - path: orc_controls/right_leg_control/right_leg_IK
+        weight: 1
+      maskType: 0
+      maskSource: {instanceID: 0}
+    - serializedVersion: 16
+      name: FlailToDead
+      takeName: Take 001
+      firstFrame: 188
+      lastFrame: 192
+      wrapMode: 1
+      orientationOffsetY: 0
+      level: 0
+      cycleOffset: 0
+      loop: 0
+      loopTime: 0
+      loopBlend: 0
+      loopBlendOrientation: 0
+      loopBlendPositionY: 0
+      loopBlendPositionXZ: 0
+      keepOriginalOrientation: 0
+      keepOriginalPositionY: 1
+      keepOriginalPositionXZ: 0
+      heightFromFeet: 0
+      mirror: 0
+      bodyMask: 01000000010000000100000001000000010000000100000001000000010000000100000001000000010000000100000001000000
+      curves: []
+      events: []
+      transformMask:
+      - path: 
+        weight: 1
+      - path: orc
+        weight: 1
+      - path: orc_controls
+        weight: 1
+      - path: orc_controls/left_arm_control
+        weight: 1
+      - path: orc_controls/left_arm_control/left_arm_IK
+        weight: 1
+      - path: orc_controls/left_leg_control
+        weight: 1
+      - path: orc_controls/left_leg_control/left_leg_IK
+        weight: 1
+      - path: orc_controls/orc_control
+        weight: 1
+      - path: orc_controls/orc_control/transform1
+        weight: 1
+      - path: orc_controls/orc_control/transform1/orc_skel
+        weight: 1
+      - path: orc_controls/orc_control/transform1/orc_skel/left_hip
+        weight: 1
+      - path: orc_controls/orc_control/transform1/orc_skel/left_hip/left_knee
+        weight: 1
+      - path: orc_controls/orc_control/transform1/orc_skel/left_hip/left_knee/left_toe
+        weight: 1
+      - path: orc_controls/orc_control/transform1/orc_skel/left_hip/left_knee/left_toe/left_toe
+          1
+        weight: 1
+      - path: orc_controls/orc_control/transform1/orc_skel/right_hip
+        weight: 1
+      - path: orc_controls/orc_control/transform1/orc_skel/right_hip/right_knee
+        weight: 1
+      - path: orc_controls/orc_control/transform1/orc_skel/right_hip/right_knee/right_foot
+        weight: 1
+      - path: orc_controls/orc_control/transform1/orc_skel/right_hip/right_knee/right_foot/right_toe
+        weight: 1
+      - path: orc_controls/orc_control/transform1/orc_skel/waist
+        weight: 1
+      - path: orc_controls/orc_control/transform1/orc_skel/waist/chest
+        weight: 1
+      - path: orc_controls/orc_control/transform1/orc_skel/waist/chest/neck
+        weight: 1
+      - path: orc_controls/orc_control/transform1/orc_skel/waist/chest/neck/head
+        weight: 1
+      - path: orc_controls/orc_control/transform1/orc_skel/waist/chest/neck/left_shoulder
+        weight: 1
+      - path: orc_controls/orc_control/transform1/orc_skel/waist/chest/neck/left_shoulder/left_elbow
+        weight: 1
+      - path: orc_controls/orc_control/transform1/orc_skel/waist/chest/neck/left_shoulder/left_elbow/left_hand
+        weight: 1
+      - path: orc_controls/orc_control/transform1/orc_skel/waist/chest/neck/left_shoulder/left_elbow/left_hand/left_index_base
+        weight: 1
+      - path: orc_controls/orc_control/transform1/orc_skel/waist/chest/neck/left_shoulder/left_elbow/left_hand/left_index_base/left_index_mid
+        weight: 1
+      - path: orc_controls/orc_control/transform1/orc_skel/waist/chest/neck/left_shoulder/left_elbow/left_hand/left_index_base/left_index_mid/left_index_tip
+        weight: 1
+      - path: orc_controls/orc_control/transform1/orc_skel/waist/chest/neck/left_shoulder/left_elbow/left_hand/left_middle_base
+        weight: 1
+      - path: orc_controls/orc_control/transform1/orc_skel/waist/chest/neck/left_shoulder/left_elbow/left_hand/left_middle_base/left_middle_mid
+        weight: 1
+      - path: orc_controls/orc_control/transform1/orc_skel/waist/chest/neck/left_shoulder/left_elbow/left_hand/left_middle_base/left_middle_mid/left_middle_tip
+        weight: 1
+      - path: orc_controls/orc_control/transform1/orc_skel/waist/chest/neck/left_shoulder/left_elbow/left_hand/left_pinky_base
+        weight: 1
+      - path: orc_controls/orc_control/transform1/orc_skel/waist/chest/neck/left_shoulder/left_elbow/left_hand/left_pinky_base/left_pinky_mid
+        weight: 1
+      - path: orc_controls/orc_control/transform1/orc_skel/waist/chest/neck/left_shoulder/left_elbow/left_hand/left_pinky_base/left_pinky_mid/left_pinky_tip
+        weight: 1
+      - path: orc_controls/orc_control/transform1/orc_skel/waist/chest/neck/left_shoulder/left_elbow/left_hand/left_ring_base
+        weight: 1
+      - path: orc_controls/orc_control/transform1/orc_skel/waist/chest/neck/left_shoulder/left_elbow/left_hand/left_ring_base/left_ring_mid
+        weight: 1
+      - path: orc_controls/orc_control/transform1/orc_skel/waist/chest/neck/left_shoulder/left_elbow/left_hand/left_ring_base/left_ring_mid/left_ring_tip
+        weight: 1
+      - path: orc_controls/orc_control/transform1/orc_skel/waist/chest/neck/left_shoulder/left_elbow/left_hand/left_thumb_base
+        weight: 1
+      - path: orc_controls/orc_control/transform1/orc_skel/waist/chest/neck/left_shoulder/left_elbow/left_hand/left_thumb_base/left_thumb_mid
+        weight: 1
+      - path: orc_controls/orc_control/transform1/orc_skel/waist/chest/neck/left_shoulder/left_elbow/left_hand/left_thumb_base/left_thumb_mid/left_thumb_tip
+        weight: 1
+      - path: orc_controls/orc_control/transform1/orc_skel/waist/chest/neck/right_shoulder
+        weight: 1
+      - path: orc_controls/orc_control/transform1/orc_skel/waist/chest/neck/right_shoulder/right_elbow
+        weight: 1
+      - path: orc_controls/orc_control/transform1/orc_skel/waist/chest/neck/right_shoulder/right_elbow/right_hand
+        weight: 1
+      - path: orc_controls/orc_control/transform1/orc_skel/waist/chest/neck/right_shoulder/right_elbow/right_hand/orc_sword
+        weight: 1
+      - path: orc_controls/orc_control/transform1/orc_skel/waist/chest/neck/right_shoulder/right_elbow/right_hand/right_index_base
+        weight: 1
+      - path: orc_controls/orc_control/transform1/orc_skel/waist/chest/neck/right_shoulder/right_elbow/right_hand/right_index_base/right_index_mid
+        weight: 1
+      - path: orc_controls/orc_control/transform1/orc_skel/waist/chest/neck/right_shoulder/right_elbow/right_hand/right_index_base/right_index_mid/right_index_tip
+        weight: 1
+      - path: orc_controls/orc_control/transform1/orc_skel/waist/chest/neck/right_shoulder/right_elbow/right_hand/right_middle_base
+        weight: 1
+      - path: orc_controls/orc_control/transform1/orc_skel/waist/chest/neck/right_shoulder/right_elbow/right_hand/right_middle_base/right_middle_mid
+        weight: 1
+      - path: orc_controls/orc_control/transform1/orc_skel/waist/chest/neck/right_shoulder/right_elbow/right_hand/right_middle_base/right_middle_mid/right_middle_tip
+        weight: 1
+      - path: orc_controls/orc_control/transform1/orc_skel/waist/chest/neck/right_shoulder/right_elbow/right_hand/right_pinky_base
+        weight: 1
+      - path: orc_controls/orc_control/transform1/orc_skel/waist/chest/neck/right_shoulder/right_elbow/right_hand/right_pinky_base/right_pinky_mid
+        weight: 1
+      - path: orc_controls/orc_control/transform1/orc_skel/waist/chest/neck/right_shoulder/right_elbow/right_hand/right_pinky_base/right_pinky_mid/right_pinky_tip
+        weight: 1
+      - path: orc_controls/orc_control/transform1/orc_skel/waist/chest/neck/right_shoulder/right_elbow/right_hand/right_ring_base
+        weight: 1
+      - path: orc_controls/orc_control/transform1/orc_skel/waist/chest/neck/right_shoulder/right_elbow/right_hand/right_ring_base/right_ring_mid
+        weight: 1
+      - path: orc_controls/orc_control/transform1/orc_skel/waist/chest/neck/right_shoulder/right_elbow/right_hand/right_ring_base/right_ring_mid/right_ring_tip
+        weight: 1
+      - path: orc_controls/orc_control/transform1/orc_skel/waist/chest/neck/right_shoulder/right_elbow/right_hand/right_thub_base
+        weight: 1
+      - path: orc_controls/orc_control/transform1/orc_skel/waist/chest/neck/right_shoulder/right_elbow/right_hand/right_thub_base/right_thumb_mid
+        weight: 1
+      - path: orc_controls/orc_control/transform1/orc_skel/waist/chest/neck/right_shoulder/right_elbow/right_hand/right_thub_base/right_thumb_mid/right_thumb_tip
+        weight: 1
+      - path: orc_controls/right_arm_control
+        weight: 1
+      - path: orc_controls/right_arm_control/rigth_arm_IK
+        weight: 1
+      - path: orc_controls/right_leg_control
+        weight: 1
+      - path: orc_controls/right_leg_control/right_leg_IK
+        weight: 1
+      maskType: 0
+      maskSource: {instanceID: 0}
+    - serializedVersion: 16
+      name: OrcDie
+      takeName: Take 001
+      firstFrame: 200
+      lastFrame: 223
+      wrapMode: 1
+      orientationOffsetY: 0
+      level: 0
+      cycleOffset: 0
+      loop: 0
+      loopTime: 0
+      loopBlend: 0
+      loopBlendOrientation: 0
+      loopBlendPositionY: 0
+      loopBlendPositionXZ: 0
+      keepOriginalOrientation: 0
+      keepOriginalPositionY: 1
+      keepOriginalPositionXZ: 0
+      heightFromFeet: 0
+      mirror: 0
+      bodyMask: 01000000010000000100000001000000010000000100000001000000010000000100000001000000010000000100000001000000
+      curves: []
+      events: []
+      transformMask:
+      - path: 
+        weight: 1
+      - path: orc
+        weight: 1
+      - path: orc_controls
+        weight: 1
+      - path: orc_controls/left_arm_control
+        weight: 1
+      - path: orc_controls/left_arm_control/left_arm_IK
+        weight: 1
+      - path: orc_controls/left_leg_control
+        weight: 1
+      - path: orc_controls/left_leg_control/left_leg_IK
+        weight: 1
+      - path: orc_controls/orc_control
+        weight: 1
+      - path: orc_controls/orc_control/transform1
+        weight: 1
+      - path: orc_controls/orc_control/transform1/orc_skel
+        weight: 1
+      - path: orc_controls/orc_control/transform1/orc_skel/left_hip
+        weight: 1
+      - path: orc_controls/orc_control/transform1/orc_skel/left_hip/left_knee
+        weight: 1
+      - path: orc_controls/orc_control/transform1/orc_skel/left_hip/left_knee/left_toe
+        weight: 1
+      - path: orc_controls/orc_control/transform1/orc_skel/left_hip/left_knee/left_toe/left_toe
+          1
+        weight: 1
+      - path: orc_controls/orc_control/transform1/orc_skel/right_hip
+        weight: 1
+      - path: orc_controls/orc_control/transform1/orc_skel/right_hip/right_knee
+        weight: 1
+      - path: orc_controls/orc_control/transform1/orc_skel/right_hip/right_knee/right_foot
+        weight: 1
+      - path: orc_controls/orc_control/transform1/orc_skel/right_hip/right_knee/right_foot/right_toe
+        weight: 1
+      - path: orc_controls/orc_control/transform1/orc_skel/waist
+        weight: 1
+      - path: orc_controls/orc_control/transform1/orc_skel/waist/chest
+        weight: 1
+      - path: orc_controls/orc_control/transform1/orc_skel/waist/chest/neck
+        weight: 1
+      - path: orc_controls/orc_control/transform1/orc_skel/waist/chest/neck/head
+        weight: 1
+      - path: orc_controls/orc_control/transform1/orc_skel/waist/chest/neck/left_shoulder
+        weight: 1
+      - path: orc_controls/orc_control/transform1/orc_skel/waist/chest/neck/left_shoulder/left_elbow
+        weight: 1
+      - path: orc_controls/orc_control/transform1/orc_skel/waist/chest/neck/left_shoulder/left_elbow/left_hand
+        weight: 1
+      - path: orc_controls/orc_control/transform1/orc_skel/waist/chest/neck/left_shoulder/left_elbow/left_hand/left_index_base
+        weight: 1
+      - path: orc_controls/orc_control/transform1/orc_skel/waist/chest/neck/left_shoulder/left_elbow/left_hand/left_index_base/left_index_mid
+        weight: 1
+      - path: orc_controls/orc_control/transform1/orc_skel/waist/chest/neck/left_shoulder/left_elbow/left_hand/left_index_base/left_index_mid/left_index_tip
+        weight: 1
+      - path: orc_controls/orc_control/transform1/orc_skel/waist/chest/neck/left_shoulder/left_elbow/left_hand/left_middle_base
+        weight: 1
+      - path: orc_controls/orc_control/transform1/orc_skel/waist/chest/neck/left_shoulder/left_elbow/left_hand/left_middle_base/left_middle_mid
+        weight: 1
+      - path: orc_controls/orc_control/transform1/orc_skel/waist/chest/neck/left_shoulder/left_elbow/left_hand/left_middle_base/left_middle_mid/left_middle_tip
+        weight: 1
+      - path: orc_controls/orc_control/transform1/orc_skel/waist/chest/neck/left_shoulder/left_elbow/left_hand/left_pinky_base
+        weight: 1
+      - path: orc_controls/orc_control/transform1/orc_skel/waist/chest/neck/left_shoulder/left_elbow/left_hand/left_pinky_base/left_pinky_mid
+        weight: 1
+      - path: orc_controls/orc_control/transform1/orc_skel/waist/chest/neck/left_shoulder/left_elbow/left_hand/left_pinky_base/left_pinky_mid/left_pinky_tip
+        weight: 1
+      - path: orc_controls/orc_control/transform1/orc_skel/waist/chest/neck/left_shoulder/left_elbow/left_hand/left_ring_base
+        weight: 1
+      - path: orc_controls/orc_control/transform1/orc_skel/waist/chest/neck/left_shoulder/left_elbow/left_hand/left_ring_base/left_ring_mid
+        weight: 1
+      - path: orc_controls/orc_control/transform1/orc_skel/waist/chest/neck/left_shoulder/left_elbow/left_hand/left_ring_base/left_ring_mid/left_ring_tip
+        weight: 1
+      - path: orc_controls/orc_control/transform1/orc_skel/waist/chest/neck/left_shoulder/left_elbow/left_hand/left_thumb_base
+        weight: 1
+      - path: orc_controls/orc_control/transform1/orc_skel/waist/chest/neck/left_shoulder/left_elbow/left_hand/left_thumb_base/left_thumb_mid
+        weight: 1
+      - path: orc_controls/orc_control/transform1/orc_skel/waist/chest/neck/left_shoulder/left_elbow/left_hand/left_thumb_base/left_thumb_mid/left_thumb_tip
+        weight: 1
+      - path: orc_controls/orc_control/transform1/orc_skel/waist/chest/neck/right_shoulder
+        weight: 1
+      - path: orc_controls/orc_control/transform1/orc_skel/waist/chest/neck/right_shoulder/right_elbow
+        weight: 1
+      - path: orc_controls/orc_control/transform1/orc_skel/waist/chest/neck/right_shoulder/right_elbow/right_hand
+        weight: 1
+      - path: orc_controls/orc_control/transform1/orc_skel/waist/chest/neck/right_shoulder/right_elbow/right_hand/orc_sword
+        weight: 1
+      - path: orc_controls/orc_control/transform1/orc_skel/waist/chest/neck/right_shoulder/right_elbow/right_hand/right_index_base
+        weight: 1
+      - path: orc_controls/orc_control/transform1/orc_skel/waist/chest/neck/right_shoulder/right_elbow/right_hand/right_index_base/right_index_mid
+        weight: 1
+      - path: orc_controls/orc_control/transform1/orc_skel/waist/chest/neck/right_shoulder/right_elbow/right_hand/right_index_base/right_index_mid/right_index_tip
+        weight: 1
+      - path: orc_controls/orc_control/transform1/orc_skel/waist/chest/neck/right_shoulder/right_elbow/right_hand/right_middle_base
+        weight: 1
+      - path: orc_controls/orc_control/transform1/orc_skel/waist/chest/neck/right_shoulder/right_elbow/right_hand/right_middle_base/right_middle_mid
+        weight: 1
+      - path: orc_controls/orc_control/transform1/orc_skel/waist/chest/neck/right_shoulder/right_elbow/right_hand/right_middle_base/right_middle_mid/right_middle_tip
+        weight: 1
+      - path: orc_controls/orc_control/transform1/orc_skel/waist/chest/neck/right_shoulder/right_elbow/right_hand/right_pinky_base
+        weight: 1
+      - path: orc_controls/orc_control/transform1/orc_skel/waist/chest/neck/right_shoulder/right_elbow/right_hand/right_pinky_base/right_pinky_mid
+        weight: 1
+      - path: orc_controls/orc_control/transform1/orc_skel/waist/chest/neck/right_shoulder/right_elbow/right_hand/right_pinky_base/right_pinky_mid/right_pinky_tip
+        weight: 1
+      - path: orc_controls/orc_control/transform1/orc_skel/waist/chest/neck/right_shoulder/right_elbow/right_hand/right_ring_base
+        weight: 1
+      - path: orc_controls/orc_control/transform1/orc_skel/waist/chest/neck/right_shoulder/right_elbow/right_hand/right_ring_base/right_ring_mid
+        weight: 1
+      - path: orc_controls/orc_control/transform1/orc_skel/waist/chest/neck/right_shoulder/right_elbow/right_hand/right_ring_base/right_ring_mid/right_ring_tip
+        weight: 1
+      - path: orc_controls/orc_control/transform1/orc_skel/waist/chest/neck/right_shoulder/right_elbow/right_hand/right_thub_base
+        weight: 1
+      - path: orc_controls/orc_control/transform1/orc_skel/waist/chest/neck/right_shoulder/right_elbow/right_hand/right_thub_base/right_thumb_mid
+        weight: 1
+      - path: orc_controls/orc_control/transform1/orc_skel/waist/chest/neck/right_shoulder/right_elbow/right_hand/right_thub_base/right_thumb_mid/right_thumb_tip
+        weight: 1
+      - path: orc_controls/right_arm_control
+        weight: 1
+      - path: orc_controls/right_arm_control/rigth_arm_IK
+        weight: 1
+      - path: orc_controls/right_leg_control
+        weight: 1
+      - path: orc_controls/right_leg_control/right_leg_IK
+        weight: 1
+      maskType: 0
+      maskSource: {instanceID: 0}
+    isReadable: 1
+  meshes:
+    lODScreenPercentages: []
+    globalScale: .0109999999
+    meshCompression: 0
+    addColliders: 1
+    importBlendShapes: 1
+    swapUVChannels: 0
+    generateSecondaryUV: 0
+    useFileUnits: 1
+    optimizeMeshForGPU: 1
+    weldVertices: 1
+    secondaryUVAngleDistortion: 8
+    secondaryUVAreaDistortion: 15.000001
+    secondaryUVHardAngle: 88
+    secondaryUVPackMargin: 4
+  tangentSpace:
+    normalSmoothAngle: 60
+    splitTangentsAcrossUV: 1
+    normalImportMode: 0
+    tangentImportMode: 1
+  importAnimation: 1
+  copyAvatar: 0
+  humanDescription:
+    human: []
+    skeleton: []
+    armTwist: .5
+    foreArmTwist: .5
+    upperLegTwist: .5
+    legTwist: .5
+    armStretch: .0500000007
+    legStretch: .0500000007
+    feetSpacing: 0
+    rootMotionBoneName: 
+  lastHumanDescriptionAvatarSource: {instanceID: 0}
+  animationType: 1
+  userData: 
