@@ -3,10 +3,12 @@ using System.Collections;
 
 public class Gate : MonoBehaviour {
 	private Animation openMe;
+	private AudioSource mySounds;
 
 	// Use this for initialization
 	void Start () {
 		openMe = (Animation)transform.GetComponents(typeof (Animation))[0];
+		mySounds = transform.GetComponent<AudioSource>();
 	}
 	
 	public void open() {
@@ -15,5 +17,9 @@ public class Gate : MonoBehaviour {
 			((Troll_AI)g).setAttackRun();
 		}
 		openMe.Play();
+	}
+
+	public void batteringRam() {
+		mySounds.PlayOneShot(Resources.Load<AudioClip>("batteringRam2"));
 	}
 }

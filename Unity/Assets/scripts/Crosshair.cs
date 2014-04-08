@@ -27,16 +27,27 @@ public class Crosshair : MonoBehaviour {
 	private int lockCount;
 	private float x, y; // (0, 0) is top left of Viewport
 	private Collider viewPort;
+	private GameStateController gameMaster;
 
-	void Start() {
+	void Awake() {
 		currentState = State.IDLE;
 		viewPort = (Collider)viewPortObject.GetComponents(typeof(Collider))[0];
+		gameMaster = (GameStateController)GameObject.FindObjectOfType(typeof(GameStateController));
 	}
 
 	void Update () {
 		if (keyboardMode) processInput();
 		else updatePos();
-		checkLockOn();
+		if (gameMaster.fireEnabled) {
+			transform.renderer.enabled = true;
+			checkLockOn();
+		}
+		else transform.renderer.enabled = false;
+	}
+
+	public void resetCursor() {
+		transform.position = viewPort.transform.position + 
+			(viewPort.transform.position - cam.transform.position);
 	}
 
 	// KEYBOARD MODE
@@ -53,6 +64,9 @@ public class Crosshair : MonoBehaviour {
 		}
 		if (Input.GetKey(KeyCode.DownArrow)) {
 			transform.position += new Vector3(0, -1 * arrowKeySensitivity * Time.deltaTime, 0);
+		}
+		if (Input.GetKeyDown(KeyCode.F)) {
+			fire();
 		}
 	}
 
@@ -77,7 +91,6 @@ public class Crosshair : MonoBehaviour {
 	// CHECK IF A TARGET IS LOCKABLE AND ALIVE
 	private bool checkLockable(RaycastHit hit) {
 		Component[] ls = hit.transform.GetComponents(typeof(Lockable));
-		
 		if (ls.Length > 0 && ((Lockable)ls[0]).isItAlive()) {
 			return true;
 		}
@@ -88,28 +101,18 @@ public class Crosshair : MonoBehaviour {
 	// RAYCAST TO SEE IF WE ARE LOCKING ON TO ANYTHING
 	private void checkLockOn() {
 		// initialize RaycastHits
-		RaycastHit hitClose = new RaycastHit();
 		RaycastHit hitFar = new RaycastHit();
 
 		// Vector shit
 		Vector3 aim = transform.position - cam.transform.position;
-		Vector3 offset = Vector3.Normalize(aim) * .5f;
+		Vector3 offset = Vector3.Normalize(aim) * .009f;
 
-		Debug.DrawLine(cam.transform.position, transform.position, Color.yellow);
 		Debug.DrawRay(transform.position + offset, Vector3.Normalize(aim)*200, Color.blue);
 
-		bool c = Physics.Raycast(cam.transform.position, aim, out hitClose, 
-		                         Vector3.Distance(cam.transform.position, transform.position));
 		bool f = Physics.Raycast (transform.position + offset, aim, out hitFar, 200);
 
-		// Lock on to a close target
-		if (c && checkLockable(hitClose)) {
-			transform.position = hitClose.point;
-			updateState (hitClose);
-		}
-
-		// Or else lock on to a far target
-		else if (f && checkLockable(hitFar)) {
+		// lock on to a far target
+		if (f && checkLockable(hitFar)) {
 			updateState(hitFar);
 		}
 
@@ -119,6 +122,7 @@ public class Crosshair : MonoBehaviour {
 				Lockable l = (Lockable)target.GetComponents(typeof(Lockable))[0];
 				l.onRelease();
 			}
+			Debug.Log("Releasing Target");
 			reset ();
 		}
 	}
@@ -144,6 +148,9 @@ public class Crosshair : MonoBehaviour {
 		else if (currentState == State.LOCKING) {
 			target = hit.transform;
 			lockCount = 0;
+		}
+
+		else {
 		}
 	}
 

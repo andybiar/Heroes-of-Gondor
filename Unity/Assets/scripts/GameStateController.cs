@@ -12,11 +12,13 @@ public class GameStateController : MonoBehaviour {
 	public GameObject HoG;
 	public GameObject particles;
 	public ParticleEmitter dustStorm;
+	public Light startLight;
+	public Taunter tutorialOrc;
 
 	private Vector3[] positions;
 	private float[] fovs;
 	private float[] transitionTimes;
-	private bool fireEnabled = true;
+	public bool fireEnabled = true;
 	private bool moving;
 	private bool onTimer;
 	private bool musicFadeOut;
@@ -29,18 +31,22 @@ public class GameStateController : MonoBehaviour {
 	private float startFov;
 	private int scene = 0;
 	private Camera cam;
-	private float timeGameStarted;
+	private float timeGameStarted = 9999999999;
 	private bool movedToWall;
 	private bool openedGate;
 	private bool sceneAutoPilot = true;
-	private float spaceCooldown = 1.5f;
+	private float spaceCooldown = .75f;
 	private float lastSpaceTime;
+	private AudioSource efx;
+	private float musicVolume;
 
 	// TIMERS
 	private int[] timers;
 
 	void Start () {
 		cam = (Camera)transform.GetComponent("Camera");
+		efx = transform.GetComponentsInChildren<AudioSource>()[0];
+		musicVolume = jukebox.volume;
 
 		positions = new Vector3[12];
 		fovs = new float[6];
@@ -55,7 +61,7 @@ public class GameStateController : MonoBehaviour {
 		transitionTimes[0] = 200;
 
 		// 1. FIRST TOWER
-		positions[2] = new Vector3(34.81511f, 18.5997f, 42.50385f);
+		positions[2] = new Vector3(34.81511f, 16.7997f, 42.50385f);
 		positions[3] = new Vector3(350.5567f, 335.8706f, 0);
 		fovs[1] = 40.6f;
 		timers[0] = 0;
@@ -68,11 +74,11 @@ public class GameStateController : MonoBehaviour {
 		fovs[2] = 24.4f;
 		timers[1] = 0;
 
-		transitionTimes[2] = 20;
+		transitionTimes[2] = 40;
 
 		// 3. STAFF SLAM FIGHT
-		positions[6] = new Vector3(24.72953f, 2.450761f, 1.860413f);
-		positions[7] = new Vector3(359.4255f, -11.9498f, 0);
+		positions[6] = new Vector3(22.5159f, -1.01845f, 11.73959f);
+		positions[7] = new Vector3(359.4587f, 7.638585f, 0);
 		fovs[3] = 39.3f;
 
 		transitionTimes[3] = 60;
@@ -90,9 +96,17 @@ public class GameStateController : MonoBehaviour {
 		transform.position = transform.parent.position + positions[0];
 		transform.rotation = (Quaternion.Euler(positions[1]));
 		cam.fieldOfView = fovs[0];
+		crosshair.resetCursor();
 	}
 
-	// UPDATE
+	public void beginGame() {
+		// BEGIN THE GAME
+		musicFadeOut = true;
+		hogFadeOut = true;
+		siege.send();
+	}
+		
+		// UPDATE
 	void FixedUpdate () {
 		if (moving) updateScene();
 
@@ -105,13 +119,6 @@ public class GameStateController : MonoBehaviour {
 				timerCount = 0;
 			}
 		}
-
-		// BEGIN THE GAME
-		if (Input.GetKeyDown (KeyCode.S)) {
-			musicFadeOut = true;
-			hogFadeOut = true;
-			siege.send();
-		}
 		
 		// FADE OUT THE MAIN MENU
 		if (musicFadeOut) {
@@ -123,12 +130,14 @@ public class GameStateController : MonoBehaviour {
 			Color c = HoG.renderer.material.color;
 			if (c.a <= 0) hogFadeOut = false;
 			HoG.renderer.material.color = new Color(c.r, c.g, c.b, c.a - .06f);
+			startLight.intensity -= .02f;
 		}
 
 		// MOVE TO THE GATE
-		if (sceneAutoPilot && !movedToWall && Time.timeSinceLevelLoad - timeGameStarted >= 34) {
+		if (sceneAutoPilot && (!movedToWall) && Time.timeSinceLevelLoad - timeGameStarted >= 34) {
 			Debug.Log("Scene advanced by 'move to the wall'");
 			nextScene();
+			efx.PlayOneShot(Resources.Load<AudioClip>("batteringRam2"));
 			movedToWall = true;
 		}
 
@@ -171,7 +180,9 @@ public class GameStateController : MonoBehaviour {
 			(positions[scene * 2 + 1] - startRot) / transitionTimes[scene-1]);
 		cam.fieldOfView += (fovs[scene] - startFov) / (transitionTimes[scene-1]);
 
-		// -=-=-=-=-=-ON ARRIVE-=-=-=-=-=-=-=-
+		// ================================================================
+		// ON ARRIVE
+		// ================================================================
 		// Scenes 1 and 2 advance by timers
 		if (Vector3.Distance(p + positions[scene * 2], transform.position) < .04) {
 			moving = false;
@@ -181,13 +192,17 @@ public class GameStateController : MonoBehaviour {
 			}
 		}
 
-		// Gandalf line at staff slam start
+		// BEGIN SLAM FIGHT
 		if (scene == 3 && playIntro) {
 			jukebox.PlayOneShot(Resources.Load<AudioClip>("Gandalf/enemiesApproaching"));
 			playIntro = false;
+			foreach (GameObject g in GameObject.FindGameObjectsWithTag("Intro")) {
+				g.SetActive(false);
+			}
+			tutorialOrc.send();
 		}
 
-		// Gandalf line at gate arrival
+		// BEGIN GATE FIGHT
 		if (scene == 4 && playIntro) {
 			jukebox.PlayOneShot(Resources.Load<AudioClip>("Gandalf/soldiersOfGondor"));
 			playIntro = false;
@@ -195,6 +210,9 @@ public class GameStateController : MonoBehaviour {
 			if (!sceneAutoPilot) gate.open();
 		}
 
+		if (crosshair.keyboardMode) {
+			crosshair.resetCursor();
+		}
 	}
 
 	public void nextScene() {
@@ -207,14 +225,21 @@ public class GameStateController : MonoBehaviour {
 
 		// BEGIN THE OPENING SEQUENCE
 		if (scene == 1) {
+			fireEnabled = false;
 			timeGameStarted = Time.timeSinceLevelLoad;
 			musicFadeOut = false;
 			jukebox.clip = gameMusic;
-			jukebox.volume = 1;
+			jukebox.volume = musicVolume;
 			jukebox.Play();
+			efx.PlayOneShot(Resources.Load<AudioClip>("Gandalf/opener"));
 			particles.SetActive(false);
 			dustStorm.minEmission = 0;
 			dustStorm.maxEmission = 0;
+		}
+
+		// STAFF SLAM FIGHT
+		if (scene == 3) {
+			fireEnabled = true;
 		}
 
 		updateScene();

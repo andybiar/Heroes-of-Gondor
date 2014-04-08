@@ -5,8 +5,8 @@ namespace BoothGame{
 
 	public abstract class Infantry : MonoBehaviour, Health {
 		// Definitions for guard state
-		public enum Task { IDLE, ENGAGING, STABBING, RUNNING }
-		public enum Stance { GUARD, ATTACK, FLEE, DEAD }
+		public enum Task { IDLE, ENGAGING, STABBING, RUNNING, GUARDING }
+		public enum Stance { GUARD, ATTACK, FLEE, DEAD, SPECIAL }
 
 		// Things to set in the inspector
 		public float ENGAGE_TIMEOUT;
@@ -19,6 +19,7 @@ namespace BoothGame{
 		public float speed;
 		public float cooldown;
 		public float maxAirTime;
+		public bool canTalk;
 
 		// Private state
 		private Vector3 guardLocation;
@@ -31,6 +32,7 @@ namespace BoothGame{
 		protected Renderer myRenderer;
 		protected float dissolveTime = 90;
 		protected AudioSource mySounds;
+		protected bool moving;
 
 		// Abstract stuff
 		protected abstract Transform aggroCast();
@@ -38,6 +40,7 @@ namespace BoothGame{
 		protected abstract void die();
 		protected abstract void onCrash();
 		protected abstract void onFall();
+		protected abstract void specialBehavior();
 				
 		// Getters and Setters
 		public bool getIsAlive() {
@@ -58,26 +61,26 @@ namespace BoothGame{
 				dissolveMe();
 			}
 
-			if (!isUpright()) return;
-
-			// Handle the airborne case
+			// Falling
 			if (!isGrounded()) {
 				airTime += 1;
-				if (airTime >= maxAirTime) {
+				if (airTime >= maxAirTime && !airDeath) {
 					airDeath = true;
 					onFall();
 				}
 			}
-			else if (airDeath) {
+			else if (airDeath && isAlive) {
 				onCrash();
 				isAlive = false;
 			}
 			else airTime = 0;
 
+			if (!isUpright() || currentTask == Task.IDLE) return;
+
 			// GUARD STANCE
 			if (currentStance == Stance.GUARD) {
 				switch(currentTask) {
-				case Task.IDLE:
+				case Task.GUARDING:
 					guard();
 					break;
 				case Task.ENGAGING:
@@ -107,6 +110,10 @@ namespace BoothGame{
 					stab(target);
 					break;
 				}
+			}
+
+			else if (currentStance == Stance.SPECIAL) {
+				specialBehavior();
 			}
 		}
 

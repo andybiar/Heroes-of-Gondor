@@ -33,4 +33,6 @@ public class Spearman : Infantry, Ally {
 	protected override void onCrash() {
 	}
 
+	protected override void specialBehavior() {
+	}
 }

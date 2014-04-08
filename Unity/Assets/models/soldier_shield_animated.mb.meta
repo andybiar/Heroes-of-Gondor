@@ -1,0 +1,1745 @@
+fileFormatVersion: 2
+guid: 88c06ef8164ffc048927354f6f168a1a
+ModelImporter:
+  serializedVersion: 15
+  fileIDToRecycleName:
+    100000: chest
+    100002: head
+    100004: left_arm_control
+    100006: left_arm_IK
+    100008: left_elbow
+    100010: left_foot
+    100012: left_hand
+    100014: left_hip
+    100016: left_index_base
+    100018: left_index_mid
+    100020: left_index_tip
+    100022: left_knee
+    100024: left_leg_control
+    100026: left_leg_IK
+    100028: left_middle_base
+    100030: left_middle_mid
+    100032: left_middle_tip
+    100034: left_pinky_base
+    100036: left_pinky_mid
+    100038: left_pinky_tip
+    100040: left_ring_base
+    100042: left_ring_mid
+    100044: left_ring_tip
+    100046: left_shoulder
+    100048: left_thumb_base
+    100050: left_thumb_mid
+    100052: left_thumb_tip
+    100054: left_toe
+    100056: neck
+    100058: right_arm_control
+    100060: right_arm_IK
+    100062: right_elbow
+    100064: right_foot
+    100066: right_hand
+    100068: right_hip
+    100070: right_index_base
+    100072: right_index_mid
+    100074: right_index_tip
+    100076: right_knee
+    100078: right_leg_control
+    100080: right_leg_IK
+    100082: right_middle_base
+    100084: right_middle_mid
+    100086: right_middle_tip
+    100088: right_pinky_base
+    100090: right_pinky_mid
+    100092: right_pinky_tip
+    100094: right_ring_base
+    100096: right_ring_mid
+    100098: right_ring_tip
+    100100: right_shoulder
+    100102: right_thub_base
+    100104: right_thumb_mid
+    100106: right_thumb_tip
+    100108: right_toe
+    100110: shield
+    100112: soldier
+    100114: soldier_control
+    100116: soldier_controls
+    100118: //RootNode
+    100120: soldier_skel
+    100122: soldier_spear
+    100124: transform1
+    100126: waist
+    400000: chest
+    400002: head
+    400004: left_arm_control
+    400006: left_arm_IK
+    400008: left_elbow
+    400010: left_foot
+    400012: left_hand
+    400014: left_hip
+    400016: left_index_base
+    400018: left_index_mid
+    400020: left_index_tip
+    400022: left_knee
+    400024: left_leg_control
+    400026: left_leg_IK
+    400028: left_middle_base
+    400030: left_middle_mid
+    400032: left_middle_tip
+    400034: left_pinky_base
+    400036: left_pinky_mid
+    400038: left_pinky_tip
+    400040: left_ring_base
+    400042: left_ring_mid
+    400044: left_ring_tip
+    400046: left_shoulder
+    400048: left_thumb_base
+    400050: left_thumb_mid
+    400052: left_thumb_tip
+    400054: left_toe
+    400056: neck
+    400058: right_arm_control
+    400060: right_arm_IK
+    400062: right_elbow
+    400064: right_foot
+    400066: right_hand
+    400068: right_hip
+    400070: right_index_base
+    400072: right_index_mid
+    400074: right_index_tip
+    400076: right_knee
+    400078: right_leg_control
+    400080: right_leg_IK
+    400082: right_middle_base
+    400084: right_middle_mid
+    400086: right_middle_tip
+    400088: right_pinky_base
+    400090: right_pinky_mid
+    400092: right_pinky_tip
+    400094: right_ring_base
+    400096: right_ring_mid
+    400098: right_ring_tip
+    400100: right_shoulder
+    400102: right_thub_base
+    400104: right_thumb_mid
+    400106: right_thumb_tip
+    400108: right_toe
+    400110: shield
+    400112: soldier
+    400114: soldier_control
+    400116: soldier_controls
+    400118: //RootNode
+    400120: soldier_skel
+    400122: soldier_spear
+    400124: transform1
+    400126: waist
+    2300000: shield
+    2300002: soldier_spear
+    3300000: shield
+    3300002: soldier_spear
+    4300000: soldier
+    4300002: shield
+    4300004: soldier_spear
+    7400000: StandToRun
+    7400002: Run
+    7400004: RunToStand
+    7400006: Strike
+    7400008: Brace
+    7400010: BraceToStand
+    7400012: StandToFlail
+    7400014: Flail
+    7400016: FailToDead
+    7400018: Die
+    9500000: //RootNode
+    11100000: //RootNode
+    13700000: soldier
+  materials:
+    importMaterials: 1
+    materialName: 0
+    materialSearch: 1
+  animations:
+    legacyGenerateAnimations: 4
+    bakeSimulation: 1
+    optimizeGameObjects: 0
+    animationCompression: 1
+    animationRotationError: .5
+    animationPositionError: .5
+    animationScaleError: .5
+    animationWrapMode: 0
+    extraExposedTransformPaths: []
+    clipAnimations:
+    - serializedVersion: 16
+      name: StandToRun
+      takeName: Take 001
+      firstFrame: 1
+      lastFrame: 31
+      wrapMode: 1
+      orientationOffsetY: 0
+      level: 0
+      cycleOffset: 0
+      loop: 0
+      loopTime: 0
+      loopBlend: 0
+      loopBlendOrientation: 0
+      loopBlendPositionY: 0
+      loopBlendPositionXZ: 0
+      keepOriginalOrientation: 0
+      keepOriginalPositionY: 1
+      keepOriginalPositionXZ: 0
+      heightFromFeet: 0
+      mirror: 0
+      bodyMask: 01000000010000000100000001000000010000000100000001000000010000000100000001000000010000000100000001000000
+      curves: []
+      events: []
+      transformMask:
+      - path: 
+        weight: 1
+      - path: soldier
+        weight: 1
+      - path: soldier_controls
+        weight: 1
+      - path: soldier_controls/left_arm_control
+        weight: 1
+      - path: soldier_controls/left_arm_control/left_arm_IK
+        weight: 1
+      - path: soldier_controls/left_leg_control
+        weight: 1
+      - path: soldier_controls/left_leg_control/left_leg_IK
+        weight: 1
+      - path: soldier_controls/right_arm_control
+        weight: 1
+      - path: soldier_controls/right_arm_control/right_arm_IK
+        weight: 1
+      - path: soldier_controls/right_leg_control
+        weight: 1
+      - path: soldier_controls/right_leg_control/right_leg_IK
+        weight: 1
+      - path: soldier_controls/soldier_control
+        weight: 1
+      - path: soldier_controls/soldier_control/transform1
+        weight: 1
+      - path: soldier_controls/soldier_control/transform1/soldier_skel
+        weight: 1
+      - path: soldier_controls/soldier_control/transform1/soldier_skel/left_hip
+        weight: 1
+      - path: soldier_controls/soldier_control/transform1/soldier_skel/left_hip/left_knee
+        weight: 1
+      - path: soldier_controls/soldier_control/transform1/soldier_skel/left_hip/left_knee/left_foot
+        weight: 1
+      - path: soldier_controls/soldier_control/transform1/soldier_skel/left_hip/left_knee/left_foot/left_toe
+        weight: 1
+      - path: soldier_controls/soldier_control/transform1/soldier_skel/right_hip
+        weight: 1
+      - path: soldier_controls/soldier_control/transform1/soldier_skel/right_hip/right_knee
+        weight: 1
+      - path: soldier_controls/soldier_control/transform1/soldier_skel/right_hip/right_knee/right_foot
+        weight: 1
+      - path: soldier_controls/soldier_control/transform1/soldier_skel/right_hip/right_knee/right_foot/right_toe
+        weight: 1
+      - path: soldier_controls/soldier_control/transform1/soldier_skel/waist
+        weight: 1
+      - path: soldier_controls/soldier_control/transform1/soldier_skel/waist/chest
+        weight: 1
+      - path: soldier_controls/soldier_control/transform1/soldier_skel/waist/chest/neck
+        weight: 1
+      - path: soldier_controls/soldier_control/transform1/soldier_skel/waist/chest/neck/head
+        weight: 1
+      - path: soldier_controls/soldier_control/transform1/soldier_skel/waist/chest/neck/left_shoulder
+        weight: 1
+      - path: soldier_controls/soldier_control/transform1/soldier_skel/waist/chest/neck/left_shoulder/left_elbow
+        weight: 1
+      - path: soldier_controls/soldier_control/transform1/soldier_skel/waist/chest/neck/left_shoulder/left_elbow/left_hand
+        weight: 1
+      - path: soldier_controls/soldier_control/transform1/soldier_skel/waist/chest/neck/left_shoulder/left_elbow/left_hand/left_index_base
+        weight: 1
+      - path: soldier_controls/soldier_control/transform1/soldier_skel/waist/chest/neck/left_shoulder/left_elbow/left_hand/left_index_base/left_index_mid
+        weight: 1
+      - path: soldier_controls/soldier_control/transform1/soldier_skel/waist/chest/neck/left_shoulder/left_elbow/left_hand/left_index_base/left_index_mid/left_index_tip
+        weight: 1
+      - path: soldier_controls/soldier_control/transform1/soldier_skel/waist/chest/neck/left_shoulder/left_elbow/left_hand/left_middle_base
+        weight: 1
+      - path: soldier_controls/soldier_control/transform1/soldier_skel/waist/chest/neck/left_shoulder/left_elbow/left_hand/left_middle_base/left_middle_mid
+        weight: 1
+      - path: soldier_controls/soldier_control/transform1/soldier_skel/waist/chest/neck/left_shoulder/left_elbow/left_hand/left_middle_base/left_middle_mid/left_middle_tip
+        weight: 1
+      - path: soldier_controls/soldier_control/transform1/soldier_skel/waist/chest/neck/left_shoulder/left_elbow/left_hand/left_pinky_base
+        weight: 1
+      - path: soldier_controls/soldier_control/transform1/soldier_skel/waist/chest/neck/left_shoulder/left_elbow/left_hand/left_pinky_base/left_pinky_mid
+        weight: 1
+      - path: soldier_controls/soldier_control/transform1/soldier_skel/waist/chest/neck/left_shoulder/left_elbow/left_hand/left_pinky_base/left_pinky_mid/left_pinky_tip
+        weight: 1
+      - path: soldier_controls/soldier_control/transform1/soldier_skel/waist/chest/neck/left_shoulder/left_elbow/left_hand/left_ring_base
+        weight: 1
+      - path: soldier_controls/soldier_control/transform1/soldier_skel/waist/chest/neck/left_shoulder/left_elbow/left_hand/left_ring_base/left_ring_mid
+        weight: 1
+      - path: soldier_controls/soldier_control/transform1/soldier_skel/waist/chest/neck/left_shoulder/left_elbow/left_hand/left_ring_base/left_ring_mid/left_ring_tip
+        weight: 1
+      - path: soldier_controls/soldier_control/transform1/soldier_skel/waist/chest/neck/left_shoulder/left_elbow/left_hand/left_thumb_base
+        weight: 1
+      - path: soldier_controls/soldier_control/transform1/soldier_skel/waist/chest/neck/left_shoulder/left_elbow/left_hand/left_thumb_base/left_thumb_mid
+        weight: 1
+      - path: soldier_controls/soldier_control/transform1/soldier_skel/waist/chest/neck/left_shoulder/left_elbow/left_hand/left_thumb_base/left_thumb_mid/left_thumb_tip
+        weight: 1
+      - path: soldier_controls/soldier_control/transform1/soldier_skel/waist/chest/neck/left_shoulder/left_elbow/shield
+        weight: 1
+      - path: soldier_controls/soldier_control/transform1/soldier_skel/waist/chest/neck/right_shoulder
+        weight: 1
+      - path: soldier_controls/soldier_control/transform1/soldier_skel/waist/chest/neck/right_shoulder/right_elbow
+        weight: 1
+      - path: soldier_controls/soldier_control/transform1/soldier_skel/waist/chest/neck/right_shoulder/right_elbow/right_hand
+        weight: 1
+      - path: soldier_controls/soldier_control/transform1/soldier_skel/waist/chest/neck/right_shoulder/right_elbow/right_hand/right_index_base
+        weight: 1
+      - path: soldier_controls/soldier_control/transform1/soldier_skel/waist/chest/neck/right_shoulder/right_elbow/right_hand/right_index_base/right_index_mid
+        weight: 1
+      - path: soldier_controls/soldier_control/transform1/soldier_skel/waist/chest/neck/right_shoulder/right_elbow/right_hand/right_index_base/right_index_mid/right_index_tip
+        weight: 1
+      - path: soldier_controls/soldier_control/transform1/soldier_skel/waist/chest/neck/right_shoulder/right_elbow/right_hand/right_middle_base
+        weight: 1
+      - path: soldier_controls/soldier_control/transform1/soldier_skel/waist/chest/neck/right_shoulder/right_elbow/right_hand/right_middle_base/right_middle_mid
+        weight: 1
+      - path: soldier_controls/soldier_control/transform1/soldier_skel/waist/chest/neck/right_shoulder/right_elbow/right_hand/right_middle_base/right_middle_mid/right_middle_tip
+        weight: 1
+      - path: soldier_controls/soldier_control/transform1/soldier_skel/waist/chest/neck/right_shoulder/right_elbow/right_hand/right_pinky_base
+        weight: 1
+      - path: soldier_controls/soldier_control/transform1/soldier_skel/waist/chest/neck/right_shoulder/right_elbow/right_hand/right_pinky_base/right_pinky_mid
+        weight: 1
+      - path: soldier_controls/soldier_control/transform1/soldier_skel/waist/chest/neck/right_shoulder/right_elbow/right_hand/right_pinky_base/right_pinky_mid/right_pinky_tip
+        weight: 1
+      - path: soldier_controls/soldier_control/transform1/soldier_skel/waist/chest/neck/right_shoulder/right_elbow/right_hand/right_ring_base
+        weight: 1
+      - path: soldier_controls/soldier_control/transform1/soldier_skel/waist/chest/neck/right_shoulder/right_elbow/right_hand/right_ring_base/right_ring_mid
+        weight: 1
+      - path: soldier_controls/soldier_control/transform1/soldier_skel/waist/chest/neck/right_shoulder/right_elbow/right_hand/right_ring_base/right_ring_mid/right_ring_tip
+        weight: 1
+      - path: soldier_controls/soldier_control/transform1/soldier_skel/waist/chest/neck/right_shoulder/right_elbow/right_hand/right_thub_base
+        weight: 1
+      - path: soldier_controls/soldier_control/transform1/soldier_skel/waist/chest/neck/right_shoulder/right_elbow/right_hand/right_thub_base/right_thumb_mid
+        weight: 1
+      - path: soldier_controls/soldier_control/transform1/soldier_skel/waist/chest/neck/right_shoulder/right_elbow/right_hand/right_thub_base/right_thumb_mid/right_thumb_tip
+        weight: 1
+      - path: soldier_controls/soldier_control/transform1/soldier_skel/waist/chest/neck/right_shoulder/right_elbow/right_hand/soldier_spear
+        weight: 1
+      maskType: 0
+      maskSource: {instanceID: 0}
+    - serializedVersion: 16
+      name: Run
+      takeName: Take 001
+      firstFrame: 32
+      lastFrame: 60
+      wrapMode: 2
+      orientationOffsetY: 0
+      level: 0
+      cycleOffset: 0
+      loop: 0
+      loopTime: 0
+      loopBlend: 0
+      loopBlendOrientation: 0
+      loopBlendPositionY: 0
+      loopBlendPositionXZ: 0
+      keepOriginalOrientation: 0
+      keepOriginalPositionY: 1
+      keepOriginalPositionXZ: 0
+      heightFromFeet: 0
+      mirror: 0
+      bodyMask: 01000000010000000100000001000000010000000100000001000000010000000100000001000000010000000100000001000000
+      curves: []
+      events: []
+      transformMask:
+      - path: 
+        weight: 1
+      - path: soldier
+        weight: 1
+      - path: soldier_controls
+        weight: 1
+      - path: soldier_controls/left_arm_control
+        weight: 1
+      - path: soldier_controls/left_arm_control/left_arm_IK
+        weight: 1
+      - path: soldier_controls/left_leg_control
+        weight: 1
+      - path: soldier_controls/left_leg_control/left_leg_IK
+        weight: 1
+      - path: soldier_controls/right_arm_control
+        weight: 1
+      - path: soldier_controls/right_arm_control/right_arm_IK
+        weight: 1
+      - path: soldier_controls/right_leg_control
+        weight: 1
+      - path: soldier_controls/right_leg_control/right_leg_IK
+        weight: 1
+      - path: soldier_controls/soldier_control
+        weight: 1
+      - path: soldier_controls/soldier_control/transform1
+        weight: 1
+      - path: soldier_controls/soldier_control/transform1/soldier_skel
+        weight: 1
+      - path: soldier_controls/soldier_control/transform1/soldier_skel/left_hip
+        weight: 1
+      - path: soldier_controls/soldier_control/transform1/soldier_skel/left_hip/left_knee
+        weight: 1
+      - path: soldier_controls/soldier_control/transform1/soldier_skel/left_hip/left_knee/left_foot
+        weight: 1
+      - path: soldier_controls/soldier_control/transform1/soldier_skel/left_hip/left_knee/left_foot/left_toe
+        weight: 1
+      - path: soldier_controls/soldier_control/transform1/soldier_skel/right_hip
+        weight: 1
+      - path: soldier_controls/soldier_control/transform1/soldier_skel/right_hip/right_knee
+        weight: 1
+      - path: soldier_controls/soldier_control/transform1/soldier_skel/right_hip/right_knee/right_foot
+        weight: 1
+      - path: soldier_controls/soldier_control/transform1/soldier_skel/right_hip/right_knee/right_foot/right_toe
+        weight: 1
+      - path: soldier_controls/soldier_control/transform1/soldier_skel/waist
+        weight: 1
+      - path: soldier_controls/soldier_control/transform1/soldier_skel/waist/chest
+        weight: 1
+      - path: soldier_controls/soldier_control/transform1/soldier_skel/waist/chest/neck
+        weight: 1
+      - path: soldier_controls/soldier_control/transform1/soldier_skel/waist/chest/neck/head
+        weight: 1
+      - path: soldier_controls/soldier_control/transform1/soldier_skel/waist/chest/neck/left_shoulder
+        weight: 1
+      - path: soldier_controls/soldier_control/transform1/soldier_skel/waist/chest/neck/left_shoulder/left_elbow
+        weight: 1
+      - path: soldier_controls/soldier_control/transform1/soldier_skel/waist/chest/neck/left_shoulder/left_elbow/left_hand
+        weight: 1
+      - path: soldier_controls/soldier_control/transform1/soldier_skel/waist/chest/neck/left_shoulder/left_elbow/left_hand/left_index_base
+        weight: 1
+      - path: soldier_controls/soldier_control/transform1/soldier_skel/waist/chest/neck/left_shoulder/left_elbow/left_hand/left_index_base/left_index_mid
+        weight: 1
+      - path: soldier_controls/soldier_control/transform1/soldier_skel/waist/chest/neck/left_shoulder/left_elbow/left_hand/left_index_base/left_index_mid/left_index_tip
+        weight: 1
+      - path: soldier_controls/soldier_control/transform1/soldier_skel/waist/chest/neck/left_shoulder/left_elbow/left_hand/left_middle_base
+        weight: 1
+      - path: soldier_controls/soldier_control/transform1/soldier_skel/waist/chest/neck/left_shoulder/left_elbow/left_hand/left_middle_base/left_middle_mid
+        weight: 1
+      - path: soldier_controls/soldier_control/transform1/soldier_skel/waist/chest/neck/left_shoulder/left_elbow/left_hand/left_middle_base/left_middle_mid/left_middle_tip
+        weight: 1
+      - path: soldier_controls/soldier_control/transform1/soldier_skel/waist/chest/neck/left_shoulder/left_elbow/left_hand/left_pinky_base
+        weight: 1
+      - path: soldier_controls/soldier_control/transform1/soldier_skel/waist/chest/neck/left_shoulder/left_elbow/left_hand/left_pinky_base/left_pinky_mid
+        weight: 1
+      - path: soldier_controls/soldier_control/transform1/soldier_skel/waist/chest/neck/left_shoulder/left_elbow/left_hand/left_pinky_base/left_pinky_mid/left_pinky_tip
+        weight: 1
+      - path: soldier_controls/soldier_control/transform1/soldier_skel/waist/chest/neck/left_shoulder/left_elbow/left_hand/left_ring_base
+        weight: 1
+      - path: soldier_controls/soldier_control/transform1/soldier_skel/waist/chest/neck/left_shoulder/left_elbow/left_hand/left_ring_base/left_ring_mid
+        weight: 1
+      - path: soldier_controls/soldier_control/transform1/soldier_skel/waist/chest/neck/left_shoulder/left_elbow/left_hand/left_ring_base/left_ring_mid/left_ring_tip
+        weight: 1
+      - path: soldier_controls/soldier_control/transform1/soldier_skel/waist/chest/neck/left_shoulder/left_elbow/left_hand/left_thumb_base
+        weight: 1
+      - path: soldier_controls/soldier_control/transform1/soldier_skel/waist/chest/neck/left_shoulder/left_elbow/left_hand/left_thumb_base/left_thumb_mid
+        weight: 1
+      - path: soldier_controls/soldier_control/transform1/soldier_skel/waist/chest/neck/left_shoulder/left_elbow/left_hand/left_thumb_base/left_thumb_mid/left_thumb_tip
+        weight: 1
+      - path: soldier_controls/soldier_control/transform1/soldier_skel/waist/chest/neck/left_shoulder/left_elbow/shield
+        weight: 1
+      - path: soldier_controls/soldier_control/transform1/soldier_skel/waist/chest/neck/right_shoulder
+        weight: 1
+      - path: soldier_controls/soldier_control/transform1/soldier_skel/waist/chest/neck/right_shoulder/right_elbow
+        weight: 1
+      - path: soldier_controls/soldier_control/transform1/soldier_skel/waist/chest/neck/right_shoulder/right_elbow/right_hand
+        weight: 1
+      - path: soldier_controls/soldier_control/transform1/soldier_skel/waist/chest/neck/right_shoulder/right_elbow/right_hand/right_index_base
+        weight: 1
+      - path: soldier_controls/soldier_control/transform1/soldier_skel/waist/chest/neck/right_shoulder/right_elbow/right_hand/right_index_base/right_index_mid
+        weight: 1
+      - path: soldier_controls/soldier_control/transform1/soldier_skel/waist/chest/neck/right_shoulder/right_elbow/right_hand/right_index_base/right_index_mid/right_index_tip
+        weight: 1
+      - path: soldier_controls/soldier_control/transform1/soldier_skel/waist/chest/neck/right_shoulder/right_elbow/right_hand/right_middle_base
+        weight: 1
+      - path: soldier_controls/soldier_control/transform1/soldier_skel/waist/chest/neck/right_shoulder/right_elbow/right_hand/right_middle_base/right_middle_mid
+        weight: 1
+      - path: soldier_controls/soldier_control/transform1/soldier_skel/waist/chest/neck/right_shoulder/right_elbow/right_hand/right_middle_base/right_middle_mid/right_middle_tip
+        weight: 1
+      - path: soldier_controls/soldier_control/transform1/soldier_skel/waist/chest/neck/right_shoulder/right_elbow/right_hand/right_pinky_base
+        weight: 1
+      - path: soldier_controls/soldier_control/transform1/soldier_skel/waist/chest/neck/right_shoulder/right_elbow/right_hand/right_pinky_base/right_pinky_mid
+        weight: 1
+      - path: soldier_controls/soldier_control/transform1/soldier_skel/waist/chest/neck/right_shoulder/right_elbow/right_hand/right_pinky_base/right_pinky_mid/right_pinky_tip
+        weight: 1
+      - path: soldier_controls/soldier_control/transform1/soldier_skel/waist/chest/neck/right_shoulder/right_elbow/right_hand/right_ring_base
+        weight: 1
+      - path: soldier_controls/soldier_control/transform1/soldier_skel/waist/chest/neck/right_shoulder/right_elbow/right_hand/right_ring_base/right_ring_mid
+        weight: 1
+      - path: soldier_controls/soldier_control/transform1/soldier_skel/waist/chest/neck/right_shoulder/right_elbow/right_hand/right_ring_base/right_ring_mid/right_ring_tip
+        weight: 1
+      - path: soldier_controls/soldier_control/transform1/soldier_skel/waist/chest/neck/right_shoulder/right_elbow/right_hand/right_thub_base
+        weight: 1
+      - path: soldier_controls/soldier_control/transform1/soldier_skel/waist/chest/neck/right_shoulder/right_elbow/right_hand/right_thub_base/right_thumb_mid
+        weight: 1
+      - path: soldier_controls/soldier_control/transform1/soldier_skel/waist/chest/neck/right_shoulder/right_elbow/right_hand/right_thub_base/right_thumb_mid/right_thumb_tip
+        weight: 1
+      - path: soldier_controls/soldier_control/transform1/soldier_skel/waist/chest/neck/right_shoulder/right_elbow/right_hand/soldier_spear
+        weight: 1
+      maskType: 0
+      maskSource: {instanceID: 0}
+    - serializedVersion: 16
+      name: RunToStand
+      takeName: Take 001
+      firstFrame: 61
+      lastFrame: 72
+      wrapMode: 1
+      orientationOffsetY: 0
+      level: 0
+      cycleOffset: 0
+      loop: 0
+      loopTime: 0
+      loopBlend: 0
+      loopBlendOrientation: 0
+      loopBlendPositionY: 0
+      loopBlendPositionXZ: 0
+      keepOriginalOrientation: 0
+      keepOriginalPositionY: 1
+      keepOriginalPositionXZ: 0
+      heightFromFeet: 0
+      mirror: 0
+      bodyMask: 01000000010000000100000001000000010000000100000001000000010000000100000001000000010000000100000001000000
+      curves: []
+      events: []
+      transformMask:
+      - path: 
+        weight: 1
+      - path: soldier
+        weight: 1
+      - path: soldier_controls
+        weight: 1
+      - path: soldier_controls/left_arm_control
+        weight: 1
+      - path: soldier_controls/left_arm_control/left_arm_IK
+        weight: 1
+      - path: soldier_controls/left_leg_control
+        weight: 1
+      - path: soldier_controls/left_leg_control/left_leg_IK
+        weight: 1
+      - path: soldier_controls/right_arm_control
+        weight: 1
+      - path: soldier_controls/right_arm_control/right_arm_IK
+        weight: 1
+      - path: soldier_controls/right_leg_control
+        weight: 1
+      - path: soldier_controls/right_leg_control/right_leg_IK
+        weight: 1
+      - path: soldier_controls/soldier_control
+        weight: 1
+      - path: soldier_controls/soldier_control/transform1
+        weight: 1
+      - path: soldier_controls/soldier_control/transform1/soldier_skel
+        weight: 1
+      - path: soldier_controls/soldier_control/transform1/soldier_skel/left_hip
+        weight: 1
+      - path: soldier_controls/soldier_control/transform1/soldier_skel/left_hip/left_knee
+        weight: 1
+      - path: soldier_controls/soldier_control/transform1/soldier_skel/left_hip/left_knee/left_foot
+        weight: 1
+      - path: soldier_controls/soldier_control/transform1/soldier_skel/left_hip/left_knee/left_foot/left_toe
+        weight: 1
+      - path: soldier_controls/soldier_control/transform1/soldier_skel/right_hip
+        weight: 1
+      - path: soldier_controls/soldier_control/transform1/soldier_skel/right_hip/right_knee
+        weight: 1
+      - path: soldier_controls/soldier_control/transform1/soldier_skel/right_hip/right_knee/right_foot
+        weight: 1
+      - path: soldier_controls/soldier_control/transform1/soldier_skel/right_hip/right_knee/right_foot/right_toe
+        weight: 1
+      - path: soldier_controls/soldier_control/transform1/soldier_skel/waist
+        weight: 1
+      - path: soldier_controls/soldier_control/transform1/soldier_skel/waist/chest
+        weight: 1
+      - path: soldier_controls/soldier_control/transform1/soldier_skel/waist/chest/neck
+        weight: 1
+      - path: soldier_controls/soldier_control/transform1/soldier_skel/waist/chest/neck/head
+        weight: 1
+      - path: soldier_controls/soldier_control/transform1/soldier_skel/waist/chest/neck/left_shoulder
+        weight: 1
+      - path: soldier_controls/soldier_control/transform1/soldier_skel/waist/chest/neck/left_shoulder/left_elbow
+        weight: 1
+      - path: soldier_controls/soldier_control/transform1/soldier_skel/waist/chest/neck/left_shoulder/left_elbow/left_hand
+        weight: 1
+      - path: soldier_controls/soldier_control/transform1/soldier_skel/waist/chest/neck/left_shoulder/left_elbow/left_hand/left_index_base
+        weight: 1
+      - path: soldier_controls/soldier_control/transform1/soldier_skel/waist/chest/neck/left_shoulder/left_elbow/left_hand/left_index_base/left_index_mid
+        weight: 1
+      - path: soldier_controls/soldier_control/transform1/soldier_skel/waist/chest/neck/left_shoulder/left_elbow/left_hand/left_index_base/left_index_mid/left_index_tip
+        weight: 1
+      - path: soldier_controls/soldier_control/transform1/soldier_skel/waist/chest/neck/left_shoulder/left_elbow/left_hand/left_middle_base
+        weight: 1
+      - path: soldier_controls/soldier_control/transform1/soldier_skel/waist/chest/neck/left_shoulder/left_elbow/left_hand/left_middle_base/left_middle_mid
+        weight: 1
+      - path: soldier_controls/soldier_control/transform1/soldier_skel/waist/chest/neck/left_shoulder/left_elbow/left_hand/left_middle_base/left_middle_mid/left_middle_tip
+        weight: 1
+      - path: soldier_controls/soldier_control/transform1/soldier_skel/waist/chest/neck/left_shoulder/left_elbow/left_hand/left_pinky_base
+        weight: 1
+      - path: soldier_controls/soldier_control/transform1/soldier_skel/waist/chest/neck/left_shoulder/left_elbow/left_hand/left_pinky_base/left_pinky_mid
+        weight: 1
+      - path: soldier_controls/soldier_control/transform1/soldier_skel/waist/chest/neck/left_shoulder/left_elbow/left_hand/left_pinky_base/left_pinky_mid/left_pinky_tip
+        weight: 1
+      - path: soldier_controls/soldier_control/transform1/soldier_skel/waist/chest/neck/left_shoulder/left_elbow/left_hand/left_ring_base
+        weight: 1
+      - path: soldier_controls/soldier_control/transform1/soldier_skel/waist/chest/neck/left_shoulder/left_elbow/left_hand/left_ring_base/left_ring_mid
+        weight: 1
+      - path: soldier_controls/soldier_control/transform1/soldier_skel/waist/chest/neck/left_shoulder/left_elbow/left_hand/left_ring_base/left_ring_mid/left_ring_tip
+        weight: 1
+      - path: soldier_controls/soldier_control/transform1/soldier_skel/waist/chest/neck/left_shoulder/left_elbow/left_hand/left_thumb_base
+        weight: 1
+      - path: soldier_controls/soldier_control/transform1/soldier_skel/waist/chest/neck/left_shoulder/left_elbow/left_hand/left_thumb_base/left_thumb_mid
+        weight: 1
+      - path: soldier_controls/soldier_control/transform1/soldier_skel/waist/chest/neck/left_shoulder/left_elbow/left_hand/left_thumb_base/left_thumb_mid/left_thumb_tip
+        weight: 1
+      - path: soldier_controls/soldier_control/transform1/soldier_skel/waist/chest/neck/left_shoulder/left_elbow/shield
+        weight: 1
+      - path: soldier_controls/soldier_control/transform1/soldier_skel/waist/chest/neck/right_shoulder
+        weight: 1
+      - path: soldier_controls/soldier_control/transform1/soldier_skel/waist/chest/neck/right_shoulder/right_elbow
+        weight: 1
+      - path: soldier_controls/soldier_control/transform1/soldier_skel/waist/chest/neck/right_shoulder/right_elbow/right_hand
+        weight: 1
+      - path: soldier_controls/soldier_control/transform1/soldier_skel/waist/chest/neck/right_shoulder/right_elbow/right_hand/right_index_base
+        weight: 1
+      - path: soldier_controls/soldier_control/transform1/soldier_skel/waist/chest/neck/right_shoulder/right_elbow/right_hand/right_index_base/right_index_mid
+        weight: 1
+      - path: soldier_controls/soldier_control/transform1/soldier_skel/waist/chest/neck/right_shoulder/right_elbow/right_hand/right_index_base/right_index_mid/right_index_tip
+        weight: 1
+      - path: soldier_controls/soldier_control/transform1/soldier_skel/waist/chest/neck/right_shoulder/right_elbow/right_hand/right_middle_base
+        weight: 1
+      - path: soldier_controls/soldier_control/transform1/soldier_skel/waist/chest/neck/right_shoulder/right_elbow/right_hand/right_middle_base/right_middle_mid
+        weight: 1
+      - path: soldier_controls/soldier_control/transform1/soldier_skel/waist/chest/neck/right_shoulder/right_elbow/right_hand/right_middle_base/right_middle_mid/right_middle_tip
+        weight: 1
+      - path: soldier_controls/soldier_control/transform1/soldier_skel/waist/chest/neck/right_shoulder/right_elbow/right_hand/right_pinky_base
+        weight: 1
+      - path: soldier_controls/soldier_control/transform1/soldier_skel/waist/chest/neck/right_shoulder/right_elbow/right_hand/right_pinky_base/right_pinky_mid
+        weight: 1
+      - path: soldier_controls/soldier_control/transform1/soldier_skel/waist/chest/neck/right_shoulder/right_elbow/right_hand/right_pinky_base/right_pinky_mid/right_pinky_tip
+        weight: 1
+      - path: soldier_controls/soldier_control/transform1/soldier_skel/waist/chest/neck/right_shoulder/right_elbow/right_hand/right_ring_base
+        weight: 1
+      - path: soldier_controls/soldier_control/transform1/soldier_skel/waist/chest/neck/right_shoulder/right_elbow/right_hand/right_ring_base/right_ring_mid
+        weight: 1
+      - path: soldier_controls/soldier_control/transform1/soldier_skel/waist/chest/neck/right_shoulder/right_elbow/right_hand/right_ring_base/right_ring_mid/right_ring_tip
+        weight: 1
+      - path: soldier_controls/soldier_control/transform1/soldier_skel/waist/chest/neck/right_shoulder/right_elbow/right_hand/right_thub_base
+        weight: 1
+      - path: soldier_controls/soldier_control/transform1/soldier_skel/waist/chest/neck/right_shoulder/right_elbow/right_hand/right_thub_base/right_thumb_mid
+        weight: 1
+      - path: soldier_controls/soldier_control/transform1/soldier_skel/waist/chest/neck/right_shoulder/right_elbow/right_hand/right_thub_base/right_thumb_mid/right_thumb_tip
+        weight: 1
+      - path: soldier_controls/soldier_control/transform1/soldier_skel/waist/chest/neck/right_shoulder/right_elbow/right_hand/soldier_spear
+        weight: 1
+      maskType: 0
+      maskSource: {instanceID: 0}
+    - serializedVersion: 16
+      name: Strike
+      takeName: Take 001
+      firstFrame: 100
+      lastFrame: 128
+      wrapMode: 1
+      orientationOffsetY: 0
+      level: 0
+      cycleOffset: 0
+      loop: 0
+      loopTime: 0
+      loopBlend: 0
+      loopBlendOrientation: 0
+      loopBlendPositionY: 0
+      loopBlendPositionXZ: 0
+      keepOriginalOrientation: 0
+      keepOriginalPositionY: 1
+      keepOriginalPositionXZ: 0
+      heightFromFeet: 0
+      mirror: 0
+      bodyMask: 01000000010000000100000001000000010000000100000001000000010000000100000001000000010000000100000001000000
+      curves: []
+      events: []
+      transformMask:
+      - path: 
+        weight: 1
+      - path: soldier
+        weight: 1
+      - path: soldier_controls
+        weight: 1
+      - path: soldier_controls/left_arm_control
+        weight: 1
+      - path: soldier_controls/left_arm_control/left_arm_IK
+        weight: 1
+      - path: soldier_controls/left_leg_control
+        weight: 1
+      - path: soldier_controls/left_leg_control/left_leg_IK
+        weight: 1
+      - path: soldier_controls/right_arm_control
+        weight: 1
+      - path: soldier_controls/right_arm_control/right_arm_IK
+        weight: 1
+      - path: soldier_controls/right_leg_control
+        weight: 1
+      - path: soldier_controls/right_leg_control/right_leg_IK
+        weight: 1
+      - path: soldier_controls/soldier_control
+        weight: 1
+      - path: soldier_controls/soldier_control/transform1
+        weight: 1
+      - path: soldier_controls/soldier_control/transform1/soldier_skel
+        weight: 1
+      - path: soldier_controls/soldier_control/transform1/soldier_skel/left_hip
+        weight: 1
+      - path: soldier_controls/soldier_control/transform1/soldier_skel/left_hip/left_knee
+        weight: 1
+      - path: soldier_controls/soldier_control/transform1/soldier_skel/left_hip/left_knee/left_foot
+        weight: 1
+      - path: soldier_controls/soldier_control/transform1/soldier_skel/left_hip/left_knee/left_foot/left_toe
+        weight: 1
+      - path: soldier_controls/soldier_control/transform1/soldier_skel/right_hip
+        weight: 1
+      - path: soldier_controls/soldier_control/transform1/soldier_skel/right_hip/right_knee
+        weight: 1
+      - path: soldier_controls/soldier_control/transform1/soldier_skel/right_hip/right_knee/right_foot
+        weight: 1
+      - path: soldier_controls/soldier_control/transform1/soldier_skel/right_hip/right_knee/right_foot/right_toe
+        weight: 1
+      - path: soldier_controls/soldier_control/transform1/soldier_skel/waist
+        weight: 1
+      - path: soldier_controls/soldier_control/transform1/soldier_skel/waist/chest
+        weight: 1
+      - path: soldier_controls/soldier_control/transform1/soldier_skel/waist/chest/neck
+        weight: 1
+      - path: soldier_controls/soldier_control/transform1/soldier_skel/waist/chest/neck/head
+        weight: 1
+      - path: soldier_controls/soldier_control/transform1/soldier_skel/waist/chest/neck/left_shoulder
+        weight: 1
+      - path: soldier_controls/soldier_control/transform1/soldier_skel/waist/chest/neck/left_shoulder/left_elbow
+        weight: 1
+      - path: soldier_controls/soldier_control/transform1/soldier_skel/waist/chest/neck/left_shoulder/left_elbow/left_hand
+        weight: 1
+      - path: soldier_controls/soldier_control/transform1/soldier_skel/waist/chest/neck/left_shoulder/left_elbow/left_hand/left_index_base
+        weight: 1
+      - path: soldier_controls/soldier_control/transform1/soldier_skel/waist/chest/neck/left_shoulder/left_elbow/left_hand/left_index_base/left_index_mid
+        weight: 1
+      - path: soldier_controls/soldier_control/transform1/soldier_skel/waist/chest/neck/left_shoulder/left_elbow/left_hand/left_index_base/left_index_mid/left_index_tip
+        weight: 1
+      - path: soldier_controls/soldier_control/transform1/soldier_skel/waist/chest/neck/left_shoulder/left_elbow/left_hand/left_middle_base
+        weight: 1
+      - path: soldier_controls/soldier_control/transform1/soldier_skel/waist/chest/neck/left_shoulder/left_elbow/left_hand/left_middle_base/left_middle_mid
+        weight: 1
+      - path: soldier_controls/soldier_control/transform1/soldier_skel/waist/chest/neck/left_shoulder/left_elbow/left_hand/left_middle_base/left_middle_mid/left_middle_tip
+        weight: 1
+      - path: soldier_controls/soldier_control/transform1/soldier_skel/waist/chest/neck/left_shoulder/left_elbow/left_hand/left_pinky_base
+        weight: 1
+      - path: soldier_controls/soldier_control/transform1/soldier_skel/waist/chest/neck/left_shoulder/left_elbow/left_hand/left_pinky_base/left_pinky_mid
+        weight: 1
+      - path: soldier_controls/soldier_control/transform1/soldier_skel/waist/chest/neck/left_shoulder/left_elbow/left_hand/left_pinky_base/left_pinky_mid/left_pinky_tip
+        weight: 1
+      - path: soldier_controls/soldier_control/transform1/soldier_skel/waist/chest/neck/left_shoulder/left_elbow/left_hand/left_ring_base
+        weight: 1
+      - path: soldier_controls/soldier_control/transform1/soldier_skel/waist/chest/neck/left_shoulder/left_elbow/left_hand/left_ring_base/left_ring_mid
+        weight: 1
+      - path: soldier_controls/soldier_control/transform1/soldier_skel/waist/chest/neck/left_shoulder/left_elbow/left_hand/left_ring_base/left_ring_mid/left_ring_tip
+        weight: 1
+      - path: soldier_controls/soldier_control/transform1/soldier_skel/waist/chest/neck/left_shoulder/left_elbow/left_hand/left_thumb_base
+        weight: 1
+      - path: soldier_controls/soldier_control/transform1/soldier_skel/waist/chest/neck/left_shoulder/left_elbow/left_hand/left_thumb_base/left_thumb_mid
+        weight: 1
+      - path: soldier_controls/soldier_control/transform1/soldier_skel/waist/chest/neck/left_shoulder/left_elbow/left_hand/left_thumb_base/left_thumb_mid/left_thumb_tip
+        weight: 1
+      - path: soldier_controls/soldier_control/transform1/soldier_skel/waist/chest/neck/left_shoulder/left_elbow/shield
+        weight: 1
+      - path: soldier_controls/soldier_control/transform1/soldier_skel/waist/chest/neck/right_shoulder
+        weight: 1
+      - path: soldier_controls/soldier_control/transform1/soldier_skel/waist/chest/neck/right_shoulder/right_elbow
+        weight: 1
+      - path: soldier_controls/soldier_control/transform1/soldier_skel/waist/chest/neck/right_shoulder/right_elbow/right_hand
+        weight: 1
+      - path: soldier_controls/soldier_control/transform1/soldier_skel/waist/chest/neck/right_shoulder/right_elbow/right_hand/right_index_base
+        weight: 1
+      - path: soldier_controls/soldier_control/transform1/soldier_skel/waist/chest/neck/right_shoulder/right_elbow/right_hand/right_index_base/right_index_mid
+        weight: 1
+      - path: soldier_controls/soldier_control/transform1/soldier_skel/waist/chest/neck/right_shoulder/right_elbow/right_hand/right_index_base/right_index_mid/right_index_tip
+        weight: 1
+      - path: soldier_controls/soldier_control/transform1/soldier_skel/waist/chest/neck/right_shoulder/right_elbow/right_hand/right_middle_base
+        weight: 1
+      - path: soldier_controls/soldier_control/transform1/soldier_skel/waist/chest/neck/right_shoulder/right_elbow/right_hand/right_middle_base/right_middle_mid
+        weight: 1
+      - path: soldier_controls/soldier_control/transform1/soldier_skel/waist/chest/neck/right_shoulder/right_elbow/right_hand/right_middle_base/right_middle_mid/right_middle_tip
+        weight: 1
+      - path: soldier_controls/soldier_control/transform1/soldier_skel/waist/chest/neck/right_shoulder/right_elbow/right_hand/right_pinky_base
+        weight: 1
+      - path: soldier_controls/soldier_control/transform1/soldier_skel/waist/chest/neck/right_shoulder/right_elbow/right_hand/right_pinky_base/right_pinky_mid
+        weight: 1
+      - path: soldier_controls/soldier_control/transform1/soldier_skel/waist/chest/neck/right_shoulder/right_elbow/right_hand/right_pinky_base/right_pinky_mid/right_pinky_tip
+        weight: 1
+      - path: soldier_controls/soldier_control/transform1/soldier_skel/waist/chest/neck/right_shoulder/right_elbow/right_hand/right_ring_base
+        weight: 1
+      - path: soldier_controls/soldier_control/transform1/soldier_skel/waist/chest/neck/right_shoulder/right_elbow/right_hand/right_ring_base/right_ring_mid
+        weight: 1
+      - path: soldier_controls/soldier_control/transform1/soldier_skel/waist/chest/neck/right_shoulder/right_elbow/right_hand/right_ring_base/right_ring_mid/right_ring_tip
+        weight: 1
+      - path: soldier_controls/soldier_control/transform1/soldier_skel/waist/chest/neck/right_shoulder/right_elbow/right_hand/right_thub_base
+        weight: 1
+      - path: soldier_controls/soldier_control/transform1/soldier_skel/waist/chest/neck/right_shoulder/right_elbow/right_hand/right_thub_base/right_thumb_mid
+        weight: 1
+      - path: soldier_controls/soldier_control/transform1/soldier_skel/waist/chest/neck/right_shoulder/right_elbow/right_hand/right_thub_base/right_thumb_mid/right_thumb_tip
+        weight: 1
+      - path: soldier_controls/soldier_control/transform1/soldier_skel/waist/chest/neck/right_shoulder/right_elbow/right_hand/soldier_spear
+        weight: 1
+      maskType: 0
+      maskSource: {instanceID: 0}
+    - serializedVersion: 16
+      name: Brace
+      takeName: Take 001
+      firstFrame: 150
+      lastFrame: 171
+      wrapMode: 1
+      orientationOffsetY: 0
+      level: 0
+      cycleOffset: 0
+      loop: 0
+      loopTime: 0
+      loopBlend: 0
+      loopBlendOrientation: 0
+      loopBlendPositionY: 0
+      loopBlendPositionXZ: 0
+      keepOriginalOrientation: 0
+      keepOriginalPositionY: 1
+      keepOriginalPositionXZ: 0
+      heightFromFeet: 0
+      mirror: 0
+      bodyMask: 01000000010000000100000001000000010000000100000001000000010000000100000001000000010000000100000001000000
+      curves: []
+      events: []
+      transformMask:
+      - path: 
+        weight: 1
+      - path: soldier
+        weight: 1
+      - path: soldier_controls
+        weight: 1
+      - path: soldier_controls/left_arm_control
+        weight: 1
+      - path: soldier_controls/left_arm_control/left_arm_IK
+        weight: 1
+      - path: soldier_controls/left_leg_control
+        weight: 1
+      - path: soldier_controls/left_leg_control/left_leg_IK
+        weight: 1
+      - path: soldier_controls/right_arm_control
+        weight: 1
+      - path: soldier_controls/right_arm_control/right_arm_IK
+        weight: 1
+      - path: soldier_controls/right_leg_control
+        weight: 1
+      - path: soldier_controls/right_leg_control/right_leg_IK
+        weight: 1
+      - path: soldier_controls/soldier_control
+        weight: 1
+      - path: soldier_controls/soldier_control/transform1
+        weight: 1
+      - path: soldier_controls/soldier_control/transform1/soldier_skel
+        weight: 1
+      - path: soldier_controls/soldier_control/transform1/soldier_skel/left_hip
+        weight: 1
+      - path: soldier_controls/soldier_control/transform1/soldier_skel/left_hip/left_knee
+        weight: 1
+      - path: soldier_controls/soldier_control/transform1/soldier_skel/left_hip/left_knee/left_foot
+        weight: 1
+      - path: soldier_controls/soldier_control/transform1/soldier_skel/left_hip/left_knee/left_foot/left_toe
+        weight: 1
+      - path: soldier_controls/soldier_control/transform1/soldier_skel/right_hip
+        weight: 1
+      - path: soldier_controls/soldier_control/transform1/soldier_skel/right_hip/right_knee
+        weight: 1
+      - path: soldier_controls/soldier_control/transform1/soldier_skel/right_hip/right_knee/right_foot
+        weight: 1
+      - path: soldier_controls/soldier_control/transform1/soldier_skel/right_hip/right_knee/right_foot/right_toe
+        weight: 1
+      - path: soldier_controls/soldier_control/transform1/soldier_skel/waist
+        weight: 1
+      - path: soldier_controls/soldier_control/transform1/soldier_skel/waist/chest
+        weight: 1
+      - path: soldier_controls/soldier_control/transform1/soldier_skel/waist/chest/neck
+        weight: 1
+      - path: soldier_controls/soldier_control/transform1/soldier_skel/waist/chest/neck/head
+        weight: 1
+      - path: soldier_controls/soldier_control/transform1/soldier_skel/waist/chest/neck/left_shoulder
+        weight: 1
+      - path: soldier_controls/soldier_control/transform1/soldier_skel/waist/chest/neck/left_shoulder/left_elbow
+        weight: 1
+      - path: soldier_controls/soldier_control/transform1/soldier_skel/waist/chest/neck/left_shoulder/left_elbow/left_hand
+        weight: 1
+      - path: soldier_controls/soldier_control/transform1/soldier_skel/waist/chest/neck/left_shoulder/left_elbow/left_hand/left_index_base
+        weight: 1
+      - path: soldier_controls/soldier_control/transform1/soldier_skel/waist/chest/neck/left_shoulder/left_elbow/left_hand/left_index_base/left_index_mid
+        weight: 1
+      - path: soldier_controls/soldier_control/transform1/soldier_skel/waist/chest/neck/left_shoulder/left_elbow/left_hand/left_index_base/left_index_mid/left_index_tip
+        weight: 1
+      - path: soldier_controls/soldier_control/transform1/soldier_skel/waist/chest/neck/left_shoulder/left_elbow/left_hand/left_middle_base
+        weight: 1
+      - path: soldier_controls/soldier_control/transform1/soldier_skel/waist/chest/neck/left_shoulder/left_elbow/left_hand/left_middle_base/left_middle_mid
+        weight: 1
+      - path: soldier_controls/soldier_control/transform1/soldier_skel/waist/chest/neck/left_shoulder/left_elbow/left_hand/left_middle_base/left_middle_mid/left_middle_tip
+        weight: 1
+      - path: soldier_controls/soldier_control/transform1/soldier_skel/waist/chest/neck/left_shoulder/left_elbow/left_hand/left_pinky_base
+        weight: 1
+      - path: soldier_controls/soldier_control/transform1/soldier_skel/waist/chest/neck/left_shoulder/left_elbow/left_hand/left_pinky_base/left_pinky_mid
+        weight: 1
+      - path: soldier_controls/soldier_control/transform1/soldier_skel/waist/chest/neck/left_shoulder/left_elbow/left_hand/left_pinky_base/left_pinky_mid/left_pinky_tip
+        weight: 1
+      - path: soldier_controls/soldier_control/transform1/soldier_skel/waist/chest/neck/left_shoulder/left_elbow/left_hand/left_ring_base
+        weight: 1
+      - path: soldier_controls/soldier_control/transform1/soldier_skel/waist/chest/neck/left_shoulder/left_elbow/left_hand/left_ring_base/left_ring_mid
+        weight: 1
+      - path: soldier_controls/soldier_control/transform1/soldier_skel/waist/chest/neck/left_shoulder/left_elbow/left_hand/left_ring_base/left_ring_mid/left_ring_tip
+        weight: 1
+      - path: soldier_controls/soldier_control/transform1/soldier_skel/waist/chest/neck/left_shoulder/left_elbow/left_hand/left_thumb_base
+        weight: 1
+      - path: soldier_controls/soldier_control/transform1/soldier_skel/waist/chest/neck/left_shoulder/left_elbow/left_hand/left_thumb_base/left_thumb_mid
+        weight: 1
+      - path: soldier_controls/soldier_control/transform1/soldier_skel/waist/chest/neck/left_shoulder/left_elbow/left_hand/left_thumb_base/left_thumb_mid/left_thumb_tip
+        weight: 1
+      - path: soldier_controls/soldier_control/transform1/soldier_skel/waist/chest/neck/left_shoulder/left_elbow/shield
+        weight: 1
+      - path: soldier_controls/soldier_control/transform1/soldier_skel/waist/chest/neck/right_shoulder
+        weight: 1
+      - path: soldier_controls/soldier_control/transform1/soldier_skel/waist/chest/neck/right_shoulder/right_elbow
+        weight: 1
+      - path: soldier_controls/soldier_control/transform1/soldier_skel/waist/chest/neck/right_shoulder/right_elbow/right_hand
+        weight: 1
+      - path: soldier_controls/soldier_control/transform1/soldier_skel/waist/chest/neck/right_shoulder/right_elbow/right_hand/right_index_base
+        weight: 1
+      - path: soldier_controls/soldier_control/transform1/soldier_skel/waist/chest/neck/right_shoulder/right_elbow/right_hand/right_index_base/right_index_mid
+        weight: 1
+      - path: soldier_controls/soldier_control/transform1/soldier_skel/waist/chest/neck/right_shoulder/right_elbow/right_hand/right_index_base/right_index_mid/right_index_tip
+        weight: 1
+      - path: soldier_controls/soldier_control/transform1/soldier_skel/waist/chest/neck/right_shoulder/right_elbow/right_hand/right_middle_base
+        weight: 1
+      - path: soldier_controls/soldier_control/transform1/soldier_skel/waist/chest/neck/right_shoulder/right_elbow/right_hand/right_middle_base/right_middle_mid
+        weight: 1
+      - path: soldier_controls/soldier_control/transform1/soldier_skel/waist/chest/neck/right_shoulder/right_elbow/right_hand/right_middle_base/right_middle_mid/right_middle_tip
+        weight: 1
+      - path: soldier_controls/soldier_control/transform1/soldier_skel/waist/chest/neck/right_shoulder/right_elbow/right_hand/right_pinky_base
+        weight: 1
+      - path: soldier_controls/soldier_control/transform1/soldier_skel/waist/chest/neck/right_shoulder/right_elbow/right_hand/right_pinky_base/right_pinky_mid
+        weight: 1
+      - path: soldier_controls/soldier_control/transform1/soldier_skel/waist/chest/neck/right_shoulder/right_elbow/right_hand/right_pinky_base/right_pinky_mid/right_pinky_tip
+        weight: 1
+      - path: soldier_controls/soldier_control/transform1/soldier_skel/waist/chest/neck/right_shoulder/right_elbow/right_hand/right_ring_base
+        weight: 1
+      - path: soldier_controls/soldier_control/transform1/soldier_skel/waist/chest/neck/right_shoulder/right_elbow/right_hand/right_ring_base/right_ring_mid
+        weight: 1
+      - path: soldier_controls/soldier_control/transform1/soldier_skel/waist/chest/neck/right_shoulder/right_elbow/right_hand/right_ring_base/right_ring_mid/right_ring_tip
+        weight: 1
+      - path: soldier_controls/soldier_control/transform1/soldier_skel/waist/chest/neck/right_shoulder/right_elbow/right_hand/right_thub_base
+        weight: 1
+      - path: soldier_controls/soldier_control/transform1/soldier_skel/waist/chest/neck/right_shoulder/right_elbow/right_hand/right_thub_base/right_thumb_mid
+        weight: 1
+      - path: soldier_controls/soldier_control/transform1/soldier_skel/waist/chest/neck/right_shoulder/right_elbow/right_hand/right_thub_base/right_thumb_mid/right_thumb_tip
+        weight: 1
+      - path: soldier_controls/soldier_control/transform1/soldier_skel/waist/chest/neck/right_shoulder/right_elbow/right_hand/soldier_spear
+        weight: 1
+      maskType: 0
+      maskSource: {instanceID: 0}
+    - serializedVersion: 16
+      name: BraceToStand
+      takeName: Take 001
+      firstFrame: 175
+      lastFrame: 195
+      wrapMode: 1
+      orientationOffsetY: 0
+      level: 0
+      cycleOffset: 0
+      loop: 0
+      loopTime: 0
+      loopBlend: 0
+      loopBlendOrientation: 0
+      loopBlendPositionY: 0
+      loopBlendPositionXZ: 0
+      keepOriginalOrientation: 0
+      keepOriginalPositionY: 1
+      keepOriginalPositionXZ: 0
+      heightFromFeet: 0
+      mirror: 0
+      bodyMask: 01000000010000000100000001000000010000000100000001000000010000000100000001000000010000000100000001000000
+      curves: []
+      events: []
+      transformMask:
+      - path: 
+        weight: 1
+      - path: soldier
+        weight: 1
+      - path: soldier_controls
+        weight: 1
+      - path: soldier_controls/left_arm_control
+        weight: 1
+      - path: soldier_controls/left_arm_control/left_arm_IK
+        weight: 1
+      - path: soldier_controls/left_leg_control
+        weight: 1
+      - path: soldier_controls/left_leg_control/left_leg_IK
+        weight: 1
+      - path: soldier_controls/right_arm_control
+        weight: 1
+      - path: soldier_controls/right_arm_control/right_arm_IK
+        weight: 1
+      - path: soldier_controls/right_leg_control
+        weight: 1
+      - path: soldier_controls/right_leg_control/right_leg_IK
+        weight: 1
+      - path: soldier_controls/soldier_control
+        weight: 1
+      - path: soldier_controls/soldier_control/transform1
+        weight: 1
+      - path: soldier_controls/soldier_control/transform1/soldier_skel
+        weight: 1
+      - path: soldier_controls/soldier_control/transform1/soldier_skel/left_hip
+        weight: 1
+      - path: soldier_controls/soldier_control/transform1/soldier_skel/left_hip/left_knee
+        weight: 1
+      - path: soldier_controls/soldier_control/transform1/soldier_skel/left_hip/left_knee/left_foot
+        weight: 1
+      - path: soldier_controls/soldier_control/transform1/soldier_skel/left_hip/left_knee/left_foot/left_toe
+        weight: 1
+      - path: soldier_controls/soldier_control/transform1/soldier_skel/right_hip
+        weight: 1
+      - path: soldier_controls/soldier_control/transform1/soldier_skel/right_hip/right_knee
+        weight: 1
+      - path: soldier_controls/soldier_control/transform1/soldier_skel/right_hip/right_knee/right_foot
+        weight: 1
+      - path: soldier_controls/soldier_control/transform1/soldier_skel/right_hip/right_knee/right_foot/right_toe
+        weight: 1
+      - path: soldier_controls/soldier_control/transform1/soldier_skel/waist
+        weight: 1
+      - path: soldier_controls/soldier_control/transform1/soldier_skel/waist/chest
+        weight: 1
+      - path: soldier_controls/soldier_control/transform1/soldier_skel/waist/chest/neck
+        weight: 1
+      - path: soldier_controls/soldier_control/transform1/soldier_skel/waist/chest/neck/head
+        weight: 1
+      - path: soldier_controls/soldier_control/transform1/soldier_skel/waist/chest/neck/left_shoulder
+        weight: 1
+      - path: soldier_controls/soldier_control/transform1/soldier_skel/waist/chest/neck/left_shoulder/left_elbow
+        weight: 1
+      - path: soldier_controls/soldier_control/transform1/soldier_skel/waist/chest/neck/left_shoulder/left_elbow/left_hand
+        weight: 1
+      - path: soldier_controls/soldier_control/transform1/soldier_skel/waist/chest/neck/left_shoulder/left_elbow/left_hand/left_index_base
+        weight: 1
+      - path: soldier_controls/soldier_control/transform1/soldier_skel/waist/chest/neck/left_shoulder/left_elbow/left_hand/left_index_base/left_index_mid
+        weight: 1
+      - path: soldier_controls/soldier_control/transform1/soldier_skel/waist/chest/neck/left_shoulder/left_elbow/left_hand/left_index_base/left_index_mid/left_index_tip
+        weight: 1
+      - path: soldier_controls/soldier_control/transform1/soldier_skel/waist/chest/neck/left_shoulder/left_elbow/left_hand/left_middle_base
+        weight: 1
+      - path: soldier_controls/soldier_control/transform1/soldier_skel/waist/chest/neck/left_shoulder/left_elbow/left_hand/left_middle_base/left_middle_mid
+        weight: 1
+      - path: soldier_controls/soldier_control/transform1/soldier_skel/waist/chest/neck/left_shoulder/left_elbow/left_hand/left_middle_base/left_middle_mid/left_middle_tip
+        weight: 1
+      - path: soldier_controls/soldier_control/transform1/soldier_skel/waist/chest/neck/left_shoulder/left_elbow/left_hand/left_pinky_base
+        weight: 1
+      - path: soldier_controls/soldier_control/transform1/soldier_skel/waist/chest/neck/left_shoulder/left_elbow/left_hand/left_pinky_base/left_pinky_mid
+        weight: 1
+      - path: soldier_controls/soldier_control/transform1/soldier_skel/waist/chest/neck/left_shoulder/left_elbow/left_hand/left_pinky_base/left_pinky_mid/left_pinky_tip
+        weight: 1
+      - path: soldier_controls/soldier_control/transform1/soldier_skel/waist/chest/neck/left_shoulder/left_elbow/left_hand/left_ring_base
+        weight: 1
+      - path: soldier_controls/soldier_control/transform1/soldier_skel/waist/chest/neck/left_shoulder/left_elbow/left_hand/left_ring_base/left_ring_mid
+        weight: 1
+      - path: soldier_controls/soldier_control/transform1/soldier_skel/waist/chest/neck/left_shoulder/left_elbow/left_hand/left_ring_base/left_ring_mid/left_ring_tip
+        weight: 1
+      - path: soldier_controls/soldier_control/transform1/soldier_skel/waist/chest/neck/left_shoulder/left_elbow/left_hand/left_thumb_base
+        weight: 1
+      - path: soldier_controls/soldier_control/transform1/soldier_skel/waist/chest/neck/left_shoulder/left_elbow/left_hand/left_thumb_base/left_thumb_mid
+        weight: 1
+      - path: soldier_controls/soldier_control/transform1/soldier_skel/waist/chest/neck/left_shoulder/left_elbow/left_hand/left_thumb_base/left_thumb_mid/left_thumb_tip
+        weight: 1
+      - path: soldier_controls/soldier_control/transform1/soldier_skel/waist/chest/neck/left_shoulder/left_elbow/shield
+        weight: 1
+      - path: soldier_controls/soldier_control/transform1/soldier_skel/waist/chest/neck/right_shoulder
+        weight: 1
+      - path: soldier_controls/soldier_control/transform1/soldier_skel/waist/chest/neck/right_shoulder/right_elbow
+        weight: 1
+      - path: soldier_controls/soldier_control/transform1/soldier_skel/waist/chest/neck/right_shoulder/right_elbow/right_hand
+        weight: 1
+      - path: soldier_controls/soldier_control/transform1/soldier_skel/waist/chest/neck/right_shoulder/right_elbow/right_hand/right_index_base
+        weight: 1
+      - path: soldier_controls/soldier_control/transform1/soldier_skel/waist/chest/neck/right_shoulder/right_elbow/right_hand/right_index_base/right_index_mid
+        weight: 1
+      - path: soldier_controls/soldier_control/transform1/soldier_skel/waist/chest/neck/right_shoulder/right_elbow/right_hand/right_index_base/right_index_mid/right_index_tip
+        weight: 1
+      - path: soldier_controls/soldier_control/transform1/soldier_skel/waist/chest/neck/right_shoulder/right_elbow/right_hand/right_middle_base
+        weight: 1
+      - path: soldier_controls/soldier_control/transform1/soldier_skel/waist/chest/neck/right_shoulder/right_elbow/right_hand/right_middle_base/right_middle_mid
+        weight: 1
+      - path: soldier_controls/soldier_control/transform1/soldier_skel/waist/chest/neck/right_shoulder/right_elbow/right_hand/right_middle_base/right_middle_mid/right_middle_tip
+        weight: 1
+      - path: soldier_controls/soldier_control/transform1/soldier_skel/waist/chest/neck/right_shoulder/right_elbow/right_hand/right_pinky_base
+        weight: 1
+      - path: soldier_controls/soldier_control/transform1/soldier_skel/waist/chest/neck/right_shoulder/right_elbow/right_hand/right_pinky_base/right_pinky_mid
+        weight: 1
+      - path: soldier_controls/soldier_control/transform1/soldier_skel/waist/chest/neck/right_shoulder/right_elbow/right_hand/right_pinky_base/right_pinky_mid/right_pinky_tip
+        weight: 1
+      - path: soldier_controls/soldier_control/transform1/soldier_skel/waist/chest/neck/right_shoulder/right_elbow/right_hand/right_ring_base
+        weight: 1
+      - path: soldier_controls/soldier_control/transform1/soldier_skel/waist/chest/neck/right_shoulder/right_elbow/right_hand/right_ring_base/right_ring_mid
+        weight: 1
+      - path: soldier_controls/soldier_control/transform1/soldier_skel/waist/chest/neck/right_shoulder/right_elbow/right_hand/right_ring_base/right_ring_mid/right_ring_tip
+        weight: 1
+      - path: soldier_controls/soldier_control/transform1/soldier_skel/waist/chest/neck/right_shoulder/right_elbow/right_hand/right_thub_base
+        weight: 1
+      - path: soldier_controls/soldier_control/transform1/soldier_skel/waist/chest/neck/right_shoulder/right_elbow/right_hand/right_thub_base/right_thumb_mid
+        weight: 1
+      - path: soldier_controls/soldier_control/transform1/soldier_skel/waist/chest/neck/right_shoulder/right_elbow/right_hand/right_thub_base/right_thumb_mid/right_thumb_tip
+        weight: 1
+      - path: soldier_controls/soldier_control/transform1/soldier_skel/waist/chest/neck/right_shoulder/right_elbow/right_hand/soldier_spear
+        weight: 1
+      maskType: 0
+      maskSource: {instanceID: 0}
+    - serializedVersion: 16
+      name: StandToFlail
+      takeName: Take 001
+      firstFrame: 200
+      lastFrame: 213
+      wrapMode: 1
+      orientationOffsetY: 0
+      level: 0
+      cycleOffset: 0
+      loop: 0
+      loopTime: 0
+      loopBlend: 0
+      loopBlendOrientation: 0
+      loopBlendPositionY: 0
+      loopBlendPositionXZ: 0
+      keepOriginalOrientation: 0
+      keepOriginalPositionY: 1
+      keepOriginalPositionXZ: 0
+      heightFromFeet: 0
+      mirror: 0
+      bodyMask: 01000000010000000100000001000000010000000100000001000000010000000100000001000000010000000100000001000000
+      curves: []
+      events: []
+      transformMask:
+      - path: 
+        weight: 1
+      - path: soldier
+        weight: 1
+      - path: soldier_controls
+        weight: 1
+      - path: soldier_controls/left_arm_control
+        weight: 1
+      - path: soldier_controls/left_arm_control/left_arm_IK
+        weight: 1
+      - path: soldier_controls/left_leg_control
+        weight: 1
+      - path: soldier_controls/left_leg_control/left_leg_IK
+        weight: 1
+      - path: soldier_controls/right_arm_control
+        weight: 1
+      - path: soldier_controls/right_arm_control/right_arm_IK
+        weight: 1
+      - path: soldier_controls/right_leg_control
+        weight: 1
+      - path: soldier_controls/right_leg_control/right_leg_IK
+        weight: 1
+      - path: soldier_controls/soldier_control
+        weight: 1
+      - path: soldier_controls/soldier_control/transform1
+        weight: 1
+      - path: soldier_controls/soldier_control/transform1/soldier_skel
+        weight: 1
+      - path: soldier_controls/soldier_control/transform1/soldier_skel/left_hip
+        weight: 1
+      - path: soldier_controls/soldier_control/transform1/soldier_skel/left_hip/left_knee
+        weight: 1
+      - path: soldier_controls/soldier_control/transform1/soldier_skel/left_hip/left_knee/left_foot
+        weight: 1
+      - path: soldier_controls/soldier_control/transform1/soldier_skel/left_hip/left_knee/left_foot/left_toe
+        weight: 1
+      - path: soldier_controls/soldier_control/transform1/soldier_skel/right_hip
+        weight: 1
+      - path: soldier_controls/soldier_control/transform1/soldier_skel/right_hip/right_knee
+        weight: 1
+      - path: soldier_controls/soldier_control/transform1/soldier_skel/right_hip/right_knee/right_foot
+        weight: 1
+      - path: soldier_controls/soldier_control/transform1/soldier_skel/right_hip/right_knee/right_foot/right_toe
+        weight: 1
+      - path: soldier_controls/soldier_control/transform1/soldier_skel/waist
+        weight: 1
+      - path: soldier_controls/soldier_control/transform1/soldier_skel/waist/chest
+        weight: 1
+      - path: soldier_controls/soldier_control/transform1/soldier_skel/waist/chest/neck
+        weight: 1
+      - path: soldier_controls/soldier_control/transform1/soldier_skel/waist/chest/neck/head
+        weight: 1
+      - path: soldier_controls/soldier_control/transform1/soldier_skel/waist/chest/neck/left_shoulder
+        weight: 1
+      - path: soldier_controls/soldier_control/transform1/soldier_skel/waist/chest/neck/left_shoulder/left_elbow
+        weight: 1
+      - path: soldier_controls/soldier_control/transform1/soldier_skel/waist/chest/neck/left_shoulder/left_elbow/left_hand
+        weight: 1
+      - path: soldier_controls/soldier_control/transform1/soldier_skel/waist/chest/neck/left_shoulder/left_elbow/left_hand/left_index_base
+        weight: 1
+      - path: soldier_controls/soldier_control/transform1/soldier_skel/waist/chest/neck/left_shoulder/left_elbow/left_hand/left_index_base/left_index_mid
+        weight: 1
+      - path: soldier_controls/soldier_control/transform1/soldier_skel/waist/chest/neck/left_shoulder/left_elbow/left_hand/left_index_base/left_index_mid/left_index_tip
+        weight: 1
+      - path: soldier_controls/soldier_control/transform1/soldier_skel/waist/chest/neck/left_shoulder/left_elbow/left_hand/left_middle_base
+        weight: 1
+      - path: soldier_controls/soldier_control/transform1/soldier_skel/waist/chest/neck/left_shoulder/left_elbow/left_hand/left_middle_base/left_middle_mid
+        weight: 1
+      - path: soldier_controls/soldier_control/transform1/soldier_skel/waist/chest/neck/left_shoulder/left_elbow/left_hand/left_middle_base/left_middle_mid/left_middle_tip
+        weight: 1
+      - path: soldier_controls/soldier_control/transform1/soldier_skel/waist/chest/neck/left_shoulder/left_elbow/left_hand/left_pinky_base
+        weight: 1
+      - path: soldier_controls/soldier_control/transform1/soldier_skel/waist/chest/neck/left_shoulder/left_elbow/left_hand/left_pinky_base/left_pinky_mid
+        weight: 1
+      - path: soldier_controls/soldier_control/transform1/soldier_skel/waist/chest/neck/left_shoulder/left_elbow/left_hand/left_pinky_base/left_pinky_mid/left_pinky_tip
+        weight: 1
+      - path: soldier_controls/soldier_control/transform1/soldier_skel/waist/chest/neck/left_shoulder/left_elbow/left_hand/left_ring_base
+        weight: 1
+      - path: soldier_controls/soldier_control/transform1/soldier_skel/waist/chest/neck/left_shoulder/left_elbow/left_hand/left_ring_base/left_ring_mid
+        weight: 1
+      - path: soldier_controls/soldier_control/transform1/soldier_skel/waist/chest/neck/left_shoulder/left_elbow/left_hand/left_ring_base/left_ring_mid/left_ring_tip
+        weight: 1
+      - path: soldier_controls/soldier_control/transform1/soldier_skel/waist/chest/neck/left_shoulder/left_elbow/left_hand/left_thumb_base
+        weight: 1
+      - path: soldier_controls/soldier_control/transform1/soldier_skel/waist/chest/neck/left_shoulder/left_elbow/left_hand/left_thumb_base/left_thumb_mid
+        weight: 1
+      - path: soldier_controls/soldier_control/transform1/soldier_skel/waist/chest/neck/left_shoulder/left_elbow/left_hand/left_thumb_base/left_thumb_mid/left_thumb_tip
+        weight: 1
+      - path: soldier_controls/soldier_control/transform1/soldier_skel/waist/chest/neck/left_shoulder/left_elbow/shield
+        weight: 1
+      - path: soldier_controls/soldier_control/transform1/soldier_skel/waist/chest/neck/right_shoulder
+        weight: 1
+      - path: soldier_controls/soldier_control/transform1/soldier_skel/waist/chest/neck/right_shoulder/right_elbow
+        weight: 1
+      - path: soldier_controls/soldier_control/transform1/soldier_skel/waist/chest/neck/right_shoulder/right_elbow/right_hand
+        weight: 1
+      - path: soldier_controls/soldier_control/transform1/soldier_skel/waist/chest/neck/right_shoulder/right_elbow/right_hand/right_index_base
+        weight: 1
+      - path: soldier_controls/soldier_control/transform1/soldier_skel/waist/chest/neck/right_shoulder/right_elbow/right_hand/right_index_base/right_index_mid
+        weight: 1
+      - path: soldier_controls/soldier_control/transform1/soldier_skel/waist/chest/neck/right_shoulder/right_elbow/right_hand/right_index_base/right_index_mid/right_index_tip
+        weight: 1
+      - path: soldier_controls/soldier_control/transform1/soldier_skel/waist/chest/neck/right_shoulder/right_elbow/right_hand/right_middle_base
+        weight: 1
+      - path: soldier_controls/soldier_control/transform1/soldier_skel/waist/chest/neck/right_shoulder/right_elbow/right_hand/right_middle_base/right_middle_mid
+        weight: 1
+      - path: soldier_controls/soldier_control/transform1/soldier_skel/waist/chest/neck/right_shoulder/right_elbow/right_hand/right_middle_base/right_middle_mid/right_middle_tip
+        weight: 1
+      - path: soldier_controls/soldier_control/transform1/soldier_skel/waist/chest/neck/right_shoulder/right_elbow/right_hand/right_pinky_base
+        weight: 1
+      - path: soldier_controls/soldier_control/transform1/soldier_skel/waist/chest/neck/right_shoulder/right_elbow/right_hand/right_pinky_base/right_pinky_mid
+        weight: 1
+      - path: soldier_controls/soldier_control/transform1/soldier_skel/waist/chest/neck/right_shoulder/right_elbow/right_hand/right_pinky_base/right_pinky_mid/right_pinky_tip
+        weight: 1
+      - path: soldier_controls/soldier_control/transform1/soldier_skel/waist/chest/neck/right_shoulder/right_elbow/right_hand/right_ring_base
+        weight: 1
+      - path: soldier_controls/soldier_control/transform1/soldier_skel/waist/chest/neck/right_shoulder/right_elbow/right_hand/right_ring_base/right_ring_mid
+        weight: 1
+      - path: soldier_controls/soldier_control/transform1/soldier_skel/waist/chest/neck/right_shoulder/right_elbow/right_hand/right_ring_base/right_ring_mid/right_ring_tip
+        weight: 1
+      - path: soldier_controls/soldier_control/transform1/soldier_skel/waist/chest/neck/right_shoulder/right_elbow/right_hand/right_thub_base
+        weight: 1
+      - path: soldier_controls/soldier_control/transform1/soldier_skel/waist/chest/neck/right_shoulder/right_elbow/right_hand/right_thub_base/right_thumb_mid
+        weight: 1
+      - path: soldier_controls/soldier_control/transform1/soldier_skel/waist/chest/neck/right_shoulder/right_elbow/right_hand/right_thub_base/right_thumb_mid/right_thumb_tip
+        weight: 1
+      - path: soldier_controls/soldier_control/transform1/soldier_skel/waist/chest/neck/right_shoulder/right_elbow/right_hand/soldier_spear
+        weight: 1
+      maskType: 0
+      maskSource: {instanceID: 0}
+    - serializedVersion: 16
+      name: Flail
+      takeName: Take 001
+      firstFrame: 214
+      lastFrame: 237
+      wrapMode: 2
+      orientationOffsetY: 0
+      level: 0
+      cycleOffset: 0
+      loop: 0
+      loopTime: 0
+      loopBlend: 0
+      loopBlendOrientation: 0
+      loopBlendPositionY: 0
+      loopBlendPositionXZ: 0
+      keepOriginalOrientation: 0
+      keepOriginalPositionY: 1
+      keepOriginalPositionXZ: 0
+      heightFromFeet: 0
+      mirror: 0
+      bodyMask: 01000000010000000100000001000000010000000100000001000000010000000100000001000000010000000100000001000000
+      curves: []
+      events: []
+      transformMask:
+      - path: 
+        weight: 1
+      - path: soldier
+        weight: 1
+      - path: soldier_controls
+        weight: 1
+      - path: soldier_controls/left_arm_control
+        weight: 1
+      - path: soldier_controls/left_arm_control/left_arm_IK
+        weight: 1
+      - path: soldier_controls/left_leg_control
+        weight: 1
+      - path: soldier_controls/left_leg_control/left_leg_IK
+        weight: 1
+      - path: soldier_controls/right_arm_control
+        weight: 1
+      - path: soldier_controls/right_arm_control/right_arm_IK
+        weight: 1
+      - path: soldier_controls/right_leg_control
+        weight: 1
+      - path: soldier_controls/right_leg_control/right_leg_IK
+        weight: 1
+      - path: soldier_controls/soldier_control
+        weight: 1
+      - path: soldier_controls/soldier_control/transform1
+        weight: 1
+      - path: soldier_controls/soldier_control/transform1/soldier_skel
+        weight: 1
+      - path: soldier_controls/soldier_control/transform1/soldier_skel/left_hip
+        weight: 1
+      - path: soldier_controls/soldier_control/transform1/soldier_skel/left_hip/left_knee
+        weight: 1
+      - path: soldier_controls/soldier_control/transform1/soldier_skel/left_hip/left_knee/left_foot
+        weight: 1
+      - path: soldier_controls/soldier_control/transform1/soldier_skel/left_hip/left_knee/left_foot/left_toe
+        weight: 1
+      - path: soldier_controls/soldier_control/transform1/soldier_skel/right_hip
+        weight: 1
+      - path: soldier_controls/soldier_control/transform1/soldier_skel/right_hip/right_knee
+        weight: 1
+      - path: soldier_controls/soldier_control/transform1/soldier_skel/right_hip/right_knee/right_foot
+        weight: 1
+      - path: soldier_controls/soldier_control/transform1/soldier_skel/right_hip/right_knee/right_foot/right_toe
+        weight: 1
+      - path: soldier_controls/soldier_control/transform1/soldier_skel/waist
+        weight: 1
+      - path: soldier_controls/soldier_control/transform1/soldier_skel/waist/chest
+        weight: 1
+      - path: soldier_controls/soldier_control/transform1/soldier_skel/waist/chest/neck
+        weight: 1
+      - path: soldier_controls/soldier_control/transform1/soldier_skel/waist/chest/neck/head
+        weight: 1
+      - path: soldier_controls/soldier_control/transform1/soldier_skel/waist/chest/neck/left_shoulder
+        weight: 1
+      - path: soldier_controls/soldier_control/transform1/soldier_skel/waist/chest/neck/left_shoulder/left_elbow
+        weight: 1
+      - path: soldier_controls/soldier_control/transform1/soldier_skel/waist/chest/neck/left_shoulder/left_elbow/left_hand
+        weight: 1
+      - path: soldier_controls/soldier_control/transform1/soldier_skel/waist/chest/neck/left_shoulder/left_elbow/left_hand/left_index_base
+        weight: 1
+      - path: soldier_controls/soldier_control/transform1/soldier_skel/waist/chest/neck/left_shoulder/left_elbow/left_hand/left_index_base/left_index_mid
+        weight: 1
+      - path: soldier_controls/soldier_control/transform1/soldier_skel/waist/chest/neck/left_shoulder/left_elbow/left_hand/left_index_base/left_index_mid/left_index_tip
+        weight: 1
+      - path: soldier_controls/soldier_control/transform1/soldier_skel/waist/chest/neck/left_shoulder/left_elbow/left_hand/left_middle_base
+        weight: 1
+      - path: soldier_controls/soldier_control/transform1/soldier_skel/waist/chest/neck/left_shoulder/left_elbow/left_hand/left_middle_base/left_middle_mid
+        weight: 1
+      - path: soldier_controls/soldier_control/transform1/soldier_skel/waist/chest/neck/left_shoulder/left_elbow/left_hand/left_middle_base/left_middle_mid/left_middle_tip
+        weight: 1
+      - path: soldier_controls/soldier_control/transform1/soldier_skel/waist/chest/neck/left_shoulder/left_elbow/left_hand/left_pinky_base
+        weight: 1
+      - path: soldier_controls/soldier_control/transform1/soldier_skel/waist/chest/neck/left_shoulder/left_elbow/left_hand/left_pinky_base/left_pinky_mid
+        weight: 1
+      - path: soldier_controls/soldier_control/transform1/soldier_skel/waist/chest/neck/left_shoulder/left_elbow/left_hand/left_pinky_base/left_pinky_mid/left_pinky_tip
+        weight: 1
+      - path: soldier_controls/soldier_control/transform1/soldier_skel/waist/chest/neck/left_shoulder/left_elbow/left_hand/left_ring_base
+        weight: 1
+      - path: soldier_controls/soldier_control/transform1/soldier_skel/waist/chest/neck/left_shoulder/left_elbow/left_hand/left_ring_base/left_ring_mid
+        weight: 1
+      - path: soldier_controls/soldier_control/transform1/soldier_skel/waist/chest/neck/left_shoulder/left_elbow/left_hand/left_ring_base/left_ring_mid/left_ring_tip
+        weight: 1
+      - path: soldier_controls/soldier_control/transform1/soldier_skel/waist/chest/neck/left_shoulder/left_elbow/left_hand/left_thumb_base
+        weight: 1
+      - path: soldier_controls/soldier_control/transform1/soldier_skel/waist/chest/neck/left_shoulder/left_elbow/left_hand/left_thumb_base/left_thumb_mid
+        weight: 1
+      - path: soldier_controls/soldier_control/transform1/soldier_skel/waist/chest/neck/left_shoulder/left_elbow/left_hand/left_thumb_base/left_thumb_mid/left_thumb_tip
+        weight: 1
+      - path: soldier_controls/soldier_control/transform1/soldier_skel/waist/chest/neck/left_shoulder/left_elbow/shield
+        weight: 1
+      - path: soldier_controls/soldier_control/transform1/soldier_skel/waist/chest/neck/right_shoulder
+        weight: 1
+      - path: soldier_controls/soldier_control/transform1/soldier_skel/waist/chest/neck/right_shoulder/right_elbow
+        weight: 1
+      - path: soldier_controls/soldier_control/transform1/soldier_skel/waist/chest/neck/right_shoulder/right_elbow/right_hand
+        weight: 1
+      - path: soldier_controls/soldier_control/transform1/soldier_skel/waist/chest/neck/right_shoulder/right_elbow/right_hand/right_index_base
+        weight: 1
+      - path: soldier_controls/soldier_control/transform1/soldier_skel/waist/chest/neck/right_shoulder/right_elbow/right_hand/right_index_base/right_index_mid
+        weight: 1
+      - path: soldier_controls/soldier_control/transform1/soldier_skel/waist/chest/neck/right_shoulder/right_elbow/right_hand/right_index_base/right_index_mid/right_index_tip
+        weight: 1
+      - path: soldier_controls/soldier_control/transform1/soldier_skel/waist/chest/neck/right_shoulder/right_elbow/right_hand/right_middle_base
+        weight: 1
+      - path: soldier_controls/soldier_control/transform1/soldier_skel/waist/chest/neck/right_shoulder/right_elbow/right_hand/right_middle_base/right_middle_mid
+        weight: 1
+      - path: soldier_controls/soldier_control/transform1/soldier_skel/waist/chest/neck/right_shoulder/right_elbow/right_hand/right_middle_base/right_middle_mid/right_middle_tip
+        weight: 1
+      - path: soldier_controls/soldier_control/transform1/soldier_skel/waist/chest/neck/right_shoulder/right_elbow/right_hand/right_pinky_base
+        weight: 1
+      - path: soldier_controls/soldier_control/transform1/soldier_skel/waist/chest/neck/right_shoulder/right_elbow/right_hand/right_pinky_base/right_pinky_mid
+        weight: 1
+      - path: soldier_controls/soldier_control/transform1/soldier_skel/waist/chest/neck/right_shoulder/right_elbow/right_hand/right_pinky_base/right_pinky_mid/right_pinky_tip
+        weight: 1
+      - path: soldier_controls/soldier_control/transform1/soldier_skel/waist/chest/neck/right_shoulder/right_elbow/right_hand/right_ring_base
+        weight: 1
+      - path: soldier_controls/soldier_control/transform1/soldier_skel/waist/chest/neck/right_shoulder/right_elbow/right_hand/right_ring_base/right_ring_mid
+        weight: 1
+      - path: soldier_controls/soldier_control/transform1/soldier_skel/waist/chest/neck/right_shoulder/right_elbow/right_hand/right_ring_base/right_ring_mid/right_ring_tip
+        weight: 1
+      - path: soldier_controls/soldier_control/transform1/soldier_skel/waist/chest/neck/right_shoulder/right_elbow/right_hand/right_thub_base
+        weight: 1
+      - path: soldier_controls/soldier_control/transform1/soldier_skel/waist/chest/neck/right_shoulder/right_elbow/right_hand/right_thub_base/right_thumb_mid
+        weight: 1
+      - path: soldier_controls/soldier_control/transform1/soldier_skel/waist/chest/neck/right_shoulder/right_elbow/right_hand/right_thub_base/right_thumb_mid/right_thumb_tip
+        weight: 1
+      - path: soldier_controls/soldier_control/transform1/soldier_skel/waist/chest/neck/right_shoulder/right_elbow/right_hand/soldier_spear
+        weight: 1
+      maskType: 0
+      maskSource: {instanceID: 0}
+    - serializedVersion: 16
+      name: FailToDead
+      takeName: Take 001
+      firstFrame: 238
+      lastFrame: 242
+      wrapMode: 0
+      orientationOffsetY: 0
+      level: 0
+      cycleOffset: 0
+      loop: 0
+      loopTime: 0
+      loopBlend: 0
+      loopBlendOrientation: 0
+      loopBlendPositionY: 0
+      loopBlendPositionXZ: 0
+      keepOriginalOrientation: 0
+      keepOriginalPositionY: 1
+      keepOriginalPositionXZ: 0
+      heightFromFeet: 0
+      mirror: 0
+      bodyMask: 01000000010000000100000001000000010000000100000001000000010000000100000001000000010000000100000001000000
+      curves: []
+      events: []
+      transformMask:
+      - path: 
+        weight: 1
+      - path: soldier
+        weight: 1
+      - path: soldier_controls
+        weight: 1
+      - path: soldier_controls/left_arm_control
+        weight: 1
+      - path: soldier_controls/left_arm_control/left_arm_IK
+        weight: 1
+      - path: soldier_controls/left_leg_control
+        weight: 1
+      - path: soldier_controls/left_leg_control/left_leg_IK
+        weight: 1
+      - path: soldier_controls/right_arm_control
+        weight: 1
+      - path: soldier_controls/right_arm_control/right_arm_IK
+        weight: 1
+      - path: soldier_controls/right_leg_control
+        weight: 1
+      - path: soldier_controls/right_leg_control/right_leg_IK
+        weight: 1
+      - path: soldier_controls/soldier_control
+        weight: 1
+      - path: soldier_controls/soldier_control/transform1
+        weight: 1
+      - path: soldier_controls/soldier_control/transform1/soldier_skel
+        weight: 1
+      - path: soldier_controls/soldier_control/transform1/soldier_skel/left_hip
+        weight: 1
+      - path: soldier_controls/soldier_control/transform1/soldier_skel/left_hip/left_knee
+        weight: 1
+      - path: soldier_controls/soldier_control/transform1/soldier_skel/left_hip/left_knee/left_foot
+        weight: 1
+      - path: soldier_controls/soldier_control/transform1/soldier_skel/left_hip/left_knee/left_foot/left_toe
+        weight: 1
+      - path: soldier_controls/soldier_control/transform1/soldier_skel/right_hip
+        weight: 1
+      - path: soldier_controls/soldier_control/transform1/soldier_skel/right_hip/right_knee
+        weight: 1
+      - path: soldier_controls/soldier_control/transform1/soldier_skel/right_hip/right_knee/right_foot
+        weight: 1
+      - path: soldier_controls/soldier_control/transform1/soldier_skel/right_hip/right_knee/right_foot/right_toe
+        weight: 1
+      - path: soldier_controls/soldier_control/transform1/soldier_skel/waist
+        weight: 1
+      - path: soldier_controls/soldier_control/transform1/soldier_skel/waist/chest
+        weight: 1
+      - path: soldier_controls/soldier_control/transform1/soldier_skel/waist/chest/neck
+        weight: 1
+      - path: soldier_controls/soldier_control/transform1/soldier_skel/waist/chest/neck/head
+        weight: 1
+      - path: soldier_controls/soldier_control/transform1/soldier_skel/waist/chest/neck/left_shoulder
+        weight: 1
+      - path: soldier_controls/soldier_control/transform1/soldier_skel/waist/chest/neck/left_shoulder/left_elbow
+        weight: 1
+      - path: soldier_controls/soldier_control/transform1/soldier_skel/waist/chest/neck/left_shoulder/left_elbow/left_hand
+        weight: 1
+      - path: soldier_controls/soldier_control/transform1/soldier_skel/waist/chest/neck/left_shoulder/left_elbow/left_hand/left_index_base
+        weight: 1
+      - path: soldier_controls/soldier_control/transform1/soldier_skel/waist/chest/neck/left_shoulder/left_elbow/left_hand/left_index_base/left_index_mid
+        weight: 1
+      - path: soldier_controls/soldier_control/transform1/soldier_skel/waist/chest/neck/left_shoulder/left_elbow/left_hand/left_index_base/left_index_mid/left_index_tip
+        weight: 1
+      - path: soldier_controls/soldier_control/transform1/soldier_skel/waist/chest/neck/left_shoulder/left_elbow/left_hand/left_middle_base
+        weight: 1
+      - path: soldier_controls/soldier_control/transform1/soldier_skel/waist/chest/neck/left_shoulder/left_elbow/left_hand/left_middle_base/left_middle_mid
+        weight: 1
+      - path: soldier_controls/soldier_control/transform1/soldier_skel/waist/chest/neck/left_shoulder/left_elbow/left_hand/left_middle_base/left_middle_mid/left_middle_tip
+        weight: 1
+      - path: soldier_controls/soldier_control/transform1/soldier_skel/waist/chest/neck/left_shoulder/left_elbow/left_hand/left_pinky_base
+        weight: 1
+      - path: soldier_controls/soldier_control/transform1/soldier_skel/waist/chest/neck/left_shoulder/left_elbow/left_hand/left_pinky_base/left_pinky_mid
+        weight: 1
+      - path: soldier_controls/soldier_control/transform1/soldier_skel/waist/chest/neck/left_shoulder/left_elbow/left_hand/left_pinky_base/left_pinky_mid/left_pinky_tip
+        weight: 1
+      - path: soldier_controls/soldier_control/transform1/soldier_skel/waist/chest/neck/left_shoulder/left_elbow/left_hand/left_ring_base
+        weight: 1
+      - path: soldier_controls/soldier_control/transform1/soldier_skel/waist/chest/neck/left_shoulder/left_elbow/left_hand/left_ring_base/left_ring_mid
+        weight: 1
+      - path: soldier_controls/soldier_control/transform1/soldier_skel/waist/chest/neck/left_shoulder/left_elbow/left_hand/left_ring_base/left_ring_mid/left_ring_tip
+        weight: 1
+      - path: soldier_controls/soldier_control/transform1/soldier_skel/waist/chest/neck/left_shoulder/left_elbow/left_hand/left_thumb_base
+        weight: 1
+      - path: soldier_controls/soldier_control/transform1/soldier_skel/waist/chest/neck/left_shoulder/left_elbow/left_hand/left_thumb_base/left_thumb_mid
+        weight: 1
+      - path: soldier_controls/soldier_control/transform1/soldier_skel/waist/chest/neck/left_shoulder/left_elbow/left_hand/left_thumb_base/left_thumb_mid/left_thumb_tip
+        weight: 1
+      - path: soldier_controls/soldier_control/transform1/soldier_skel/waist/chest/neck/left_shoulder/left_elbow/shield
+        weight: 1
+      - path: soldier_controls/soldier_control/transform1/soldier_skel/waist/chest/neck/right_shoulder
+        weight: 1
+      - path: soldier_controls/soldier_control/transform1/soldier_skel/waist/chest/neck/right_shoulder/right_elbow
+        weight: 1
+      - path: soldier_controls/soldier_control/transform1/soldier_skel/waist/chest/neck/right_shoulder/right_elbow/right_hand
+        weight: 1
+      - path: soldier_controls/soldier_control/transform1/soldier_skel/waist/chest/neck/right_shoulder/right_elbow/right_hand/right_index_base
+        weight: 1
+      - path: soldier_controls/soldier_control/transform1/soldier_skel/waist/chest/neck/right_shoulder/right_elbow/right_hand/right_index_base/right_index_mid
+        weight: 1
+      - path: soldier_controls/soldier_control/transform1/soldier_skel/waist/chest/neck/right_shoulder/right_elbow/right_hand/right_index_base/right_index_mid/right_index_tip
+        weight: 1
+      - path: soldier_controls/soldier_control/transform1/soldier_skel/waist/chest/neck/right_shoulder/right_elbow/right_hand/right_middle_base
+        weight: 1
+      - path: soldier_controls/soldier_control/transform1/soldier_skel/waist/chest/neck/right_shoulder/right_elbow/right_hand/right_middle_base/right_middle_mid
+        weight: 1
+      - path: soldier_controls/soldier_control/transform1/soldier_skel/waist/chest/neck/right_shoulder/right_elbow/right_hand/right_middle_base/right_middle_mid/right_middle_tip
+        weight: 1
+      - path: soldier_controls/soldier_control/transform1/soldier_skel/waist/chest/neck/right_shoulder/right_elbow/right_hand/right_pinky_base
+        weight: 1
+      - path: soldier_controls/soldier_control/transform1/soldier_skel/waist/chest/neck/right_shoulder/right_elbow/right_hand/right_pinky_base/right_pinky_mid
+        weight: 1
+      - path: soldier_controls/soldier_control/transform1/soldier_skel/waist/chest/neck/right_shoulder/right_elbow/right_hand/right_pinky_base/right_pinky_mid/right_pinky_tip
+        weight: 1
+      - path: soldier_controls/soldier_control/transform1/soldier_skel/waist/chest/neck/right_shoulder/right_elbow/right_hand/right_ring_base
+        weight: 1
+      - path: soldier_controls/soldier_control/transform1/soldier_skel/waist/chest/neck/right_shoulder/right_elbow/right_hand/right_ring_base/right_ring_mid
+        weight: 1
+      - path: soldier_controls/soldier_control/transform1/soldier_skel/waist/chest/neck/right_shoulder/right_elbow/right_hand/right_ring_base/right_ring_mid/right_ring_tip
+        weight: 1
+      - path: soldier_controls/soldier_control/transform1/soldier_skel/waist/chest/neck/right_shoulder/right_elbow/right_hand/right_thub_base
+        weight: 1
+      - path: soldier_controls/soldier_control/transform1/soldier_skel/waist/chest/neck/right_shoulder/right_elbow/right_hand/right_thub_base/right_thumb_mid
+        weight: 1
+      - path: soldier_controls/soldier_control/transform1/soldier_skel/waist/chest/neck/right_shoulder/right_elbow/right_hand/right_thub_base/right_thumb_mid/right_thumb_tip
+        weight: 1
+      - path: soldier_controls/soldier_control/transform1/soldier_skel/waist/chest/neck/right_shoulder/right_elbow/right_hand/soldier_spear
+        weight: 1
+      maskType: 0
+      maskSource: {instanceID: 0}
+    - serializedVersion: 16
+      name: Die
+      takeName: Take 001
+      firstFrame: 250
+      lastFrame: 269
+      wrapMode: 1
+      orientationOffsetY: 0
+      level: 0
+      cycleOffset: 0
+      loop: 0
+      loopTime: 0
+      loopBlend: 0
+      loopBlendOrientation: 0
+      loopBlendPositionY: 0
+      loopBlendPositionXZ: 0
+      keepOriginalOrientation: 0
+      keepOriginalPositionY: 1
+      keepOriginalPositionXZ: 0
+      heightFromFeet: 0
+      mirror: 0
+      bodyMask: 01000000010000000100000001000000010000000100000001000000010000000100000001000000010000000100000001000000
+      curves: []
+      events: []
+      transformMask:
+      - path: 
+        weight: 1
+      - path: soldier
+        weight: 1
+      - path: soldier_controls
+        weight: 1
+      - path: soldier_controls/left_arm_control
+        weight: 1
+      - path: soldier_controls/left_arm_control/left_arm_IK
+        weight: 1
+      - path: soldier_controls/left_leg_control
+        weight: 1
+      - path: soldier_controls/left_leg_control/left_leg_IK
+        weight: 1
+      - path: soldier_controls/right_arm_control
+        weight: 1
+      - path: soldier_controls/right_arm_control/right_arm_IK
+        weight: 1
+      - path: soldier_controls/right_leg_control
+        weight: 1
+      - path: soldier_controls/right_leg_control/right_leg_IK
+        weight: 1
+      - path: soldier_controls/soldier_control
+        weight: 1
+      - path: soldier_controls/soldier_control/transform1
+        weight: 1
+      - path: soldier_controls/soldier_control/transform1/soldier_skel
+        weight: 1
+      - path: soldier_controls/soldier_control/transform1/soldier_skel/left_hip
+        weight: 1
+      - path: soldier_controls/soldier_control/transform1/soldier_skel/left_hip/left_knee
+        weight: 1
+      - path: soldier_controls/soldier_control/transform1/soldier_skel/left_hip/left_knee/left_foot
+        weight: 1
+      - path: soldier_controls/soldier_control/transform1/soldier_skel/left_hip/left_knee/left_foot/left_toe
+        weight: 1
+      - path: soldier_controls/soldier_control/transform1/soldier_skel/right_hip
+        weight: 1
+      - path: soldier_controls/soldier_control/transform1/soldier_skel/right_hip/right_knee
+        weight: 1
+      - path: soldier_controls/soldier_control/transform1/soldier_skel/right_hip/right_knee/right_foot
+        weight: 1
+      - path: soldier_controls/soldier_control/transform1/soldier_skel/right_hip/right_knee/right_foot/right_toe
+        weight: 1
+      - path: soldier_controls/soldier_control/transform1/soldier_skel/waist
+        weight: 1
+      - path: soldier_controls/soldier_control/transform1/soldier_skel/waist/chest
+        weight: 1
+      - path: soldier_controls/soldier_control/transform1/soldier_skel/waist/chest/neck
+        weight: 1
+      - path: soldier_controls/soldier_control/transform1/soldier_skel/waist/chest/neck/head
+        weight: 1
+      - path: soldier_controls/soldier_control/transform1/soldier_skel/waist/chest/neck/left_shoulder
+        weight: 1
+      - path: soldier_controls/soldier_control/transform1/soldier_skel/waist/chest/neck/left_shoulder/left_elbow
+        weight: 1
+      - path: soldier_controls/soldier_control/transform1/soldier_skel/waist/chest/neck/left_shoulder/left_elbow/left_hand
+        weight: 1
+      - path: soldier_controls/soldier_control/transform1/soldier_skel/waist/chest/neck/left_shoulder/left_elbow/left_hand/left_index_base
+        weight: 1
+      - path: soldier_controls/soldier_control/transform1/soldier_skel/waist/chest/neck/left_shoulder/left_elbow/left_hand/left_index_base/left_index_mid
+        weight: 1
+      - path: soldier_controls/soldier_control/transform1/soldier_skel/waist/chest/neck/left_shoulder/left_elbow/left_hand/left_index_base/left_index_mid/left_index_tip
+        weight: 1
+      - path: soldier_controls/soldier_control/transform1/soldier_skel/waist/chest/neck/left_shoulder/left_elbow/left_hand/left_middle_base
+        weight: 1
+      - path: soldier_controls/soldier_control/transform1/soldier_skel/waist/chest/neck/left_shoulder/left_elbow/left_hand/left_middle_base/left_middle_mid
+        weight: 1
+      - path: soldier_controls/soldier_control/transform1/soldier_skel/waist/chest/neck/left_shoulder/left_elbow/left_hand/left_middle_base/left_middle_mid/left_middle_tip
+        weight: 1
+      - path: soldier_controls/soldier_control/transform1/soldier_skel/waist/chest/neck/left_shoulder/left_elbow/left_hand/left_pinky_base
+        weight: 1
+      - path: soldier_controls/soldier_control/transform1/soldier_skel/waist/chest/neck/left_shoulder/left_elbow/left_hand/left_pinky_base/left_pinky_mid
+        weight: 1
+      - path: soldier_controls/soldier_control/transform1/soldier_skel/waist/chest/neck/left_shoulder/left_elbow/left_hand/left_pinky_base/left_pinky_mid/left_pinky_tip
+        weight: 1
+      - path: soldier_controls/soldier_control/transform1/soldier_skel/waist/chest/neck/left_shoulder/left_elbow/left_hand/left_ring_base
+        weight: 1
+      - path: soldier_controls/soldier_control/transform1/soldier_skel/waist/chest/neck/left_shoulder/left_elbow/left_hand/left_ring_base/left_ring_mid
+        weight: 1
+      - path: soldier_controls/soldier_control/transform1/soldier_skel/waist/chest/neck/left_shoulder/left_elbow/left_hand/left_ring_base/left_ring_mid/left_ring_tip
+        weight: 1
+      - path: soldier_controls/soldier_control/transform1/soldier_skel/waist/chest/neck/left_shoulder/left_elbow/left_hand/left_thumb_base
+        weight: 1
+      - path: soldier_controls/soldier_control/transform1/soldier_skel/waist/chest/neck/left_shoulder/left_elbow/left_hand/left_thumb_base/left_thumb_mid
+        weight: 1
+      - path: soldier_controls/soldier_control/transform1/soldier_skel/waist/chest/neck/left_shoulder/left_elbow/left_hand/left_thumb_base/left_thumb_mid/left_thumb_tip
+        weight: 1
+      - path: soldier_controls/soldier_control/transform1/soldier_skel/waist/chest/neck/left_shoulder/left_elbow/shield
+        weight: 1
+      - path: soldier_controls/soldier_control/transform1/soldier_skel/waist/chest/neck/right_shoulder
+        weight: 1
+      - path: soldier_controls/soldier_control/transform1/soldier_skel/waist/chest/neck/right_shoulder/right_elbow
+        weight: 1
+      - path: soldier_controls/soldier_control/transform1/soldier_skel/waist/chest/neck/right_shoulder/right_elbow/right_hand
+        weight: 1
+      - path: soldier_controls/soldier_control/transform1/soldier_skel/waist/chest/neck/right_shoulder/right_elbow/right_hand/right_index_base
+        weight: 1
+      - path: soldier_controls/soldier_control/transform1/soldier_skel/waist/chest/neck/right_shoulder/right_elbow/right_hand/right_index_base/right_index_mid
+        weight: 1
+      - path: soldier_controls/soldier_control/transform1/soldier_skel/waist/chest/neck/right_shoulder/right_elbow/right_hand/right_index_base/right_index_mid/right_index_tip
+        weight: 1
+      - path: soldier_controls/soldier_control/transform1/soldier_skel/waist/chest/neck/right_shoulder/right_elbow/right_hand/right_middle_base
+        weight: 1
+      - path: soldier_controls/soldier_control/transform1/soldier_skel/waist/chest/neck/right_shoulder/right_elbow/right_hand/right_middle_base/right_middle_mid
+        weight: 1
+      - path: soldier_controls/soldier_control/transform1/soldier_skel/waist/chest/neck/right_shoulder/right_elbow/right_hand/right_middle_base/right_middle_mid/right_middle_tip
+        weight: 1
+      - path: soldier_controls/soldier_control/transform1/soldier_skel/waist/chest/neck/right_shoulder/right_elbow/right_hand/right_pinky_base
+        weight: 1
+      - path: soldier_controls/soldier_control/transform1/soldier_skel/waist/chest/neck/right_shoulder/right_elbow/right_hand/right_pinky_base/right_pinky_mid
+        weight: 1
+      - path: soldier_controls/soldier_control/transform1/soldier_skel/waist/chest/neck/right_shoulder/right_elbow/right_hand/right_pinky_base/right_pinky_mid/right_pinky_tip
+        weight: 1
+      - path: soldier_controls/soldier_control/transform1/soldier_skel/waist/chest/neck/right_shoulder/right_elbow/right_hand/right_ring_base
+        weight: 1
+      - path: soldier_controls/soldier_control/transform1/soldier_skel/waist/chest/neck/right_shoulder/right_elbow/right_hand/right_ring_base/right_ring_mid
+        weight: 1
+      - path: soldier_controls/soldier_control/transform1/soldier_skel/waist/chest/neck/right_shoulder/right_elbow/right_hand/right_ring_base/right_ring_mid/right_ring_tip
+        weight: 1
+      - path: soldier_controls/soldier_control/transform1/soldier_skel/waist/chest/neck/right_shoulder/right_elbow/right_hand/right_thub_base
+        weight: 1
+      - path: soldier_controls/soldier_control/transform1/soldier_skel/waist/chest/neck/right_shoulder/right_elbow/right_hand/right_thub_base/right_thumb_mid
+        weight: 1
+      - path: soldier_controls/soldier_control/transform1/soldier_skel/waist/chest/neck/right_shoulder/right_elbow/right_hand/right_thub_base/right_thumb_mid/right_thumb_tip
+        weight: 1
+      - path: soldier_controls/soldier_control/transform1/soldier_skel/waist/chest/neck/right_shoulder/right_elbow/right_hand/soldier_spear
+        weight: 1
+      maskType: 0
+      maskSource: {instanceID: 0}
+    isReadable: 1
+  meshes:
+    lODScreenPercentages: []
+    globalScale: .0140000004
+    meshCompression: 0
+    addColliders: 0
+    importBlendShapes: 1
+    swapUVChannels: 0
+    generateSecondaryUV: 0
+    useFileUnits: 1
+    optimizeMeshForGPU: 1
+    weldVertices: 1
+    secondaryUVAngleDistortion: 8
+    secondaryUVAreaDistortion: 15.000001
+    secondaryUVHardAngle: 88
+    secondaryUVPackMargin: 4
+  tangentSpace:
+    normalSmoothAngle: 60
+    splitTangentsAcrossUV: 1
+    normalImportMode: 0
+    tangentImportMode: 1
+  importAnimation: 1
+  copyAvatar: 0
+  humanDescription:
+    human: []
+    skeleton: []
+    armTwist: .5
+    foreArmTwist: .5
+    upperLegTwist: .5
+    legTwist: .5
+    armStretch: .0500000007
+    legStretch: .0500000007
+    feetSpacing: 0
+    rootMotionBoneName: 
+  lastHumanDescriptionAvatarSource: {instanceID: 0}
+  animationType: 1
+  userData: 

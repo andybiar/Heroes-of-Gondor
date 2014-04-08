@@ -9,6 +9,10 @@ public class Orc : Infantry, Enemy, Lockable {
 	private float separationR = 999;
 	private string lName, rName;
 
+	protected int turnDegrees;
+	protected bool turning;
+	protected float startRotation;
+
 	public Stats stats;
 
 	void Awake() {
@@ -17,29 +21,38 @@ public class Orc : Infantry, Enemy, Lockable {
 
 	public void onLock() {
 		selectionAura.SetActive(true);
-		Color c = renderer.material.color;
-		float h = highlightStrength;
-		renderer.material.color = new Color(c.r + h, c.g + h, c.b + h);
+		//Color c = renderer.material.color;
+		//float h = highlightStrength;
+		//renderer.material.color = new Color(c.r + h, c.g + h, c.b + h);
 	}
 
 	// When Gandalf hit an orc with a spell, it dies
 	public void onFire() {
 		Debug.Log("Orc death by Gandalf");
+		int i = Random.Range(1, 3);
+		mySounds.PlayOneShot(Resources.Load<AudioClip>("Orc/falling" + i));
 		die();
 	}
 
 	public void onStab() {
 		Debug.Log("Orc death by stabbing");
+		int i = Random.Range(0, 6);
+		mySounds.PlayOneShot(Resources.Load<AudioClip>("Orc/die"+i));              
 		die();
 	}
 
 	public void onArrow() {
 		Debug.Log("Orc death by arrow");
+		int i = Random.Range(0,6);
+		mySounds.PlayOneShot(Resources.Load<AudioClip>("Orc/die"+i));
 		die();
 	}
 
 	protected override void onFall() {
 		animation.Play("Flail");
+
+		int i = Random.Range(1, 3);
+		mySounds.PlayOneShot(Resources.Load<AudioClip>("Orc/falling" + i));
 		// TODO: play falling sound
 	}
 
@@ -95,20 +108,22 @@ public class Orc : Infantry, Enemy, Lockable {
 				ally = l.transform;
 				allyDist = l.distance;
 			}
-			else {
+			else if (!l.transform.renderer) {
 				separationL = l.distance;
 				lName = l.transform.name;
 			}
+			else Debug.Log("hit trigger");
 		}
 		if (isR) {
 			if (isAlly(r.transform) && r.distance < allyDist) {
 				allyDist = r.distance;
 				ally = r.transform;
 			}
-			else {
+			else if (!r.transform.renderer){
 				separationR = r.distance;
 				rName = r.transform.name;
 			}
+			else Debug.Log("hit trigger");
 		}
 		return ally;
 	}
@@ -118,9 +133,9 @@ public class Orc : Infantry, Enemy, Lockable {
 		currentStance = Stance.ATTACK;
 		currentTask = Task.RUNNING;
 		animation.Play("Run");
-		int i = Random.Range(0,2);
-		if (i == 0) mySounds.PlayOneShot(Resources.Load<AudioClip>("Orc/takeThemDown"));
-		else if (i == 1) mySounds.PlayOneShot(Resources.Load<AudioClip>("Orc/getUpThere"));                
+		if (!canTalk) return;
+
+		mySounds.PlayOneShot(Resources.Load<AudioClip>("Orc/battlecry2"));
 	}
 
 	protected override void die() {
@@ -141,16 +156,35 @@ public class Orc : Infantry, Enemy, Lockable {
 		}
 	}
 
+	protected override void specialBehavior() {}
+
 	private void move() {
 		// SHIT BE'S IN THE WAY
 		if (separationL < .5 && separationR < .5) {
-			animation.Play("RunToStand");
+			if (moving) {
+				moving = false;
+				animation.Play("RunToStand");
+			}
 			Debug.DrawRay(transform.position, transform.forward, Color.magenta);
-			Debug.Log(lName + ", " + rName);
+			//Debug.Log("Orc obstructed by: " + lName + ", " + rName);
 			return;
 		}
 		else {
+			moving = true;
+			if (turning == true) {
+				Debug.Log("turn");
+				transform.Rotate(new Vector3(0, 55f, 0));
+				if (transform.rotation.eulerAngles.y - startRotation >= turnDegrees) {
+					turning = false;
+				}
+			}
 			transform.position += transform.forward * speed * Time.deltaTime;
 		}
+	}
+
+	public void turnLeft() {
+		turnDegrees = Random.Range(75, 95);
+		turning = true;
+		startRotation = transform.rotation.eulerAngles.y;
 	}
 }

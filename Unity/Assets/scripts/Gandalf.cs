@@ -39,6 +39,7 @@ public class Gandalf : MonoBehaviour {
 			if (hits[i].transform.GetComponents(typeof(Ally)).Length > 0) continue;
 
 			if (hits[i].attachedRigidbody) {
+				hits[i].attachedRigidbody.freezeRotation = false;
 				hits[i].attachedRigidbody.AddExplosionForce(spellPower, transform.position, spellRadius);
 			}
 
