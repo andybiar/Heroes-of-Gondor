@@ -27,11 +27,10 @@ public class Orc : Infantry, Enemy, Lockable {
 	}
 
 	// When Gandalf hit an orc with a spell, it dies
-	public void onFire() {
-		Debug.Log("Orc death by Gandalf");
-		int i = Random.Range(1, 3);
-		mySounds.PlayOneShot(Resources.Load<AudioClip>("Orc/falling" + i));
-		die();
+	public virtual void onFire() {
+		Debug.Log("Orc shot by Gandalf");
+		int i = random.Next();
+		mySounds.PlayOneShot(Resources.Load<AudioClip>("Orc/falling" + (i%3)));
 	}
 
 	public void onStab() {
@@ -63,11 +62,18 @@ public class Orc : Infantry, Enemy, Lockable {
 		// TODO: play crashing sound
 	}
 
+	protected override void onGuardEngage() {
+	}
+
+	protected override void onMyStab() {
+		animation.CrossFade("Strike");
+	}
+
 	public void onRelease() {
 		selectionAura.SetActive(false);
-		Color c = renderer.material.color;
-		float h = highlightStrength;
-		renderer.material.color = new Color(c.r - h, c.g - h, c.b - h);
+		//Color c = renderer.material.color;
+		//float h = highlightStrength;
+		//renderer.material.color = new Color(c.r - h, c.g - h, c.b - h);
 	}
 
 	public bool isItAlive() {
@@ -112,7 +118,9 @@ public class Orc : Infantry, Enemy, Lockable {
 				separationL = l.distance;
 				lName = l.transform.name;
 			}
-			else Debug.Log("hit trigger");
+			else {
+				// you hit a trigger
+			}
 		}
 		if (isR) {
 			if (isAlly(r.transform) && r.distance < allyDist) {
@@ -123,7 +131,9 @@ public class Orc : Infantry, Enemy, Lockable {
 				separationR = r.distance;
 				rName = r.transform.name;
 			}
-			else Debug.Log("hit trigger");
+			else {
+				// you're looking at a trigger
+			}
 		}
 		return ally;
 	}
@@ -172,9 +182,8 @@ public class Orc : Infantry, Enemy, Lockable {
 		else {
 			moving = true;
 			if (turning == true) {
-				Debug.Log("turn");
-				transform.Rotate(new Vector3(0, 55f, 0));
-				if (transform.rotation.eulerAngles.y - startRotation >= turnDegrees) {
+				transform.Rotate(new Vector3(0, turnDegrees/40.0f, 0));
+				if (Mathf.Abs(transform.rotation.eulerAngles.y - (startRotation + turnDegrees)) < 5) {
 					turning = false;
 				}
 			}
@@ -182,9 +191,9 @@ public class Orc : Infantry, Enemy, Lockable {
 		}
 	}
 
-	public void turnLeft() {
-		turnDegrees = Random.Range(75, 95);
+	public void turn(int degrees) {
 		turning = true;
 		startRotation = transform.rotation.eulerAngles.y;
+		turnDegrees = degrees;
 	}
 }

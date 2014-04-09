@@ -6,15 +6,20 @@ public class Troll_AI : MonoBehaviour, Lockable {
 
 	// Inspect me, bitch
 	public float speed;
+	public Transform path0;
+	public Mace myMace;
 	
 	// Private state
 	private bool isAlive = true;
 	private Task currentTask = Task.IDLE;
 	private Transform target;
 	private AudioSource mySounds;
+	private System.Random random;
+	private int pointsHit;
 	
 	void Start () {
 		mySounds = transform.GetComponent<AudioSource>();
+		random = new System.Random();
 	}
 
 	void Update () {
@@ -34,12 +39,25 @@ public class Troll_AI : MonoBehaviour, Lockable {
 	}
 
 	private void charge() {
-		transform.position -= Vector3.forward * speed * Time.deltaTime;
 		findTarget();
+		transform.position -= Vector3.forward * speed * Time.deltaTime;
 	}
 
+	private void attack() {
+		myMace.attacking = true;
+		animation.CrossFade("Strike");
+		int i = random.Next();
+		mySounds.PlayOneShot(Resources.Load<AudioClip>("Troll/attack"+ (i % 3)));
+	}
 
 	private void findTarget() {
+		if (pointsHit == 0) {
+			transform.LookAt(path0);
+			if (Vector3.Distance(transform.position, path0.position) < 2.5f) {
+				attack();
+				pointsHit += 1;
+			}
+		}
 	}
 
 	public void onLock() {
@@ -47,9 +65,13 @@ public class Troll_AI : MonoBehaviour, Lockable {
 	}
 
 	public void onFire() {
+		int i = random.Next();
+		mySounds.PlayOneShot(Resources.Load<AudioClip>("Troll/hit"+(i%6)));
+		animation.CrossFade("Flinch");
 	}
 
 	public void onArrow(){
+
 	}
 
 	public void onStab() {

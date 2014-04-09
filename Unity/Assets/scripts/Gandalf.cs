@@ -6,10 +6,10 @@ public class Gandalf : MonoBehaviour {
 	public float spellRadius;
 	public float spellPower;
 	public float spellCooldown;
+	public GameStateController gameMaster;
 
 	// Private state
 	private float lastSpellTime;
-	private bool hasCast;
 
 	void Start() {
 		lastSpellTime = -spellCooldown;
@@ -25,14 +25,13 @@ public class Gandalf : MonoBehaviour {
 		    Input.GetKeyDown(KeyCode.X) ||
 		    Input.GetKeyDown(KeyCode.Y)) &&
 		    Time.timeSinceLevelLoad - lastSpellTime > spellCooldown &&
-			!hasCast){
+			gameMaster.slamEnabled){
 
 			castBigSpell();
 		}
 	}
 
 	private void castBigSpell() {
-		hasCast = true;
 		Collider[] hits = Physics.OverlapSphere(transform.position, spellRadius);
 
 		for (int i = 0; i < hits.Length; i++) {

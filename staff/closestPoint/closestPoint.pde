@@ -11,7 +11,7 @@ import SimpleOpenNI.*;
 //******************************************
 boolean useOutlierScreen = false;
 float jumpTolerance = 9;
-int stabThreshold = 37;
+int stabThreshold = 30;
 
 boolean fire = false;
 KPacket[] frames;
@@ -93,9 +93,9 @@ void draw()
     // The sexy part
     //************************************************
     // draw the depth image on the screen or block it
-     image(kinect.depthImage(),0,0);
+     //image(kinect.depthImage(),0,0);
      fill(255);
-     //rect(0, 0, width, height);
+     rect(0, 0, width, height);
      float interpolatedX, interpolatedY;
      
      interpolatedX = lerp(lastX, closestX, 0.3f);
@@ -110,7 +110,7 @@ void draw()
       boolean corrected = false;
       
       // 2-FRAME CORRECTION
-      if (frames[3] != null &&
+      if (f1 != null && f3 != null &&
           distance(f1.x, f1.y, f3.x, f3.y) > jumpTolerance &&
           distance(f2.x, f2.y, f3.x, f3.y) > jumpTolerance &&
           distance(iX, iY, f3.x, f3.y) < jumpTolerance) {

@@ -28,11 +28,12 @@ namespace BoothGame{
 		protected Transform target;
 		protected Health targetHealth;
 		private float airTime;
-		private bool airDeath;
+		protected bool airDeath;
 		protected Renderer myRenderer;
 		protected float dissolveTime = 90;
 		protected AudioSource mySounds;
 		protected bool moving;
+		protected System.Random random;
 
 		// Abstract stuff
 		protected abstract Transform aggroCast();
@@ -41,6 +42,8 @@ namespace BoothGame{
 		protected abstract void onCrash();
 		protected abstract void onFall();
 		protected abstract void specialBehavior();
+		protected abstract void onGuardEngage();
+		protected abstract void onMyStab();
 				
 		// Getters and Setters
 		public bool getIsAlive() {
@@ -53,6 +56,7 @@ namespace BoothGame{
 
 		void Start() {
 			mySounds = transform.GetComponent<AudioSource>();
+			random = new System.Random();
 		}
 
 		void Update () {
@@ -73,9 +77,17 @@ namespace BoothGame{
 				onCrash();
 				isAlive = false;
 			}
+			else if (!isUpright()) {
+				animation.Stop();
+				airTime += 1;
+				if (airTime >= maxAirTime) {
+					isAlive = false;
+					die();
+				}
+			}
 			else airTime = 0;
 
-			if (!isUpright() || currentTask == Task.IDLE) return;
+			if (currentTask == Task.IDLE) return;
 
 			// GUARD STANCE
 			if (currentStance == Stance.GUARD) {
@@ -84,7 +96,7 @@ namespace BoothGame{
 					guard();
 					break;
 				case Task.ENGAGING:
-					engage();
+					guardEngage();
 					break;
 				case Task.STABBING:
 					stab(target);
@@ -127,9 +139,20 @@ namespace BoothGame{
 
 		public void damage(float d) {
 			health = health - d;
-			if (health <= 0) {
+			if (health <= 0 && isAlive) {
+				isAlive = false;
 				Debug.Log("Infantry death by loss of health");
 				die();
+			}
+		}
+
+		protected void guardEngage() {
+			onGuardEngage();
+			// If we are in range and cooldown, STRIKE!
+			if (Vector3.Distance(target.position, transform.position) < pikeRange &&
+			    Time.timeSinceLevelLoad - lastActionTime > cooldown) {
+				
+				currentTask = Task.STABBING;
 			}
 		}
 
@@ -205,7 +228,7 @@ namespace BoothGame{
 			((Health)enemy.GetComponents(typeof(Health))[0]).damage(strength);
 			lastActionTime = Time.timeSinceLevelLoad;
 
-			// TODO: play stabbing animation
+			onMyStab();
 		}
 
 		// Run away!!

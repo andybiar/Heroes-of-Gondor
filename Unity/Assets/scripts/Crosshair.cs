@@ -12,12 +12,6 @@ public class Crosshair : MonoBehaviour {
 	public int maxLockCount;
 	public float breakThreshold;
 
-	// Boundaries of the game
-	public float bLeft;
-	public float bRight;
-	public float bUp;
-	public float bDown;
-
 	// Force push controllers
 	public float power;
 	public float radius;
@@ -167,12 +161,15 @@ public class Crosshair : MonoBehaviour {
 		// Call the target's onFire function
 		Lockable l = (Lockable)hit.transform.GetComponents(typeof(Lockable))[0];
 		l.onFire();
+
+		// Sounds
+		gameMaster.onFire();
 	}
 
 	private void fire(Transform t) {
 		// If we have a Rigidbody, apply an explosive force to it
 		if (t.rigidbody) {
-			t.rigidbody.AddExplosionForce(power, transform.position, radius);
+			t.rigidbody.AddExplosionForce(power, transform.position-new Vector3(0,1,0), radius);
 		}
 		
 		// Call the target's onFire function

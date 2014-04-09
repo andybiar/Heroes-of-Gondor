@@ -21,9 +21,11 @@ public class SiegeBody : MonoBehaviour {
 			done = true;
 			driver.stop();
 			transform.parent.animation.Play("dropDoor");
-			foreach (Component c in orcList.transform.GetComponentsInChildren(typeof(Orc))) {
-				Orc orc = (Orc)c;
-				orc.setAttackRun();
+			if (orcList) {
+				foreach (Component c in orcList.transform.GetComponentsInChildren(typeof(Orc))) {
+					Orc orc = (Orc)c;
+					orc.setAttackRun();
+				}
 			}
 			if (canAdvanceScene) {
 				foreach (Object n in GameObject.FindObjectsOfType(typeof(Siege))) {

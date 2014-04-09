@@ -6,10 +6,10 @@ public class Taunter : Orc {
 	private bool inPosition;
 	public Transform targetPosition;
 	public GameObject orcList;
+	public GameStateController gameMaster;
 
 	public void send() {
 		currentTask = Task.ENGAGING;
-		Debug.Log("sent");
 	}
 
 	protected override void specialBehavior() {
@@ -18,7 +18,6 @@ public class Taunter : Orc {
 			started = true;
 		}
 		else if (!inPosition) {
-			Debug.Log("Taunter running to his spot");
 			transform.LookAt(targetPosition);
 			transform.position += transform.forward * speed * Time.deltaTime;
 		}
@@ -29,15 +28,20 @@ public class Taunter : Orc {
 		}
 	}
 
-	void OnTriggerEnter() {
-		inPosition = true;
-		animation.Play("RunToStand");
-		// TODO: play taunt animation
+	public override void onFire() {
+		base.onFire();
 		foreach (Component c in orcList.GetComponentsInChildren(typeof (Orc))) {
 			((Orc)c).setAttackRun();
 		}
-		rigidbody.freezeRotation = true;
-		rigidbody.isKinematic = true;
+		gameMaster.slamEnabled = true;
+	}
+
+	void OnTriggerEnter() {
+		if (!inPosition) {
+			animation.Play("RunToStand");
+			inPosition = true;
+		}
+		// TODO: play taunt animation
 		
 	}
 
