@@ -6,6 +6,7 @@ public class SiegeBody : MonoBehaviour {
 	public GameObject orcList;
 	public GameStateController gameMaster;
 	bool advancedScene;
+	public GameObject wallBros;
 
 	public bool canAdvanceScene;
 	bool done;
@@ -25,6 +26,15 @@ public class SiegeBody : MonoBehaviour {
 				foreach (Component c in orcList.transform.GetComponentsInChildren(typeof(Orc))) {
 					Orc orc = (Orc)c;
 					orc.setAttackRun();
+				}
+			}
+
+			if (wallBros) {
+				foreach (Spearman s in wallBros.GetComponentsInChildren<Spearman>()) {
+					s.brace();
+					if (s.canTalk) {
+						s.transform.audio.PlayOneShot(Resources.Load<AudioClip>("Human/forGondor0"));
+					}
 				}
 			}
 			if (canAdvanceScene) {

@@ -33,7 +33,8 @@ namespace BoothGame{
 		protected float dissolveTime = 90;
 		protected AudioSource mySounds;
 		protected bool moving;
-		protected System.Random random;
+		public System.Random random;
+		protected bool enteredBattle;
 
 		// Abstract stuff
 		protected abstract Transform aggroCast();
@@ -78,6 +79,7 @@ namespace BoothGame{
 				isAlive = false;
 			}
 			else if (!isUpright()) {
+				Debug.Log("Orc not upright");
 				animation.Stop();
 				airTime += 1;
 				if (airTime >= maxAirTime) {
@@ -216,6 +218,7 @@ namespace BoothGame{
 
 		// Attack the target
 		private void stab(Transform enemy) {
+			Debug.Log("Human stab");
 			Debug.DrawLine(transform.position, enemy.position, Color.red);
 
 			// If the target is dead, stop
@@ -238,7 +241,11 @@ namespace BoothGame{
 
 		protected void dissolveMe() {
 			dissolveTime = dissolveTime - 1;
-			if (dissolveTime <= 0) Destroy(this.gameObject);
+			if (dissolveTime <= 0) this.gameObject.SetActive(false);
+		}
+
+		void OnTriggerExit() {
+			enteredBattle = true;
 		}
 	}
 }

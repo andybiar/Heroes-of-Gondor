@@ -28,7 +28,8 @@ public class ArcherAI : MonoBehaviour {
 			Component[] enemies = hit.transform.GetComponents(typeof(Enemy));
 			
 			if (enemies.Length > 0 && ((Enemy)enemies[0]).getIsAlive()) {
-				fire(hit.transform.position);
+				Component[] cs = hit.transform.GetComponentsInChildren<Collider>();
+				fire(hit.transform.position + new Vector3(0, ((Collider)cs[0]).bounds.extents.y, 0));
 			}
 		}
 	}

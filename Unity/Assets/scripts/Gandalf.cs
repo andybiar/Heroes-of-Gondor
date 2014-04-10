@@ -40,6 +40,7 @@ public class Gandalf : MonoBehaviour {
 			if (hits[i].attachedRigidbody) {
 				hits[i].attachedRigidbody.freezeRotation = false;
 				hits[i].attachedRigidbody.AddExplosionForce(spellPower, transform.position, spellRadius);
+				gameMaster.onSlam();
 			}
 
 			Component[] ls = hits[i].transform.GetComponents(typeof(Lockable));

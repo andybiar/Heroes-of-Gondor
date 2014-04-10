@@ -86,6 +86,13 @@ public class Crosshair : MonoBehaviour {
 	private bool checkLockable(RaycastHit hit) {
 		Component[] ls = hit.transform.GetComponents(typeof(Lockable));
 		if (ls.Length > 0 && ((Lockable)ls[0]).isItAlive()) {
+			target = hit.transform;
+			return true;
+		}
+
+		ls = hit.transform.parent.GetComponents(typeof(Lockable));
+		if (ls.Length > 0 && ((Lockable)ls[0]).isItAlive()) {
+			target = hit.transform.parent;
 			return true;
 		}
 
@@ -116,35 +123,37 @@ public class Crosshair : MonoBehaviour {
 				Lockable l = (Lockable)target.GetComponents(typeof(Lockable))[0];
 				l.onRelease();
 			}
-			Debug.Log("Releasing Target");
 			reset ();
 		}
 	}
 
 	// UPDATE LOCKON STATE
+	// guaranteed either target or target.parent is Lockable
 	private void updateState(RaycastHit hit) {
 		// If IDLE, set target and set state to LOCKING
 		if (currentState == State.IDLE) {
-			target = hit.transform;
 			currentState = State.LOCKING;
-			Lockable l = (Lockable)target.GetComponents(typeof(Lockable))[0];
-			l.onLock();
+			Component[] cs = target.GetComponents(typeof(Lockable));
+			if (cs.Length > 0) {
+				((Lockable)cs[0]).onLock();
+			}
 		}
 		
 		// If LOCKING and SAME TARGET, increment count or FIRE!!
 		if (currentState == State.LOCKING && hit.transform == target) {
-			if (lockCount < maxLockCount) { 
+			if (lockCount < maxLockCount) {
+				Debug.Log("Locking: " + hit.transform.name);
 				lockCount = lockCount + 1;
 			}
 		}
 		
 		// If LOCKING and NEW TARGET, reset
 		else if (currentState == State.LOCKING) {
-			target = hit.transform;
 			lockCount = 0;
 		}
 
 		else {
+
 		}
 	}
 
@@ -175,5 +184,8 @@ public class Crosshair : MonoBehaviour {
 		// Call the target's onFire function
 		Lockable l = (Lockable)t.GetComponents(typeof(Lockable))[0];
 		l.onFire();
+
+		// Sounds
+		gameMaster.onFire();
 	}
 }

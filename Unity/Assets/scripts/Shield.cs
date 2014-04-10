@@ -2,12 +2,16 @@
 using System.Collections;
 
 public class Shield : MonoBehaviour {
-	public Rigidbody soldier;
+	public Spearman soldier;
 
 	void OnCollisionEnter(Collision c) {
-		Debug.Log("Shield hit: " + c.transform.name);
 		if (c.collider.transform.GetComponents(typeof(Mace)).Length > 0) {
-			Debug.Log("Mace hit shield");
+			soldier.onMace();
+		}
+		else if (c.collider.transform.parent.GetComponents(typeof(Spearman)).Length > 0) {}
+		else {
+			int i = soldier.random.Next();
+			soldier.transform.audio.PlayOneShot(Resources.Load<AudioClip>("Weapons/sword"+(i%6)));
 		}
 	}
 }

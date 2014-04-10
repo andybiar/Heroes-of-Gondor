@@ -4,6 +4,9 @@ using BoothGame;
 
 public class Spearman : Infantry, Ally {
 	private bool braced;
+	private bool turning;
+	private float turnDegrees;
+	private float startRotation;
 
 	public Spearman() : base() {
 	}
@@ -22,7 +25,19 @@ public class Spearman : Infantry, Ally {
 		return null;
 	}
 
+	public void turn(int degrees) {
+		turning = true;
+		startRotation = transform.rotation.eulerAngles.y;
+		turnDegrees = degrees;
+	}
+
 	protected override void charge() {
+		if (turning == true) {
+			transform.Rotate(new Vector3(0, turnDegrees/130.0f, 0));
+			if (Mathf.Abs(transform.rotation.eulerAngles.y - (startRotation + turnDegrees)) < 5) {
+				turning = false;
+			}
+		}
 	}
 
 	protected override void die() {
@@ -45,6 +60,14 @@ public class Spearman : Infantry, Ally {
 			animation.Play("Brace");
 			braced = true;
 		}
+		Debug.DrawRay(transform.position, transform.up * 5, Color.yellow);
+	}
+
+	public void onMace() {
+		animation.CrossFade("Flail");
+		int i = random.Next(1,3);
+		mySounds.PlayOneShot(Resources.Load<AudioClip>("Human/falling"+i));
+		rigidbody.freezeRotation = false;
 	}
 
 	protected override void onMyStab() {
@@ -62,6 +85,5 @@ public class Spearman : Infantry, Ally {
 	}
 
 	void OnCollisionEnter(Collision c) {
-		Debug.Log("Spearman hit: " + c.transform.name);
 	}
 }

@@ -25,6 +25,7 @@ public class Taunter : Orc {
 			mySounds.clip = (Resources.Load<AudioClip>("Orc/trembleBeforeOrcs"));
 			mySounds.Play();
 			currentTask = Task.IDLE;
+			animation.Play ("Taunt");
 		}
 	}
 

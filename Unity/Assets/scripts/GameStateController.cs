@@ -18,7 +18,7 @@ public class GameStateController : MonoBehaviour {
 	public GameObject introScene;
 	public GameObject slamFight;
 	public bool slamEnabled;
-	public GameObject wallBros;
+	public UnityOSCReceiver oscReceiver;
 
 	private Vector3[] positions;
 	private float[] fovs;
@@ -46,6 +46,8 @@ public class GameStateController : MonoBehaviour {
 	private float musicVolume;
 	private bool gameOver;
 	private System.Random random;
+	private float winTime = 999999;
+	private bool slamLine;
 
 	// TIMERS
 	private int[] timers;
@@ -83,7 +85,7 @@ public class GameStateController : MonoBehaviour {
 		// 2. LOOKING AT TOWERS
 		positions[4] = new Vector3(19.44117f, 15.48369f, 7.56176f);
 		positions[5] = new Vector3(359.5207f, 380.41245f, 0);
-		fovs[2] = 30.4f;
+		fovs[2] = 20.4f;
 		timers[1] = 0;
 
 		transitionTimes[2] = 40;
@@ -104,7 +106,7 @@ public class GameStateController : MonoBehaviour {
 
 		// 5. SCALE TO FINAL GATE POS
 		positions[10] = new Vector3(4.582672f, -.0659391f, -3.465302f);
-		positions[11] = new Vector3(364.4802f, 322.3153f, 0);
+		positions[11] = new Vector3(364.4802f, 320.3153f, 0);
 		fovs[5] = 62.9f;
 
 		transform.position = transform.parent.position + positions[0];
@@ -117,7 +119,6 @@ public class GameStateController : MonoBehaviour {
 		// BEGIN THE GAME
 		musicFadeOut = true;
 		hogFadeOut = true;
-		siege.send();
 	}
 		
 	// UPDATE
@@ -136,23 +137,23 @@ public class GameStateController : MonoBehaviour {
 		
 		// FADE OUT THE MAIN MENU
 		if (musicFadeOut) {
-			jukebox.volume -= .06f;
-			// approximately 2 seconds after game starts
+			if (playIntro) {
+				efx.PlayOneShot(Resources.Load<AudioClip>("Gandalf/opener"));
+				playIntro = false;
+			}
+			jukebox.volume -= .005f;
+
+			// approximately ?? seconds after game starts
 			if (jukebox.volume <= 0) {
+				siege.send();
 				musicFadeOut = false;
-				foreach (Spearman s in wallBros.GetComponentsInChildren<Spearman>()) {
-					s.brace();
-					if (s.canTalk) {
-						s.transform.audio.PlayOneShot(Resources.Load<AudioClip>("Human/forGondor0"));
-					}
-				}
 			}
 		}
 
 		if (hogFadeOut) {
 			Color c = HoG.renderer.material.color;
 			if (c.a <= 0) hogFadeOut = false;
-			HoG.renderer.material.color = new Color(c.r, c.g, c.b, c.a - .06f);
+			HoG.renderer.material.color = new Color(c.r, c.g, c.b, c.a - .02f);
 			startLight.intensity -= .02f;
 		}
 
@@ -179,13 +180,20 @@ public class GameStateController : MonoBehaviour {
 		}
 
 		// IF YOU TOOK TOO LONG YO SHIT IS OVER
-		if (!gameOver && Time.timeSinceLevelLoad - timeGameStarted >= 109) {
+		if (sceneAutoPilot && !gameOver && Time.timeSinceLevelLoad - timeGameStarted >= 109) {
 			efx.PlayOneShot(Resources.Load<AudioClip>("Gandalf/retreat"));
 			gameOver = true;
 		}
 
+		// TIME OUT THE WIN CINEMATIC
+		if (!sceneAutoPilot && gameOver && Time.timeSinceLevelLoad - winTime >= 10) {
+			oscReceiver.disconnect();
+			Application.LoadLevel(0);
+		}
+
 		// RESTART THE LEVEL
-		if (Time.timeSinceLevelLoad - timeGameStarted >= 120) {
+		if (sceneAutoPilot && Time.timeSinceLevelLoad - timeGameStarted >= 120) {
+			oscReceiver.disconnect();
 			Application.LoadLevel(0);
 		}
 
@@ -209,6 +217,13 @@ public class GameStateController : MonoBehaviour {
 			nextScene();
 			jukebox.Stop();
 		}
+	}
+
+	public void win() {
+		sceneAutoPilot = false;
+		gameOver = true;
+		efx.PlayOneShot(Resources.Load<AudioClip>("Gandalf/closer"));
+		winTime = Time.timeSinceLevelLoad;
 	}
 
 	// Plays when moving
@@ -273,7 +288,6 @@ public class GameStateController : MonoBehaviour {
 			jukebox.clip = gameMusic;
 			jukebox.volume = musicVolume;
 			jukebox.Play();
-			efx.PlayOneShot(Resources.Load<AudioClip>("Gandalf/opener"));
 			particles.SetActive(false);
 			dustStorm.minEmission = 0;
 			dustStorm.maxEmission = 0;
@@ -284,11 +298,21 @@ public class GameStateController : MonoBehaviour {
 			fireEnabled = true;
 		}
 
+		// FINAL CAM POS
+		if (scene == 5) {
+			efx.PlayOneShot(Resources.Load<AudioClip>("Gandalf/aimForTheTrolls"));
+		}
+
 		updateScene();
 	}
 
 	public void onFire() {
-		int i = random.Next();
-		efx.PlayOneShot(Resources.Load<AudioClip>("Gandalf/grunt" + (i%3)));
+	}
+
+	public void onSlam() {
+		if (!slamLine && scene == 3) {
+			efx.PlayOneShot(Resources.Load<AudioClip>("Gandalf/returnToYourMaster"));
+			slamLine = true;
+		}
 	}
 }

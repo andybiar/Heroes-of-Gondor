@@ -48,6 +48,7 @@ public class Orc : Infantry, Enemy, Lockable {
 	}
 
 	protected override void onFall() {
+		Debug.Log("Orc falling to his death");
 		animation.Play("Flail");
 
 		int i = Random.Range(1, 3);
@@ -119,7 +120,7 @@ public class Orc : Infantry, Enemy, Lockable {
 				lName = l.transform.name;
 			}
 			else {
-				// you hit a trigger
+				//
 			}
 		}
 		if (isR) {
@@ -182,7 +183,7 @@ public class Orc : Infantry, Enemy, Lockable {
 		else {
 			moving = true;
 			if (turning == true) {
-				transform.Rotate(new Vector3(0, turnDegrees/40.0f, 0));
+				transform.Rotate(new Vector3(0, turnDegrees/130.0f, 0));
 				if (Mathf.Abs(transform.rotation.eulerAngles.y - (startRotation + turnDegrees)) < 5) {
 					turning = false;
 				}
