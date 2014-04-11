@@ -63,11 +63,27 @@ public class Spearman : Infantry, Ally {
 		Debug.DrawRay(transform.position, transform.up * 5, Color.yellow);
 	}
 
+	public void playAttack() {
+		animation.wrapMode = WrapMode.Loop;
+		animation.Play("Strike");
+		int i = random.Next();
+		if (i % 3 == 0) {
+			i = random.Next();
+			mySounds.PlayOneShot(Resources.Load<AudioClip>("Human/stab"+(i%3)));
+		}
+	}
+
 	public void onMace() {
+		rigidbody.constraints = RigidbodyConstraints.None;
 		animation.CrossFade("Flail");
 		int i = random.Next(1,3);
 		mySounds.PlayOneShot(Resources.Load<AudioClip>("Human/falling"+i));
 		rigidbody.freezeRotation = false;
+	}
+
+	public void onMace(Vector3 q) {
+		onMace();
+		rigidbody.AddExplosionForce(1000, new Vector3(q.x, q.y - 1, q.z), 6);
 	}
 
 	protected override void onMyStab() {

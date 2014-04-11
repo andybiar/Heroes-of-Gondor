@@ -12,6 +12,9 @@ public class Taunter : Orc {
 		currentTask = Task.ENGAGING;
 	}
 
+	public override void onLock() {
+	}
+
 	protected override void specialBehavior() {
 		if (!started) {
 			animation.Play("Run");
@@ -22,7 +25,7 @@ public class Taunter : Orc {
 			transform.position += transform.forward * speed * Time.deltaTime;
 		}
 		else if (!mySounds.isPlaying) {
-			mySounds.clip = (Resources.Load<AudioClip>("Orc/trembleBeforeOrcs"));
+			mySounds.clip = (Resources.Load<AudioClip>("Orc/taunt1"));
 			mySounds.Play();
 			currentTask = Task.IDLE;
 			animation.Play ("Taunt");
@@ -35,6 +38,7 @@ public class Taunter : Orc {
 			((Orc)c).setAttackRun();
 		}
 		gameMaster.slamEnabled = true;
+		die();
 	}
 
 	void OnTriggerEnter() {

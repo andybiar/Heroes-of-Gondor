@@ -9,6 +9,9 @@ public class TrollAttackBox : MonoBehaviour {
 	}
 
 	void OnTriggerEnter(Collider c) {
-		troll.attack();
+		if (c.transform.GetComponent(typeof(Ally)) ||
+		    (c.transform.GetComponent(typeof(Shield)))) {
+			troll.attack();
+		}
 	}
 }

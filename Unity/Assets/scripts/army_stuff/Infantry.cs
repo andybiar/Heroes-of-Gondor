@@ -226,6 +226,8 @@ namespace BoothGame{
 				releaseTarget();
 				currentTask = Task.IDLE;
 			}
+
+			currentTask = Task.GUARDING;
 			
 			// Deal damage, set timer
 			((Health)enemy.GetComponents(typeof(Health))[0]).damage(strength);

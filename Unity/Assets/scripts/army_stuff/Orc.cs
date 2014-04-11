@@ -3,6 +3,8 @@ using System.Collections;
 using BoothGame;
 
 public class Orc : Infantry, Enemy, Lockable {
+	public Camera gameCam;
+
 	private GameObject selectionAura;
 	private float highlightStrength = .35f;
 	private float separationL = 999;
@@ -16,11 +18,11 @@ public class Orc : Infantry, Enemy, Lockable {
 	public Stats stats;
 
 	void Awake() {
-		selectionAura = transform.GetChild(0).gameObject;
+		//selectionAura = transform.GetChild(0).gameObject;
 	}
 
-	public void onLock() {
-		selectionAura.SetActive(true);
+	public virtual void onLock() {
+		//selectionAura.SetActive(true);
 		//Color c = renderer.material.color;
 		//float h = highlightStrength;
 		//renderer.material.color = new Color(c.r + h, c.g + h, c.b + h);
@@ -31,6 +33,8 @@ public class Orc : Infantry, Enemy, Lockable {
 		Debug.Log("Orc shot by Gandalf");
 		int i = random.Next();
 		mySounds.PlayOneShot(Resources.Load<AudioClip>("Orc/falling" + (i%3)));
+		animation.CrossFade("Flail");
+		rigidbody.AddExplosionForce(1340, gameCam.transform.position-new Vector3(0,2,0), 50);
 	}
 
 	public void onStab() {
@@ -71,7 +75,7 @@ public class Orc : Infantry, Enemy, Lockable {
 	}
 
 	public void onRelease() {
-		selectionAura.SetActive(false);
+		//selectionAura.SetActive(false);
 		//Color c = renderer.material.color;
 		//float h = highlightStrength;
 		//renderer.material.color = new Color(c.r - h, c.g - h, c.b - h);
@@ -183,7 +187,7 @@ public class Orc : Infantry, Enemy, Lockable {
 		else {
 			moving = true;
 			if (turning == true) {
-				transform.Rotate(new Vector3(0, turnDegrees/130.0f, 0));
+				transform.Rotate(new Vector3(0, turnDegrees/110.0f, 0));
 				if (Mathf.Abs(transform.rotation.eulerAngles.y - (startRotation + turnDegrees)) < 5) {
 					turning = false;
 				}

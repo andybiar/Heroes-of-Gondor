@@ -25,6 +25,7 @@ public class Troll_AI : MonoBehaviour, Lockable, Enemy, Health {
 	private bool turning;
 	private float startRotation;
 	private float turnDegrees;
+	private bool animWait;
 	
 	void Start () {
 		mySounds = transform.GetComponent<AudioSource>();
@@ -42,6 +43,8 @@ public class Troll_AI : MonoBehaviour, Lockable, Enemy, Health {
 				break;
 			case Task.ATTACKING:
 				waitForAttackAnimation();
+				break;
+			case Task.DEAD:
 				break;
 			}
 		}
@@ -65,7 +68,11 @@ public class Troll_AI : MonoBehaviour, Lockable, Enemy, Health {
 	}
 
 	private void waitForAttackAnimation() {
-		if (!animation.isPlaying) currentTask = Task.RUNNING;
+		if (!animation.isPlaying) {
+			currentTask = Task.RUNNING;
+			animation.Play("Walk");
+			animWait = false;
+		}
 	}
 
 	public bool getIsAlive() {
@@ -95,8 +102,11 @@ public class Troll_AI : MonoBehaviour, Lockable, Enemy, Health {
 		currentTask = Task.ATTACKING;
 		myMace.attacking = true;
 		animation.CrossFade("Strike");
-		int i = random.Next();
-		mySounds.PlayOneShot(Resources.Load<AudioClip>("Troll/attack"+ (i % 3)));
+		if (!animWait) {
+			int i = random.Next();
+			mySounds.PlayOneShot(Resources.Load<AudioClip>("Troll/attack"+ (i % 3)));
+			animWait = true;
+		}
 	}
 
 	private void findTarget() {/*
@@ -121,7 +131,6 @@ public class Troll_AI : MonoBehaviour, Lockable, Enemy, Health {
 	}
 
 	public void onFire() {
-		Debug.Log("TROLL hit by Gandalf");
 		int i = random.Next();
 		mySounds.PlayOneShot(Resources.Load<AudioClip>("Troll/hit"+(i%6)));
 		animation.CrossFade("Flinch");
@@ -151,7 +160,6 @@ public class Troll_AI : MonoBehaviour, Lockable, Enemy, Health {
 	}
 
 	void OnTriggerEnter(Collider c) {
-		Debug.Log("FUCKING TRIGGER");
 	}
 
 	private void die() {
@@ -159,10 +167,10 @@ public class Troll_AI : MonoBehaviour, Lockable, Enemy, Health {
 		int i = random.Next();
 		mySounds.PlayOneShot(Resources.Load<AudioClip>("Troll/die"+(i%2)));
 		stats.trollDied();
+		currentTask = Task.DEAD;
 	}
 
 	public void turn(int degrees) {
-		Debug.Log("FUCKING TURN");
 		turning = true;
 		startRotation = transform.rotation.eulerAngles.y;
 		turnDegrees = degrees;

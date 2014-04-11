@@ -21,6 +21,7 @@ ModelImporter:
     4300002: left_door
     4300004: right_door
     7400000: OpenGate
+    7400002: Shake
     9500000: //RootNode
     11100000: //RootNode
   materials:
@@ -42,8 +43,42 @@ ModelImporter:
       name: OpenGate
       takeName: Take 001
       firstFrame: 1
-      lastFrame: 48
-      wrapMode: 0
+      lastFrame: 25
+      wrapMode: 1
+      orientationOffsetY: 0
+      level: 0
+      cycleOffset: 0
+      loop: 0
+      loopTime: 0
+      loopBlend: 0
+      loopBlendOrientation: 0
+      loopBlendPositionY: 0
+      loopBlendPositionXZ: 0
+      keepOriginalOrientation: 0
+      keepOriginalPositionY: 1
+      keepOriginalPositionXZ: 0
+      heightFromFeet: 0
+      mirror: 0
+      bodyMask: 01000000010000000100000001000000010000000100000001000000010000000100000001000000010000000100000001000000
+      curves: []
+      events: []
+      transformMask:
+      - path: 
+        weight: 1
+      - path: arch
+        weight: 1
+      - path: left_door
+        weight: 1
+      - path: right_door
+        weight: 1
+      maskType: 0
+      maskSource: {instanceID: 0}
+    - serializedVersion: 16
+      name: Shake
+      takeName: Take 001
+      firstFrame: 35
+      lastFrame: 46
+      wrapMode: 1
       orientationOffsetY: 0
       level: 0
       cycleOffset: 0

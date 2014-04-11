@@ -1,12 +1,11 @@
 ﻿using UnityEngine;
-using System.Collections;
+using System.Collections.Generic;
 
 /* THIS IS THE UGLIEST BEHEMOTH OF A CLASS */
 public class GameStateController : MonoBehaviour {
 	// Set these in the inspector
 	public Siege siege;
 	public Gate gate;
-	public Crosshair crosshair;
 	public AudioSource jukebox;
 	public AudioClip gameMusic;
 	public GameObject HoG;
@@ -19,7 +18,11 @@ public class GameStateController : MonoBehaviour {
 	public GameObject slamFight;
 	public bool slamEnabled;
 	public UnityOSCReceiver oscReceiver;
-
+	private GameObject tutorialText; // unused atm
+	public ControlsMaster controlsMaster;
+	public Ring ring;
+	public Gandalf gandalf;
+	
 	private Vector3[] positions;
 	private float[] fovs;
 	private float[] transitionTimes;
@@ -48,11 +51,16 @@ public class GameStateController : MonoBehaviour {
 	private System.Random random;
 	private float winTime = 999999;
 	private bool slamLine;
+	private int spellState;
+	private List<ControlsMaster.MOVES> wait = new List<ControlsMaster.MOVES> {ControlsMaster.MOVES.NONE};
 
 	// TIMERS
 	private int[] timers;
 
 	void Start () {
+		System.Collections.Generic.List<ControlsMaster.MOVES> startSeq = new System.Collections.Generic.List<ControlsMaster.MOVES> { ControlsMaster.MOVES.RIGHT };
+		controlsMaster.generateSequence(startSeq, 99999);
+
 		random = new System.Random();
 
 		gateFight.SetActive(false);
@@ -112,7 +120,35 @@ public class GameStateController : MonoBehaviour {
 		transform.position = transform.parent.position + positions[0];
 		transform.rotation = (Quaternion.Euler(positions[1]));
 		cam.fieldOfView = fovs[0];
-		crosshair.resetCursor();
+	}
+
+	public void castNextSpell() {
+		if (spellState == 0) {
+			spellState += 1;
+			ring.onFire();
+			controlsMaster.generateSequence(wait, 99999);
+		}
+		else if (spellState == 1) {
+			tutorialOrc.onFire();
+			spellState += 1;
+			controlsMaster.generateSequence(new List<ControlsMaster.MOVES> 
+			   {ControlsMaster.MOVES.LEFT, 
+				ControlsMaster.MOVES.IN},
+			10);
+		}
+		else if (spellState == 2) {
+			gandalf.castBigSpell();
+			spellState += 1;
+			controlsMaster.generateSequence(wait, 99999);
+			if (Time.timeSinceLevelLoad - timeGameStarted < 30) {
+				efx.PlayOneShot(Resources.Load<AudioClip>("Gandalf/greaterThreatsThanOrcs"));
+			}
+		}
+		else if (openedGate) {
+			((Troll_AI)GameObject.FindObjectOfType(typeof(Troll_AI))).onFire();
+			spellState += 1;
+
+		}
 	}
 
 	public void beginGame() {
@@ -177,6 +213,12 @@ public class GameStateController : MonoBehaviour {
 					((Orc)c[0]).setAttackRun();
 				}
 			}
+			controlsMaster.generateSequence(
+				new List<ControlsMaster.MOVES> {
+				ControlsMaster.MOVES.LEFT,
+				ControlsMaster.MOVES.RIGHT,
+				ControlsMaster.MOVES.IN},
+			10);
 		}
 
 		// IF YOU TOOK TOO LONG YO SHIT IS OVER
@@ -220,10 +262,12 @@ public class GameStateController : MonoBehaviour {
 	}
 
 	public void win() {
-		sceneAutoPilot = false;
-		gameOver = true;
-		efx.PlayOneShot(Resources.Load<AudioClip>("Gandalf/closer"));
-		winTime = Time.timeSinceLevelLoad;
+		if (!gameOver) {
+			sceneAutoPilot = false;
+			gameOver = true;
+			efx.PlayOneShot(Resources.Load<AudioClip>("Gandalf/closer"));
+			winTime = Time.timeSinceLevelLoad;
+		}
 	}
 
 	// Plays when moving
@@ -257,6 +301,7 @@ public class GameStateController : MonoBehaviour {
 			introScene.SetActive(false);
 			slamFight.SetActive(true);
 			tutorialOrc.send();
+			controlsMaster.generateSequence(new List<ControlsMaster.MOVES> {ControlsMaster.MOVES.IN}, 10);
 		}
 
 		// BEGIN GATE FIGHT
@@ -265,10 +310,6 @@ public class GameStateController : MonoBehaviour {
 			playIntro = false;
 
 			if (!sceneAutoPilot) gate.open();
-		}
-
-		if (crosshair.keyboardMode) {
-			crosshair.resetCursor();
 		}
 	}
 

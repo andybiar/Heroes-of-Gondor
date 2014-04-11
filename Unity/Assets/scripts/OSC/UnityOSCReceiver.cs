@@ -12,7 +12,7 @@ public class UnityOSCReceiver : MonoBehaviour {
 	public int port;
 	private OSCReceiver receiver;
 	private Thread thread;
-	public Crosshair crosshair;
+	public ControlsMaster controls;
 	
 	private List<OSCMessage> processQueue = new List<OSCMessage>();
 	
@@ -44,11 +44,8 @@ public class UnityOSCReceiver : MonoBehaviour {
 		//so we used a shared proccessQueue full of OSC Messages
 		lock(processQueue){
 			foreach( OSCMessage message in processQueue){
-				if (message.Address.Equals("/staffPos")){
-					crosshair.setPos((float)message.Values[0], (float)message.Values[1]);
-				}
 				if (message.Address.Equals("/fire")) {
-					crosshair.fire();
+					controls.onFire();
 				}
 			}
 			processQueue.Clear();

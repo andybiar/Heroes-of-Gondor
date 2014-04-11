@@ -49,7 +49,8 @@
      <Compile Include="Assets\TrollAttackBox.cs" />
      <Compile Include="Assets\scripts\AdvanceCamera.cs" />
      <Compile Include="Assets\scripts\Arrow.cs" />
-     <Compile Include="Assets\scripts\Crosshair.cs" />
+     <Compile Include="Assets\scripts\AttackTrigger.cs" />
+     <Compile Include="Assets\scripts\ControlsMaster.cs" />
      <Compile Include="Assets\scripts\EndCollider.cs" />
      <Compile Include="Assets\scripts\GameStateController.cs" />
      <Compile Include="Assets\scripts\Gandalf.cs" />
