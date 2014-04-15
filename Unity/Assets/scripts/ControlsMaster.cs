@@ -18,6 +18,11 @@ public class ControlsMaster : MonoBehaviour {
 	private bool fired;
 	private bool gameStarted;
 	private bool firstAfterMenu = true;
+	private bool lastScene;
+
+	public void bumpOver() {
+		lastScene = true;
+	}
 
 	void Start () {
 		gameMaster = (GameStateController)GameObject.FindObjectOfType<GameStateController>();
@@ -42,15 +47,20 @@ public class ControlsMaster : MonoBehaviour {
 			firstAfterMenu = false;
 		}
 
+		if (!lastScene)
 		movesDisplay.transform.position = gameMaster.transform.position + new Vector3(.3f, .5f, 2.1f);
+		else {
+			movesDisplay.transform.position = gameMaster.transform.position + new Vector3(-.85f, .5f, 2.1f);
+		}
 		if (nextCorrectMove == MOVES.RIGHT || nextCorrectMove == MOVES.LEFT) {
-			movesDisplay.renderer.material = right;
 
 			movesDisplay.transform.rotation = Quaternion.Euler(gameMaster.transform.rotation.eulerAngles + 
 				new Vector3(-.5f, 260.2f, 93.3f));
 		}
 		else {
 			movesDisplay.renderer.material = into;
+			movesDisplay.transform.rotation = Quaternion.Euler (
+				new Vector3(53.97f, 163.97f, 348.58f));
 		}
 
 
@@ -71,6 +81,10 @@ public class ControlsMaster : MonoBehaviour {
 		}
 	}
 
+	public void hide() {
+		movesDisplay.renderer.enabled = false;
+	}
+
 	public void onFire() {
 		fired = true;
 	}
@@ -87,10 +101,10 @@ public class ControlsMaster : MonoBehaviour {
 	}
 
 	private void processInput() {
-		if (Input.GetKeyDown(KeyCode.X)) {
+		if (Input.GetKeyUp(KeyCode.X)) {
 			leftPressed();
 		}
-		else if (Input.GetKeyDown(KeyCode.B)) {
+		else if (Input.GetKeyDown(KeyCode.A)) {
 			rightPressed();
 		}
 		else if (fired || Input.GetKeyDown(KeyCode.J)) {
@@ -101,31 +115,29 @@ public class ControlsMaster : MonoBehaviour {
 	private void leftPressed() {
 		if (nextCorrectMove == MOVES.LEFT) {
 			sCount += 1;
+			gameMaster.playSuccess();
 			checkCompletion();
 		}
-		else if (nextCorrectMove != MOVES.NONE) {
-			sCount = 0;
-		}
+
 	}
 
 	private void rightPressed() {
 		if (nextCorrectMove == MOVES.RIGHT) {
 			sCount += 1;
+			gameMaster.playSuccess();
 			checkCompletion();
 		}
-		else if (nextCorrectMove != MOVES.NONE) {
-			sCount = 0;
-		}
+
 	}
 
 	private void firePressed() {
 		if (nextCorrectMove == MOVES.IN) {
 			sCount += 1;
+			gameMaster.playSuccess();
 			checkCompletion();
 		}
-		else if (nextCorrectMove != MOVES.NONE) {
-			sCount = 0;
-		}
+		fired = false;
+
 	}
 
 	public void generateSequence(List<MOVES> moveList, float interval) {

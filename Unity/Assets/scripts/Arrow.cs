@@ -31,7 +31,7 @@ public class Arrow : MonoBehaviour {
 			transform.parent = c.transform;
 			Destroy(transform.rigidbody);
 			Destroy(transform.collider);
-			transform.position += transform.up * .45f;
+			transform.position += transform.up * .65f;
 		}
 	}
 

@@ -199,7 +199,7 @@ namespace BoothGame{
 			}
 
 			// Approach the enemy
-			Debug.DrawRay(transform.position, transform.forward * pikeRange, Color.yellow);
+			//Debug.DrawRay(transform.position, transform.forward * pikeRange, Color.yellow);
 			transform.LookAt(target);
 			transform.position = Vector3.MoveTowards(transform.position, target.position, speed * Time.deltaTime);
 
@@ -219,7 +219,7 @@ namespace BoothGame{
 		// Attack the target
 		private void stab(Transform enemy) {
 			Debug.Log("Human stab");
-			Debug.DrawLine(transform.position, enemy.position, Color.red);
+			//Debug.DrawLine(transform.position, enemy.position, Color.red);
 
 			// If the target is dead, stop
 			if (!targetHealth.getIsAlive()) {

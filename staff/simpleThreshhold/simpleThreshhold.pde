@@ -23,7 +23,7 @@ float lastMessageMillis;
 float interval = 17;
 
 //1525 is 5ft, so 305/foot?
-int threshold = 610;
+int threshold = 521;
 
 void setup()
 {
@@ -66,9 +66,9 @@ void draw()
       }
     }
     
-     image(kinect.depthImage(),0,0);
+     //image(kinect.depthImage(),0,0);
      fill(255);
-     //rect(0, 0, width, height);
+     rect(0, 0, width, height);
       
     if(closestValue<threshold){
       inRange = true;

@@ -1,14 +1,18 @@
 ﻿<Properties>
-  <MonoDevelop.Ide.Workspace ActiveConfiguration="Debug" />
-  <MonoDevelop.Ide.Workbench ActiveDocument="Assets\scripts\ControlsMaster.cs">
+  <MonoDevelop.Ide.Workspace ActiveConfiguration="Debug" PreferredExecutionTarget="MonoDevelop.Default" />
+  <MonoDevelop.Ide.Workbench ActiveDocument="Assets\scripts\army_stuff\ArcherAI.cs">
     <Files>
-      <File FileName="Assets\scripts\ControlsMaster.cs" Line="50" Column="39" />
-      <File FileName="Assets\scripts\GameStateController.cs" Line="145" Column="5" />
-      <File FileName="Assets\scripts\Gandalf.cs" Line="27" Column="73" />
-      <File FileName="Assets\scripts\Shield.cs" Line="9" Column="38" />
-      <File FileName="Assets\scripts\Mace.cs" Line="13" Column="31" />
-      <File FileName="Assets\scripts\army_stuff\Spearman.cs" Line="67" Column="53" />
-      <File FileName="Assets\scripts\army_stuff\Troll_AI.cs" Line="75" Column="4" />
+      <File FileName="Assets\scripts\army_stuff\Infantry.cs" Line="204" Column="37" />
+      <File FileName="Assets\scripts\ControlsMaster.cs" Line="1" Column="1" />
+      <File FileName="Assets\scripts\GameStateController.cs" Line="1" Column="1" />
+      <File FileName="Assets\scripts\army_stuff\Spearman.cs" Line="63" Column="5" />
+      <File FileName="Assets\scripts\army_stuff\Troll_AI.cs" Line="67" Column="5" />
+      <File FileName="Assets\scripts\army_stuff\Orc.cs" Line="183" Column="6" />
+      <File FileName="Assets\scripts\OSC\UnityOSCReceiver.cs" Line="1" Column="1" />
+      <File FileName="Assets\scripts\army_stuff\Infantry.cs" Line="1" Column="1" />
+      <File FileName="Assets\scripts\Taunter.cs" Line="1" Column="1" />
+      <File FileName="Assets\scripts\Arrow.cs" Line="1" Column="1" />
+      <File FileName="Assets\scripts\army_stuff\ArcherAI.cs" Line="25" Column="5" />
     </Files>
   </MonoDevelop.Ide.Workbench>
   <MonoDevelop.Ide.DebuggingService.Breakpoints>

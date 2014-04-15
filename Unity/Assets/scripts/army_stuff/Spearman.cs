@@ -12,7 +12,7 @@ public class Spearman : Infantry, Ally {
 	}
 
 	protected override Transform aggroCast() {
-		Debug.DrawRay(transform.position + new Vector3(0,1.7f,0), transform.forward * aggroRange);
+		//Debug.DrawRay(transform.position + new Vector3(0,1.7f,0), transform.forward * aggroRange);
 
 		// If we see an enemy within our aggro range, engage it in combat!
 		RaycastHit hit = new RaycastHit();
@@ -60,17 +60,15 @@ public class Spearman : Infantry, Ally {
 			animation.Play("Brace");
 			braced = true;
 		}
-		Debug.DrawRay(transform.position, transform.up * 5, Color.yellow);
+		//Debug.DrawRay(transform.position, transform.up * 5, Color.yellow);
 	}
 
 	public void playAttack() {
 		animation.wrapMode = WrapMode.Loop;
 		animation.Play("Strike");
 		int i = random.Next();
-		if (i % 3 == 0) {
-			i = random.Next();
-			mySounds.PlayOneShot(Resources.Load<AudioClip>("Human/stab"+(i%3)));
-		}
+		if(i % 2 == 0)
+		mySounds.PlayOneShot(Resources.Load<AudioClip>("Weapons/sword0"));
 	}
 
 	public void onMace() {

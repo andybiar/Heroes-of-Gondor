@@ -3,17 +3,12 @@ using System.Collections;
 
 public class Ring : MonoBehaviour, Lockable {
 	public GameStateController gameMaster;
-	public GameObject innerRing;
-	public GameObject outerRing;
+	public GameObject pressText;
 
 	void Start() {
-		Color c = outerRing.renderer.material.color;
-		outerRing.renderer.material.color = new Color(c.r, c.g, c.b, 0);
 	}
 
 	public void onLock() {
-		Color c = outerRing.renderer.material.color;
-		outerRing.renderer.material.color = new Color(c.r, c.g, c.b, 1);
 	}
 
 	public void onRelease() {
@@ -22,7 +17,8 @@ public class Ring : MonoBehaviour, Lockable {
 	public void onFire() {
 		gameMaster.beginGame();
 		gameObject.SetActive(false);
-		innerRing.SetActive(false);
+		pressText.SetActive(false);
+
 	}
 
 	public void onStab() {

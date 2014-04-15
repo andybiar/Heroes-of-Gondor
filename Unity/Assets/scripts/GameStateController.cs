@@ -22,6 +22,8 @@ public class GameStateController : MonoBehaviour {
 	public ControlsMaster controlsMaster;
 	public Ring ring;
 	public Gandalf gandalf;
+	public GameObject wave2;
+	public GameObject wave3;
 	
 	private Vector3[] positions;
 	private float[] fovs;
@@ -40,6 +42,7 @@ public class GameStateController : MonoBehaviour {
 	private int scene = 0;
 	private Camera cam;
 	private float timeGameStarted = 9999999999;
+	private bool ranOpening;
 	private bool movedToWall;
 	private bool openedGate;
 	private bool sceneAutoPilot = true;
@@ -52,6 +55,7 @@ public class GameStateController : MonoBehaviour {
 	private float winTime = 999999;
 	private bool slamLine;
 	private int spellState;
+	private bool playGreaterthreats;
 	private List<ControlsMaster.MOVES> wait = new List<ControlsMaster.MOVES> {ControlsMaster.MOVES.NONE};
 
 	// TIMERS
@@ -133,22 +137,36 @@ public class GameStateController : MonoBehaviour {
 			spellState += 1;
 			controlsMaster.generateSequence(new List<ControlsMaster.MOVES> 
 			   {ControlsMaster.MOVES.LEFT, 
-				ControlsMaster.MOVES.IN},
+				ControlsMaster.MOVES.RIGHT},
 			10);
 		}
 		else if (spellState == 2) {
 			gandalf.castBigSpell();
 			spellState += 1;
 			controlsMaster.generateSequence(wait, 99999);
-			if (Time.timeSinceLevelLoad - timeGameStarted < 30) {
-				efx.PlayOneShot(Resources.Load<AudioClip>("Gandalf/greaterThreatsThanOrcs"));
+			if (Time.timeSinceLevelLoad - timeGameStarted < 26) {
+				playGreaterthreats = true;
 			}
 		}
 		else if (openedGate) {
 			((Troll_AI)GameObject.FindObjectOfType(typeof(Troll_AI))).onFire();
 			spellState += 1;
-
+			int i = random.Next();
+			int j = random.Next();
+			int k = random.Next();
+			controlsMaster.generateSequence(new List<ControlsMaster.MOVES> {
+				i2M(i%2), i2M(j%2), i2M(k%2), ControlsMaster.MOVES.IN},
+			15);
 		}
+	}
+
+	public void playSuccess() {
+		efx.PlayOneShot(Resources.Load<AudioClip>("success"));
+	}
+
+	private ControlsMaster.MOVES i2M(int i) {
+		if (i == 0) return ControlsMaster.MOVES.RIGHT;
+		else return ControlsMaster.MOVES.LEFT;
 	}
 
 	public void beginGame() {
@@ -173,16 +191,17 @@ public class GameStateController : MonoBehaviour {
 		
 		// FADE OUT THE MAIN MENU
 		if (musicFadeOut) {
-			if (playIntro) {
+			if (playIntro && !ranOpening) {
 				efx.PlayOneShot(Resources.Load<AudioClip>("Gandalf/opener"));
 				playIntro = false;
 			}
 			jukebox.volume -= .005f;
 
 			// approximately ?? seconds after game starts
-			if (jukebox.volume <= 0) {
+			if (jukebox.volume <= 0 && !ranOpening) {
 				siege.send();
 				musicFadeOut = false;
+				ranOpening = true;
 			}
 		}
 
@@ -193,6 +212,11 @@ public class GameStateController : MonoBehaviour {
 			startLight.intensity -= .02f;
 		}
 
+		if (playGreaterthreats && Time.timeSinceLevelLoad - timeGameStarted >= 28) {
+			playGreaterthreats = false;
+			efx.PlayOneShot(Resources.Load<AudioClip>("Gandalf/greaterThreats"));
+			 }
+
 		// MOVE TO THE GATE
 		if (sceneAutoPilot && (!movedToWall) && Time.timeSinceLevelLoad - timeGameStarted >= 34) {
 			Debug.Log("Scene advanced by 'move to the wall'");
@@ -200,6 +224,14 @@ public class GameStateController : MonoBehaviour {
 			efx.PlayOneShot(Resources.Load<AudioClip>("batteringRam2"));
 			movedToWall = true;
 			gateFight.SetActive(true);
+			if (spellState < 3) {
+				spellState = 2;
+				castNextSpell();
+			}
+		}
+
+		if (Time.timeSinceLevelLoad - timeGameStarted == 36) {
+			gate.animation.Play ("Thud");
 		}
 
 		// OPEN THE GATE
@@ -221,8 +253,17 @@ public class GameStateController : MonoBehaviour {
 			10);
 		}
 
-		// IF YOU TOOK TOO LONG YO SHIT IS OVER
-		if (sceneAutoPilot && !gameOver && Time.timeSinceLevelLoad - timeGameStarted >= 109) {
+		if (!gameOver && Time.timeSinceLevelLoad - timeGameStarted >= 60) {
+			foreach (GameObject g in GameObject.FindGameObjectsWithTag("Wave2")) {
+				Component[] c = g.GetComponents(typeof(Orc));
+				if (c.Length > 0) {
+					((Orc)c[0]).setAttackRun();
+				}
+			}
+		}
+			
+			// IF YOU TOOK TOO LONG YO SHIT IS OVER
+		if (sceneAutoPilot && !gameOver && Time.timeSinceLevelLoad - timeGameStarted >= 88) {
 			efx.PlayOneShot(Resources.Load<AudioClip>("Gandalf/retreat"));
 			gameOver = true;
 		}
@@ -234,7 +275,7 @@ public class GameStateController : MonoBehaviour {
 		}
 
 		// RESTART THE LEVEL
-		if (sceneAutoPilot && Time.timeSinceLevelLoad - timeGameStarted >= 120) {
+		if (sceneAutoPilot && Time.timeSinceLevelLoad - timeGameStarted >= 92) {
 			oscReceiver.disconnect();
 			Application.LoadLevel(0);
 		}
@@ -267,7 +308,13 @@ public class GameStateController : MonoBehaviour {
 			gameOver = true;
 			efx.PlayOneShot(Resources.Load<AudioClip>("Gandalf/closer"));
 			winTime = Time.timeSinceLevelLoad;
+			musicFadeOut = true;
+			controlsMaster.generateSequence(wait, 110);
 		}
+	}
+
+	public void trollDied() {
+		controlsMaster.hide();
 	}
 
 	// Plays when moving
@@ -342,6 +389,7 @@ public class GameStateController : MonoBehaviour {
 		// FINAL CAM POS
 		if (scene == 5) {
 			efx.PlayOneShot(Resources.Load<AudioClip>("Gandalf/aimForTheTrolls"));
+			controlsMaster.bumpOver();
 		}
 
 		updateScene();

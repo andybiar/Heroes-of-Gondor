@@ -21,7 +21,7 @@ ModelImporter:
     4300002: left_door
     4300004: right_door
     7400000: OpenGate
-    7400002: Shake
+    7400002: Thud
     9500000: //RootNode
     11100000: //RootNode
   materials:
@@ -74,7 +74,7 @@ ModelImporter:
       maskType: 0
       maskSource: {instanceID: 0}
     - serializedVersion: 16
-      name: Shake
+      name: Thud
       takeName: Take 001
       firstFrame: 35
       lastFrame: 46

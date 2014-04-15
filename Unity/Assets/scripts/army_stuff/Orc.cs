@@ -94,10 +94,10 @@ public class Orc : Infantry, Enemy, Lockable {
 		
 	protected override Transform aggroCast() {
 		Vector3 v = new Vector3(0,.8f,0) + transform.forward * .2f;
-		Debug.DrawRay(transform.position + v, 
+		/*Debug.DrawRay(transform.position + v, 
 		              Quaternion.Euler(0, -6, 0) * (transform.forward) * aggroRange);
 		Debug.DrawRay(transform.position + v,
-		              Quaternion.Euler(0, 6, 0) * (transform.forward) * aggroRange);
+		              Quaternion.Euler(0, 6, 0) * (transform.forward) * aggroRange);*/
 
 		// Double Raycast
 		RaycastHit l = new RaycastHit();
@@ -180,7 +180,7 @@ public class Orc : Infantry, Enemy, Lockable {
 				moving = false;
 				animation.Play("RunToStand");
 			}
-			Debug.DrawRay(transform.position, transform.forward, Color.magenta);
+			//Debug.DrawRay(transform.position, transform.forward, Color.magenta);
 			//Debug.Log("Orc obstructed by: " + lName + ", " + rName);
 			return;
 		}

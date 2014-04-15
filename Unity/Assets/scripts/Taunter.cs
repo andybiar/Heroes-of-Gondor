@@ -7,6 +7,7 @@ public class Taunter : Orc {
 	public Transform targetPosition;
 	public GameObject orcList;
 	public GameStateController gameMaster;
+	private int terrainHits;
 
 	public void send() {
 		currentTask = Task.ENGAGING;
@@ -48,6 +49,13 @@ public class Taunter : Orc {
 		}
 		// TODO: play taunt animation
 		
+	}
+
+	void OnCollisionEnter(Collision c) {
+		if (currentStance == Stance.DEAD && c.transform.name.Equals("Terrain")) {
+			if(terrainHits == 0) terrainHits += 1;
+			else gameObject.SetActive(false);
+		}
 	}
 
 

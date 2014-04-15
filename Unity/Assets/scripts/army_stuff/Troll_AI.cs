@@ -26,6 +26,8 @@ public class Troll_AI : MonoBehaviour, Lockable, Enemy, Health {
 	private float startRotation;
 	private float turnDegrees;
 	private bool animWait;
+	private float dissolveTime = 15;
+	private int maxDissolveTime = 15;
 	
 	void Start () {
 		mySounds = transform.GetComponent<AudioSource>();
@@ -35,6 +37,8 @@ public class Troll_AI : MonoBehaviour, Lockable, Enemy, Health {
 	}
 
 	void Update () {
+		if (!isAlive) dissolveMe();
+
 		if (enteredBattle && checkBoundaries()) {}
 		else {
 			switch(currentTask) {
@@ -50,8 +54,17 @@ public class Troll_AI : MonoBehaviour, Lockable, Enemy, Health {
 		}
 	}
 
+	protected void dissolveMe() {
+		dissolveTime = dissolveTime - 1;
+		foreach (Component c in transform.GetComponentsInChildren<Renderer>()) {
+			Color q = ((Renderer)c).material.color;
+			((Renderer)c).material.color = new Color(q.r, q.g, q.b, dissolveTime/maxDissolveTime);
+		}
+		if (dissolveTime <= 0) this.gameObject.SetActive(false);
+	}
+	
 	private bool checkBoundaries() {
-		Debug.DrawRay(transform.position, transform.forward * wallCheckDist);
+		//Debug.DrawRay(transform.position, transform.forward * wallCheckDist);
 		RaycastHit hit = new RaycastHit();
 		if (Physics.Raycast(transform.position, transform.forward, out hit, wallCheckDist)) {
 			if (Vector3.Distance(transform.position + transform.right, gameMaster.transform.position) <
@@ -91,10 +104,8 @@ public class Troll_AI : MonoBehaviour, Lockable, Enemy, Health {
 		transform.position += transform.forward * speed * Time.deltaTime;
 
 		if (turning == true) {
-			transform.Rotate(new Vector3(0, turnDegrees/130.0f, 0));
-			if (Mathf.Abs(transform.rotation.eulerAngles.y - (startRotation + turnDegrees)) < 5) {
-				turning = false;
-			}
+			transform.Rotate(new Vector3(0, turnDegrees, 0));
+			turning = false;
 		}
 	}
 
@@ -163,11 +174,13 @@ public class Troll_AI : MonoBehaviour, Lockable, Enemy, Health {
 	}
 
 	private void die() {
+		myMace.attacking = false;
 		animation.CrossFade("Die");
 		int i = random.Next();
 		mySounds.PlayOneShot(Resources.Load<AudioClip>("Troll/die"+(i%2)));
 		stats.trollDied();
 		currentTask = Task.DEAD;
+		gameMaster.trollDied();
 	}
 
 	public void turn(int degrees) {

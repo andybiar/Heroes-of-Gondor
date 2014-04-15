@@ -22,7 +22,7 @@ public class ArcherAI : MonoBehaviour {
 	}
 
 	private void lookForTargets() {
-		Debug.DrawRay(transform.position, transform.forward * 200);
+		//Debug.DrawRay(transform.position, transform.forward * 200);
 		RaycastHit hit = new RaycastHit();
 		if (Physics.Raycast (transform.position, transform.forward, out hit, 200)) {
 			Component[] enemies = hit.transform.GetComponents(typeof(Enemy));
