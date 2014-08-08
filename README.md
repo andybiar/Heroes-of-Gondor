@@ -11,4 +11,4 @@ As crunch time for Heroes of Gondor wound to a close, this repo got pretty messy
 
 A port for the Unity Web Player is on my to-do list, but in the meantime if you want to use any of the awesome audio or visual assets go ahead, but please credit us. We had a team of 17 people working really hard on this for a couple months; it's the least you can do.
 
-I do not own any rights to Lord of the Rings content, nor have I made any money from this project.
+Disclaimer: I do not own any rights to Lord of the Rings content, nor have I made any money from this project.
